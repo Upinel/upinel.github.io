@@ -193,7 +193,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://upinel.github.io/2024/07/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/">
+    <link itemprop="mainEntityOfPage" href="https://upinel.github.io/2024/07/15/Windows-KMS-activation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -211,7 +211,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/07/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/" class="post-title-link" itemprop="url">Intel NUC12 1240P 10TB (4*SSD) Super HomeLab Build</a>
+          <a href="/2024/07/15/Windows-KMS-activation/" class="post-title-link" itemprop="url">Windows KMS activation</a>
         </h2>
 
         <div class="post-meta-container">
@@ -221,9 +221,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2024-07-13 12:58:47 / Modified: 13:03:08" itemprop="dateCreated datePublished" datetime="2024-07-13T12:58:47+01:00">2024-07-13</time>
+      <time title="Created: 2024-07-15 10:25:10" itemprop="dateCreated datePublished" datetime="2024-07-15T10:25:10+01:00">2024-07-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-07-13 13:10:12" itemprop="dateModified" datetime="2024-07-13T13:10:12+01:00">2024-07-13</time>
     </span>
 
   
@@ -235,433 +241,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2024/07/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/07/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>I’m excited to share my recent project of building an ultra-compact, all-SSD HomeLab with the incredible Intel NUC12. Below, I will walk you through the specifications and the detailed process of creating this monster build.</p>
-<p><img src="/2024/07/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/8tb-3xssd-pve-homelab-setup-nuc-12-nuc12wski5-wall-street-v0-edvkkkp9x83d1.jpg" alt="NUC12 HomeLab Setup"></p>
-<h2 id="Specifications"><a href="#Specifications" class="headerlink" title="Specifications"></a>Specifications</h2><p><strong>Processor:</strong> Intel i5-1240P (12 Cores &#x2F; 16 Threads, Underclock at 18&#x2F;28W)</p>
-<p><strong>RAM:</strong> 64GB</p>
-<p><strong>Storage:</strong> Total 10TB across four SSDs:</p>
-<ul>
-<li><strong>Samsung 980Pro 2TB</strong> (Gen 4x4) 2280 NVMe SSD</li>
-<li><strong>Solidigm P41 Plus 2TB</strong> (Gen 4x4 Downgraded to Gen 3x1) 2280 NVMe SSD</li>
-<li><strong>Sandisk SN740 2TB</strong> (Gen 4x4 Downgraded to Gen 3x1) 2230 NVMe SSD</li>
-<li><strong>Samsung 870 EVO 4TB</strong> SATA SSD</li>
-</ul>
-<h2 id="Installation-Process"><a href="#Installation-Process" class="headerlink" title="Installation Process"></a>Installation Process</h2><h3 id="Step-1-Default-Configuration"><a href="#Step-1-Default-Configuration" class="headerlink" title="Step 1: Default Configuration"></a>Step 1: Default Configuration</h3><p>The Intel NUC12 can naturally accommodate two SSDs: </p>
-<ul>
-<li><strong>M.2 2280 SSD slot:</strong> Where I installed the <strong>Samsung 980 Pro 2TB</strong>.</li>
-<li><strong>SATA SSD slot:</strong> Which houses the <strong>Samsung 870 EVO 4TB</strong>.</li>
-</ul>
-<p>This setup provided me with 6TB of high-speed storage.</p>
-<h3 id="Step-2-Maximizing-Expandability-with-M-2-2242-Slot"><a href="#Step-2-Maximizing-Expandability-with-M-2-2242-Slot" class="headerlink" title="Step 2: Maximizing Expandability with M.2 2242 Slot"></a>Step 2: Maximizing Expandability with M.2 2242 Slot</h3><p>I discovered that the NUC12’s 2242 M.2 slot includes a PCIe Gen3x1 lane. By using a <strong>Key B to Key M converter</strong>, this allowed me to connect a <strong>Sandisk SN740 2TB</strong> as a 2242 form-factor drive.</p>
-<p><em>Note: Connecting the <strong>SN740</strong> via <strong>Key B</strong> scales down its speed from Gen4x4 (<del>5000MB&#x2F;s) to Gen3x1 (</del>900MB&#x2F;s).</em></p>
-<p><img src="/2024/07/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/8tb-3xssd-pve-homelab-setup-nuc-12-nuc12wski5-wall-street-v0-y5zxrkp9x83d1.jpg" alt="SSD Conversion"></p>
-<h3 id="Step-3-Utilizing-the-WiFi-Slot"><a href="#Step-3-Utilizing-the-WiFi-Slot" class="headerlink" title="Step 3: Utilizing the WiFi Slot"></a>Step 3: Utilizing the WiFi Slot</h3><p>Since I seldom use the WiFi chip, my HomeLab runs mainly on a 2.5Gbps Ethernet connection. By converting the <strong>Key A+E to Key M</strong> via another converter, I effectively utilized the <strong>WiFi slot’s PCIe Gen3x1 lane</strong>. This connected the <strong>Solidigm P41 2TB SSD</strong> to the WiFi slot via an <strong>FFC cable</strong> routed to the remaining area designated for the SATA drive, providing an additional 2TB at PCIe Gen3x1 (~900MB&#x2F;s).</p>
-<p><img src="/2024/07/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/13.56.47.png" alt="WiFi Slot SSD"></p>
-<h3 id="Step-4-Underclocking-for-Optimal-Performance"><a href="#Step-4-Underclocking-for-Optimal-Performance" class="headerlink" title="Step 4: Underclocking for Optimal Performance"></a>Step 4: Underclocking for Optimal Performance</h3><p>To keep noise and heat in check, I underclocked the Intel i5-1240P CPU to:</p>
-<ul>
-<li><strong>PL1 &#x3D; 18W</strong></li>
-<li><strong>PL2 &#x3D; 28W</strong></li>
-</ul>
-<p>This adjustment still provides 80% of the CPU’s power potential, which is more than sufficient for my workloads. Additionally, the CPU typically operates below a 10% load, thus maintaining an efficient and quiet environment.</p>
-<p><img src="/2024/07/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/13.11.45.png" alt="CPU Load Overview"></p>
-<h2 id="Enhancing-Capabilities-with-Thunderbolt-4-Ports"><a href="#Enhancing-Capabilities-with-Thunderbolt-4-Ports" class="headerlink" title="Enhancing Capabilities with Thunderbolt 4 Ports"></a>Enhancing Capabilities with Thunderbolt 4 Ports</h2><p>The NUC12 also features <strong>2 Thunderbolt 4 ports</strong>, each offering a 40Gbps link. This provides the flexibility to expand storage further by connecting to external SSD enclosures or HDD RAID setups—potentially accommodating up to <strong>8x10Gbps (Gen3x1) external SSDs</strong> via TB3&#x2F;4 4-bay enclosures.</p>
-<p><img src="/2024/07/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/14.01.43.png" alt="Thunderbolt 4 Ports"></p>
-<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>By fully utilizing the Gen4x4 M.2 slot, SATA slot, Gen3x1 2242 slot, and the Gen3x1 WiFi slot, I successfully installed four SSDs into a single 4x4 NUC12 with ease. This setup provides an impressive 10TB of high-speed storage in a remarkably compact form factor.</p>
-<p><img src="/2024/07/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/13.21.09.png" alt="Completed HomeLab"></p>
-<p>I am thrilled with how compact yet powerful the Intel NUC12 1240P has proven to be for this HomeLab build. It not only meets my storage needs but also leverages advanced features for potential future expansions.</p>
-<p>Feel free to share your thoughts or ask questions in the comments below. Happy building!</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://upinel.github.io/2024/07/13/Windows-10-11-installation-bypass-TPM-Ram-and-Secure-Boot-Requirements/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="@Upinel">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Upinel TechSpace">
-      <meta itemprop="description" content="Code, Homelab, and everything tech">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Upinel TechSpace">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/07/13/Windows-10-11-installation-bypass-TPM-Ram-and-Secure-Boot-Requirements/" class="post-title-link" itemprop="url">Windows 10 / 11 installation bypass TPM, Ram and Secure Boot Requirements</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2024-07-13 10:36:15 / Modified: 10:50:18" itemprop="dateCreated datePublished" datetime="2024-07-13T10:36:15+01:00">2024-07-13</time>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2024/07/13/Windows-10-11-installation-bypass-TPM-Ram-and-Secure-Boot-Requirements/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/07/13/Windows-10-11-installation-bypass-TPM-Ram-and-Secure-Boot-Requirements/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Are you looking to install Windows 11 on an older PC that doesn’t meet the official hardware requirements? Don’t worry; there’s a way to bypass the TPM, RAM, and Secure Boot checks during the installation process. Follow the steps below to get Windows 11 up and running on your system.</p>
-<h2 id="Step-by-Step-Guide-to-Bypass-Hardware-Requirements"><a href="#Step-by-Step-Guide-to-Bypass-Hardware-Requirements" class="headerlink" title="Step-by-Step Guide to Bypass Hardware Requirements"></a>Step-by-Step Guide to Bypass Hardware Requirements</h2><h3 id="1-Boot-Off-Your-Windows-11-Install-Disk"><a href="#1-Boot-Off-Your-Windows-11-Install-Disk" class="headerlink" title="1. Boot Off Your Windows 11 Install Disk"></a>1. Boot Off Your Windows 11 Install Disk</h3><p>If you don’t already have a Windows 11 installation disk, you can create one by following our guide on <a target="_blank" rel="noopener" href="https://www.tomshardware.com/how-to/clean-install-windows-11">how to download Windows 11</a>. Once you have the install disk ready, boot from it. You should see a screen that asks you to choose the language of your install.</p>
-<h3 id="2-Launch-Command-Prompt"><a href="#2-Launch-Command-Prompt" class="headerlink" title="2. Launch Command Prompt"></a>2. Launch Command Prompt</h3><p>Once you’re at the language selection screen, press <code>SHIFT + F10</code> to open the Command Prompt.</p>
-<h3 id="3-Launch-Registry-Editor"><a href="#3-Launch-Registry-Editor" class="headerlink" title="3. Launch Registry Editor"></a>3. Launch Registry Editor</h3><p>Type <code>regedit</code> into the Command Prompt and hit Enter to launch the Registry Editor.</p>
-<h3 id="4-Navigate-to-Setup-Key"><a href="#4-Navigate-to-Setup-Key" class="headerlink" title="4. Navigate to Setup Key"></a>4. Navigate to Setup Key</h3><p>In the Registry Editor, navigate to <code>HKEY_LOCAL_MACHINE\SYSTEM\Setup</code>.</p>
-<h3 id="5-Create-a-New-Registry-Key-Named-LabConfig"><a href="#5-Create-a-New-Registry-Key-Named-LabConfig" class="headerlink" title="5. Create a New Registry Key Named LabConfig"></a>5. Create a New Registry Key Named LabConfig</h3><p>Right-click in the right window pane, select New -&gt; Key, and name the new key <code>LabConfig</code>.</p>
-<h3 id="6-Create-DWORDs-to-Bypass-TPM-Secure-Boot-and-RAM-Checks"><a href="#6-Create-DWORDs-to-Bypass-TPM-Secure-Boot-and-RAM-Checks" class="headerlink" title="6. Create DWORDs to Bypass TPM, Secure Boot and RAM Checks"></a>6. Create DWORDs to Bypass TPM, Secure Boot and RAM Checks</h3><p>Within the <code>LabConfig</code> key, create the following <code>DWORD 32</code> values and set each to <code>1</code>:</p>
-<ul>
-<li><code>BypassTPMCheck</code></li>
-<li><code>BypassSecureBootCheck</code></li>
-<li><code>BypassRAMCheck</code> (if you also want to bypass the RAM requirement)</li>
-</ul>
-<p>To create a new DWORD value, right-click in the right window pane, select New -&gt; DWORD (32-bit) Value, name the key, then double-click the entry to set it to <code>1</code>.</p>
-<p>For a more straightforward solution, you can use the following <code>reg.exe</code> commands to automate this process via the Command Prompt:</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg.exe add HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig /v BypassTPMCheck /t REG_DWORD /d <span class="number">1</span> /f</span><br><span class="line">reg.exe add HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig /v BypassSecureBootCheck /t REG_DWORD /d <span class="number">1</span> /f</span><br><span class="line">reg.exe add HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig /v BypassRAMCheck /t REG_DWORD /d <span class="number">1</span> /f</span><br></pre></td></tr></table></figure>
-<p>Simply copy and paste these commands into the Command Prompt and hit Enter.</p>
-<h3 id="7-Close-Registry-Editor-and-Command-Prompt"><a href="#7-Close-Registry-Editor-and-Command-Prompt" class="headerlink" title="7. Close Registry Editor and Command Prompt"></a>7. Close Registry Editor and Command Prompt</h3><p>Close the Registry Editor and the Command Prompt. You should then be able to proceed with the Windows 11 installation process without encountering any of the hardware requirement checks.</p>
-<p>By following these steps, you can bypass the TPM, RAM, and Secure Boot checks and install Windows 11 on your older PC effortlessly.</p>
-<p>Happy installing!</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://upinel.github.io/2024/07/13/Uninstall-debian-desktop-enviorment/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="@Upinel">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Upinel TechSpace">
-      <meta itemprop="description" content="Code, Homelab, and everything tech">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Upinel TechSpace">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/07/13/Uninstall-debian-desktop-enviorment/" class="post-title-link" itemprop="url">Uninstall debian desktop enviorment</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2024-07-13 10:34:13 / Modified: 10:52:29" itemprop="dateCreated datePublished" datetime="2024-07-13T10:34:13+01:00">2024-07-13</time>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2024/07/13/Uninstall-debian-desktop-enviorment/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/07/13/Uninstall-debian-desktop-enviorment/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Have you installed a desktop environment on Debian that you no longer need? Whether you’re looking to free up space or want to use a minimal install without a GUI, this guide will walk you through the steps to uninstall the desktop environment on Debian.</p>
-<h2 id="Step-by-Step-Guide-to-Uninstall-Desktop-Environment"><a href="#Step-by-Step-Guide-to-Uninstall-Desktop-Environment" class="headerlink" title="Step-by-Step Guide to Uninstall Desktop Environment"></a>Step-by-Step Guide to Uninstall Desktop Environment</h2><h3 id="1-Check-Packages-Related-to-Desktop-Environment"><a href="#1-Check-Packages-Related-to-Desktop-Environment" class="headerlink" title="1. Check Packages Related to Desktop Environment"></a>1. Check Packages Related to Desktop Environment</h3><p>Firstly, you can identify the packages related to the desktop environment using the following command:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># check package related to desktop</span></span><br><span class="line">tasksel --task-packages desktop</span><br></pre></td></tr></table></figure>
-<h3 id="2-Uninstall-the-Desktop-Environment-Packages"><a href="#2-Uninstall-the-Desktop-Environment-Packages" class="headerlink" title="2. Uninstall the Desktop Environment Packages"></a>2. Uninstall the Desktop Environment Packages</h3><p>You can then use apt-get purge to remove all the packages related to the desktop environment. This can be done efficiently by combining the output from the previous command:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get purge $(tasksel --task-packages desktop)</span><br></pre></td></tr></table></figure>
-<p>Alternatively, you might consider a more comprehensive removal using the following command:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt purge task-desktop hyphen-en-us libglu1-mesa libreoffice-* libu2f-udev mythes-en-us x11-apps x11-session-utils xinit xorg xserver-* desktop-base task-german task-german-desktop totem gedit gedit-common gir1.2-* gnome-* gstreamer* sound-icons speech-dispatcher totem-common xserver-* xfonts-* xwayland gir1.2* gnome-*</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-Autoremove-Unnecessary-Packages"><a href="#3-Autoremove-Unnecessary-Packages" class="headerlink" title="3. Autoremove Unnecessary Packages"></a>3. Autoremove Unnecessary Packages</h3><p>After purging, you should also run apt autoremove –purge to clean up any remaining dependencies that were automatically installed with the desktop environment and are no longer needed:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt autoremove --purge</span><br></pre></td></tr></table></figure>
-<p>By following these steps, you can successfully remove the desktop environment from your Debian system, leaving you with a leaner and more minimal setup.</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://upinel.github.io/2024/07/13/Debian-installation-remove-cd-rom-apt-source/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="@Upinel">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Upinel TechSpace">
-      <meta itemprop="description" content="Code, Homelab, and everything tech">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Upinel TechSpace">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/07/13/Debian-installation-remove-cd-rom-apt-source/" class="post-title-link" itemprop="url">Debian installation remove cd-rom apt source</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2024-07-13 10:33:37 / Modified: 11:13:35" itemprop="dateCreated datePublished" datetime="2024-07-13T10:33:37+01:00">2024-07-13</time>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2024/07/13/Debian-installation-remove-cd-rom-apt-source/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/07/13/Debian-installation-remove-cd-rom-apt-source/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>A local CD can act as an APT repository, just as if it were a distant server. This feature is incredibly useful when you are installing Debian on systems without a fast internet connection or when you need to install packages from localized media. However, once the installation is done or if you prefer using online repositories, you might want to disable the CD-ROM source to avoid any unnecessary prompts. </p>
-<p>If you don’t want <code>apt-get</code> to search the CD, you can achieve this easily by editing the <code>/etc/apt/sources.list</code> file. Here’s how to do it:</p>
-<h2 id="Steps-to-Remove-CD-ROM-apt-Source"><a href="#Steps-to-Remove-CD-ROM-apt-Source" class="headerlink" title="Steps to Remove CD-ROM apt Source"></a>Steps to Remove CD-ROM apt Source</h2><ol>
-<li><strong>Open the <code>/etc/apt/sources.list</code> file</strong>:<br>  To edit the file, you need administrative privileges. You can use <code>nano</code> or any other text editor you prefer. If you’re using <code>nano</code>, the command would look like this:</li>
-</ol>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nano /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li><strong>Find the CD-ROM source line</strong>:<br>  Look for the line that specifies the CD-ROM as a source. It will look something like this:</li>
-</ol>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deb cdrom:[deb95amd64d1]/ stretch contrib main</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li><strong>Comment out the CD-ROM source line</strong>:<br>  To disable this source, simply comment out the line by adding a <code>#</code> at the beginning of it. The result should look like this:</li>
-</ol>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># deb cdrom:[deb95amd64d1]/ stretch contrib main</span></span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li><p><strong>Save and close the file</strong>:<br>  In <code>nano</code>, you can do this by pressing <code>CTRL+X</code>, then <code>Y</code> to confirm the changes, and <code>Enter</code> to exit.</p>
-</li>
-<li><p><strong>Update your package list</strong>:<br>  After making these changes, ensure your package list is up to date by running:</p>
-</li>
-</ol>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt-get update</span><br></pre></td></tr></table></figure>
-
-<p>By following these steps, you instruct <code>apt-get</code> to ignore the CD-ROM as a source, relying instead on your other sources for package installations and updates.</p>
-<p>Whether you’re managing package sources or ensuring your applications are running smoothly, Debian and its tools offer robust solutions for both tasks.</p>
-<p>Taking care of your system’s configurations thoughtfully can save a lot of time and hassle.</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://upinel.github.io/2024/07/13/Windows-KMS-activation/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="@Upinel">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Upinel TechSpace">
-      <meta itemprop="description" content="Code, Homelab, and everything tech">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Upinel TechSpace">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/07/13/Windows-KMS-activation/" class="post-title-link" itemprop="url">Windows KMS activation</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2024-07-13 10:25:10 / Modified: 10:53:59" itemprop="dateCreated datePublished" datetime="2024-07-13T10:25:10+01:00">2024-07-13</time>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2024/07/13/Windows-KMS-activation/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/07/13/Windows-KMS-activation/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2024/07/15/Windows-KMS-activation/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/07/15/Windows-KMS-activation/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -898,124 +479,6 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://upinel.github.io/2024/07/13/Check-PCIe-lane-with-lspci/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="@Upinel">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Upinel TechSpace">
-      <meta itemprop="description" content="Code, Homelab, and everything tech">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Upinel TechSpace">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/07/13/Check-PCIe-lane-with-lspci/" class="post-title-link" itemprop="url">Check PCIe lane with lspci</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2024-07-13 10:24:09 / Modified: 11:14:44" itemprop="dateCreated datePublished" datetime="2024-07-13T10:24:09+01:00">2024-07-13</time>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2024/07/13/Check-PCIe-lane-with-lspci/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/07/13/Check-PCIe-lane-with-lspci/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>When managing servers or desktops, knowing the details of your PCIe configuration can be very beneficial. This information is essential for troubleshooting hardware issues, upgrading components, or optimizing performance. One of the most powerful tools for examining PCIe details on Debian-based systems is <code>lspci</code>.</p>
-<p>In this blog post, we’ll show you a quick command to check the PCIe lane configuration using <code>lspci</code>.</p>
-<h2 id="Using-lspci-to-Check-PCIe-Lanes"><a href="#Using-lspci-to-Check-PCIe-Lanes" class="headerlink" title="Using lspci to Check PCIe Lanes"></a>Using lspci to Check PCIe Lanes</h2><p>The <code>lspci</code> command is a standard utility to list all PCI devices on your system. However, to get detailed information about PCIe lanes, you’ll need to use it with certain options and grep for specific fields.</p>
-<p>Here’s the command you need:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lspci -vv | grep -P <span class="string">&quot;[0-9a-f]&#123;2&#125;:[0-9a-f]&#123;2&#125;\.[0-9a-f]|LnkSta:&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Breaking-Down-the-Command"><a href="#Breaking-Down-the-Command" class="headerlink" title="Breaking Down the Command"></a>Breaking Down the Command</h3><ul>
-<li><p><strong><code>lspci -vv</code></strong>: The <code>-vv</code> option tells <code>lspci</code> to be very verbose, providing detailed information about each PCI device.</p>
-</li>
-<li><p><strong><code>grep -P &quot;[0-9a-f]&#123;2&#125;:[0-9a-f]&#123;2&#125;\.[0-9a-f]|LnkSta:&quot;</code></strong>: This grep command uses a Perl-compatible regular expression. It searches for:</p>
-<ul>
-<li><strong><code>[0-9a-f]&#123;2&#125;:[0-9a-f]&#123;2&#125;\.[0-9a-f]</code></strong>: This part matches the PCI address.</li>
-<li><strong><code>LnkSta:</code></strong>: This part searches for the link status, which includes the current PCIe lane configuration.</li>
-</ul>
-</li>
-</ul>
-<h3 id="Example-Output"><a href="#Example-Output" class="headerlink" title="Example Output"></a>Example Output</h3><p>Running this command, you might see output similar to the following:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">00:1c.0 PCI bridge: Intel Corporation 82801 Mobile PCI Bridge (rev f2)</span><br><span class="line">        LnkSta: Speed 2.5GT/s, Width x1</span><br><span class="line">01:00.0 VGA compatible controller: NVIDIA Corporation GP107GL [Quadro P400] (rev a1)</span><br><span class="line">        LnkSta: Speed 8GT/s, Width x16</span><br></pre></td></tr></table></figure>
-
-<p>In the example above:</p>
-<ul>
-<li>The PCI bridge at address <code>00:1c.0</code> operates at 2.5GT&#x2F;s (Giga-transfers per second) and uses 1 lane.</li>
-<li>The NVIDIA Quadro P400 at address <code>01:00.0</code> operates at 8GT&#x2F;s and uses 16 lanes.</li>
-</ul>
-<h2 id="Why-Is-This-Information-Important"><a href="#Why-Is-This-Information-Important" class="headerlink" title="Why Is This Information Important?"></a>Why Is This Information Important?</h2><p>Understanding the PCIe lane configuration is crucial for several reasons:</p>
-<ol>
-<li><p><strong>Performance Optimization</strong>: Ensuring that high-performance devices, like GPUs, are connected via the correct number of PCIe lanes can significantly impact performance.</p>
-</li>
-<li><p><strong>Troubleshooting</strong>: Sometimes, hardware issues might be related to improper PCIe configurations or limitations.</p>
-</li>
-<li><p><strong>Upgrading Hardware</strong>: Knowing your system’s current PCIe configuration can help determine compatibility with new components.</p>
-</li>
-</ol>
-<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Checking your PCIe lane configuration is a straightforward process with the <code>lspci</code> command. This information can be pivotal for optimizing performance, troubleshooting, and general hardware management. </p>
-<p>If you have any further questions or if there’s a specific task you need help with, feel free to ask in the comments below. Happy computing, and may your system always run smoothly!</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://upinel.github.io/2024/07/13/nodejs-webApp-auto-deploy-using-pm2-and-GitHub-Action/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1124,6 +587,579 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://upinel.github.io/2024/07/11/Check-PCIe-lane-with-lspci/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="@Upinel">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Upinel TechSpace">
+      <meta itemprop="description" content="Code, Homelab, and everything tech">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Upinel TechSpace">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/07/11/Check-PCIe-lane-with-lspci/" class="post-title-link" itemprop="url">Check PCIe lane with lspci</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-07-11 10:24:09" itemprop="dateCreated datePublished" datetime="2024-07-11T10:24:09+01:00">2024-07-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-07-13 13:09:56" itemprop="dateModified" datetime="2024-07-13T13:09:56+01:00">2024-07-13</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2024/07/11/Check-PCIe-lane-with-lspci/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/07/11/Check-PCIe-lane-with-lspci/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>When managing servers or desktops, knowing the details of your PCIe configuration can be very beneficial. This information is essential for troubleshooting hardware issues, upgrading components, or optimizing performance. One of the most powerful tools for examining PCIe details on Debian-based systems is <code>lspci</code>.</p>
+<p>In this blog post, we’ll show you a quick command to check the PCIe lane configuration using <code>lspci</code>.</p>
+<h2 id="Using-lspci-to-Check-PCIe-Lanes"><a href="#Using-lspci-to-Check-PCIe-Lanes" class="headerlink" title="Using lspci to Check PCIe Lanes"></a>Using lspci to Check PCIe Lanes</h2><p>The <code>lspci</code> command is a standard utility to list all PCI devices on your system. However, to get detailed information about PCIe lanes, you’ll need to use it with certain options and grep for specific fields.</p>
+<p>Here’s the command you need:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lspci -vv | grep -P <span class="string">&quot;[0-9a-f]&#123;2&#125;:[0-9a-f]&#123;2&#125;\.[0-9a-f]|LnkSta:&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Breaking-Down-the-Command"><a href="#Breaking-Down-the-Command" class="headerlink" title="Breaking Down the Command"></a>Breaking Down the Command</h3><ul>
+<li><p><strong><code>lspci -vv</code></strong>: The <code>-vv</code> option tells <code>lspci</code> to be very verbose, providing detailed information about each PCI device.</p>
+</li>
+<li><p><strong><code>grep -P &quot;[0-9a-f]&#123;2&#125;:[0-9a-f]&#123;2&#125;\.[0-9a-f]|LnkSta:&quot;</code></strong>: This grep command uses a Perl-compatible regular expression. It searches for:</p>
+<ul>
+<li><strong><code>[0-9a-f]&#123;2&#125;:[0-9a-f]&#123;2&#125;\.[0-9a-f]</code></strong>: This part matches the PCI address.</li>
+<li><strong><code>LnkSta:</code></strong>: This part searches for the link status, which includes the current PCIe lane configuration.</li>
+</ul>
+</li>
+</ul>
+<h3 id="Example-Output"><a href="#Example-Output" class="headerlink" title="Example Output"></a>Example Output</h3><p>Running this command, you might see output similar to the following:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">00:1c.0 PCI bridge: Intel Corporation 82801 Mobile PCI Bridge (rev f2)</span><br><span class="line">        LnkSta: Speed 2.5GT/s, Width x1</span><br><span class="line">01:00.0 VGA compatible controller: NVIDIA Corporation GP107GL [Quadro P400] (rev a1)</span><br><span class="line">        LnkSta: Speed 8GT/s, Width x16</span><br></pre></td></tr></table></figure>
+
+<p>In the example above:</p>
+<ul>
+<li>The PCI bridge at address <code>00:1c.0</code> operates at 2.5GT&#x2F;s (Giga-transfers per second) and uses 1 lane.</li>
+<li>The NVIDIA Quadro P400 at address <code>01:00.0</code> operates at 8GT&#x2F;s and uses 16 lanes.</li>
+</ul>
+<h2 id="Why-Is-This-Information-Important"><a href="#Why-Is-This-Information-Important" class="headerlink" title="Why Is This Information Important?"></a>Why Is This Information Important?</h2><p>Understanding the PCIe lane configuration is crucial for several reasons:</p>
+<ol>
+<li><p><strong>Performance Optimization</strong>: Ensuring that high-performance devices, like GPUs, are connected via the correct number of PCIe lanes can significantly impact performance.</p>
+</li>
+<li><p><strong>Troubleshooting</strong>: Sometimes, hardware issues might be related to improper PCIe configurations or limitations.</p>
+</li>
+<li><p><strong>Upgrading Hardware</strong>: Knowing your system’s current PCIe configuration can help determine compatibility with new components.</p>
+</li>
+</ol>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Checking your PCIe lane configuration is a straightforward process with the <code>lspci</code> command. This information can be pivotal for optimizing performance, troubleshooting, and general hardware management. </p>
+<p>If you have any further questions or if there’s a specific task you need help with, feel free to ask in the comments below. Happy computing, and may your system always run smoothly!</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://upinel.github.io/2024/07/02/Windows-10-11-installation-bypass-TPM-Ram-and-Secure-Boot-Requirements/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="@Upinel">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Upinel TechSpace">
+      <meta itemprop="description" content="Code, Homelab, and everything tech">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Upinel TechSpace">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/07/02/Windows-10-11-installation-bypass-TPM-Ram-and-Secure-Boot-Requirements/" class="post-title-link" itemprop="url">Windows 10 / 11 installation bypass TPM, Ram and Secure Boot Requirements</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-07-02 10:36:15" itemprop="dateCreated datePublished" datetime="2024-07-02T10:36:15+01:00">2024-07-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-07-13 13:10:07" itemprop="dateModified" datetime="2024-07-13T13:10:07+01:00">2024-07-13</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2024/07/02/Windows-10-11-installation-bypass-TPM-Ram-and-Secure-Boot-Requirements/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/07/02/Windows-10-11-installation-bypass-TPM-Ram-and-Secure-Boot-Requirements/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Are you looking to install Windows 11 on an older PC that doesn’t meet the official hardware requirements? Don’t worry; there’s a way to bypass the TPM, RAM, and Secure Boot checks during the installation process. Follow the steps below to get Windows 11 up and running on your system.</p>
+<h2 id="Step-by-Step-Guide-to-Bypass-Hardware-Requirements"><a href="#Step-by-Step-Guide-to-Bypass-Hardware-Requirements" class="headerlink" title="Step-by-Step Guide to Bypass Hardware Requirements"></a>Step-by-Step Guide to Bypass Hardware Requirements</h2><h3 id="1-Boot-Off-Your-Windows-11-Install-Disk"><a href="#1-Boot-Off-Your-Windows-11-Install-Disk" class="headerlink" title="1. Boot Off Your Windows 11 Install Disk"></a>1. Boot Off Your Windows 11 Install Disk</h3><p>If you don’t already have a Windows 11 installation disk, you can create one by following our guide on <a target="_blank" rel="noopener" href="https://www.tomshardware.com/how-to/clean-install-windows-11">how to download Windows 11</a>. Once you have the install disk ready, boot from it. You should see a screen that asks you to choose the language of your install.</p>
+<h3 id="2-Launch-Command-Prompt"><a href="#2-Launch-Command-Prompt" class="headerlink" title="2. Launch Command Prompt"></a>2. Launch Command Prompt</h3><p>Once you’re at the language selection screen, press <code>SHIFT + F10</code> to open the Command Prompt.</p>
+<h3 id="3-Launch-Registry-Editor"><a href="#3-Launch-Registry-Editor" class="headerlink" title="3. Launch Registry Editor"></a>3. Launch Registry Editor</h3><p>Type <code>regedit</code> into the Command Prompt and hit Enter to launch the Registry Editor.</p>
+<h3 id="4-Navigate-to-Setup-Key"><a href="#4-Navigate-to-Setup-Key" class="headerlink" title="4. Navigate to Setup Key"></a>4. Navigate to Setup Key</h3><p>In the Registry Editor, navigate to <code>HKEY_LOCAL_MACHINE\SYSTEM\Setup</code>.</p>
+<h3 id="5-Create-a-New-Registry-Key-Named-LabConfig"><a href="#5-Create-a-New-Registry-Key-Named-LabConfig" class="headerlink" title="5. Create a New Registry Key Named LabConfig"></a>5. Create a New Registry Key Named LabConfig</h3><p>Right-click in the right window pane, select New -&gt; Key, and name the new key <code>LabConfig</code>.</p>
+<h3 id="6-Create-DWORDs-to-Bypass-TPM-Secure-Boot-and-RAM-Checks"><a href="#6-Create-DWORDs-to-Bypass-TPM-Secure-Boot-and-RAM-Checks" class="headerlink" title="6. Create DWORDs to Bypass TPM, Secure Boot and RAM Checks"></a>6. Create DWORDs to Bypass TPM, Secure Boot and RAM Checks</h3><p>Within the <code>LabConfig</code> key, create the following <code>DWORD 32</code> values and set each to <code>1</code>:</p>
+<ul>
+<li><code>BypassTPMCheck</code></li>
+<li><code>BypassSecureBootCheck</code></li>
+<li><code>BypassRAMCheck</code> (if you also want to bypass the RAM requirement)</li>
+</ul>
+<p>To create a new DWORD value, right-click in the right window pane, select New -&gt; DWORD (32-bit) Value, name the key, then double-click the entry to set it to <code>1</code>.</p>
+<p>For a more straightforward solution, you can use the following <code>reg.exe</code> commands to automate this process via the Command Prompt:</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg.exe add HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig /v BypassTPMCheck /t REG_DWORD /d <span class="number">1</span> /f</span><br><span class="line">reg.exe add HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig /v BypassSecureBootCheck /t REG_DWORD /d <span class="number">1</span> /f</span><br><span class="line">reg.exe add HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig /v BypassRAMCheck /t REG_DWORD /d <span class="number">1</span> /f</span><br></pre></td></tr></table></figure>
+<p>Simply copy and paste these commands into the Command Prompt and hit Enter.</p>
+<h3 id="7-Close-Registry-Editor-and-Command-Prompt"><a href="#7-Close-Registry-Editor-and-Command-Prompt" class="headerlink" title="7. Close Registry Editor and Command Prompt"></a>7. Close Registry Editor and Command Prompt</h3><p>Close the Registry Editor and the Command Prompt. You should then be able to proceed with the Windows 11 installation process without encountering any of the hardware requirement checks.</p>
+<p>By following these steps, you can bypass the TPM, RAM, and Secure Boot checks and install Windows 11 on your older PC effortlessly.</p>
+<p>Happy installing!</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://upinel.github.io/2024/07/02/Uninstall-debian-desktop-enviorment/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="@Upinel">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Upinel TechSpace">
+      <meta itemprop="description" content="Code, Homelab, and everything tech">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Upinel TechSpace">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/07/02/Uninstall-debian-desktop-enviorment/" class="post-title-link" itemprop="url">Uninstall debian desktop enviorment</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-07-02 10:34:13" itemprop="dateCreated datePublished" datetime="2024-07-02T10:34:13+01:00">2024-07-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-07-13 13:10:03" itemprop="dateModified" datetime="2024-07-13T13:10:03+01:00">2024-07-13</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2024/07/02/Uninstall-debian-desktop-enviorment/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/07/02/Uninstall-debian-desktop-enviorment/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Have you installed a desktop environment on Debian that you no longer need? Whether you’re looking to free up space or want to use a minimal install without a GUI, this guide will walk you through the steps to uninstall the desktop environment on Debian.</p>
+<h2 id="Step-by-Step-Guide-to-Uninstall-Desktop-Environment"><a href="#Step-by-Step-Guide-to-Uninstall-Desktop-Environment" class="headerlink" title="Step-by-Step Guide to Uninstall Desktop Environment"></a>Step-by-Step Guide to Uninstall Desktop Environment</h2><h3 id="1-Check-Packages-Related-to-Desktop-Environment"><a href="#1-Check-Packages-Related-to-Desktop-Environment" class="headerlink" title="1. Check Packages Related to Desktop Environment"></a>1. Check Packages Related to Desktop Environment</h3><p>Firstly, you can identify the packages related to the desktop environment using the following command:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># check package related to desktop</span></span><br><span class="line">tasksel --task-packages desktop</span><br></pre></td></tr></table></figure>
+<h3 id="2-Uninstall-the-Desktop-Environment-Packages"><a href="#2-Uninstall-the-Desktop-Environment-Packages" class="headerlink" title="2. Uninstall the Desktop Environment Packages"></a>2. Uninstall the Desktop Environment Packages</h3><p>You can then use apt-get purge to remove all the packages related to the desktop environment. This can be done efficiently by combining the output from the previous command:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get purge $(tasksel --task-packages desktop)</span><br></pre></td></tr></table></figure>
+<p>Alternatively, you might consider a more comprehensive removal using the following command:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt purge task-desktop hyphen-en-us libglu1-mesa libreoffice-* libu2f-udev mythes-en-us x11-apps x11-session-utils xinit xorg xserver-* desktop-base task-german task-german-desktop totem gedit gedit-common gir1.2-* gnome-* gstreamer* sound-icons speech-dispatcher totem-common xserver-* xfonts-* xwayland gir1.2* gnome-*</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-Autoremove-Unnecessary-Packages"><a href="#3-Autoremove-Unnecessary-Packages" class="headerlink" title="3. Autoremove Unnecessary Packages"></a>3. Autoremove Unnecessary Packages</h3><p>After purging, you should also run apt autoremove –purge to clean up any remaining dependencies that were automatically installed with the desktop environment and are no longer needed:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt autoremove --purge</span><br></pre></td></tr></table></figure>
+<p>By following these steps, you can successfully remove the desktop environment from your Debian system, leaving you with a leaner and more minimal setup.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://upinel.github.io/2024/06/13/Debian-installation-remove-cd-rom-apt-source/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="@Upinel">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Upinel TechSpace">
+      <meta itemprop="description" content="Code, Homelab, and everything tech">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Upinel TechSpace">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/06/13/Debian-installation-remove-cd-rom-apt-source/" class="post-title-link" itemprop="url">Debian installation remove cd-rom apt source</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-06-13 10:33:37" itemprop="dateCreated datePublished" datetime="2024-06-13T10:33:37+01:00">2024-06-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-07-13 13:09:48" itemprop="dateModified" datetime="2024-07-13T13:09:48+01:00">2024-07-13</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2024/06/13/Debian-installation-remove-cd-rom-apt-source/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/06/13/Debian-installation-remove-cd-rom-apt-source/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>A local CD can act as an APT repository, just as if it were a distant server. This feature is incredibly useful when you are installing Debian on systems without a fast internet connection or when you need to install packages from localized media. However, once the installation is done or if you prefer using online repositories, you might want to disable the CD-ROM source to avoid any unnecessary prompts. </p>
+<p>If you don’t want <code>apt-get</code> to search the CD, you can achieve this easily by editing the <code>/etc/apt/sources.list</code> file. Here’s how to do it:</p>
+<h2 id="Steps-to-Remove-CD-ROM-apt-Source"><a href="#Steps-to-Remove-CD-ROM-apt-Source" class="headerlink" title="Steps to Remove CD-ROM apt Source"></a>Steps to Remove CD-ROM apt Source</h2><ol>
+<li><strong>Open the <code>/etc/apt/sources.list</code> file</strong>:<br>  To edit the file, you need administrative privileges. You can use <code>nano</code> or any other text editor you prefer. If you’re using <code>nano</code>, the command would look like this:</li>
+</ol>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nano /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><strong>Find the CD-ROM source line</strong>:<br>  Look for the line that specifies the CD-ROM as a source. It will look something like this:</li>
+</ol>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deb cdrom:[deb95amd64d1]/ stretch contrib main</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><strong>Comment out the CD-ROM source line</strong>:<br>  To disable this source, simply comment out the line by adding a <code>#</code> at the beginning of it. The result should look like this:</li>
+</ol>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># deb cdrom:[deb95amd64d1]/ stretch contrib main</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li><p><strong>Save and close the file</strong>:<br>  In <code>nano</code>, you can do this by pressing <code>CTRL+X</code>, then <code>Y</code> to confirm the changes, and <code>Enter</code> to exit.</p>
+</li>
+<li><p><strong>Update your package list</strong>:<br>  After making these changes, ensure your package list is up to date by running:</p>
+</li>
+</ol>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt-get update</span><br></pre></td></tr></table></figure>
+
+<p>By following these steps, you instruct <code>apt-get</code> to ignore the CD-ROM as a source, relying instead on your other sources for package installations and updates.</p>
+<p>Whether you’re managing package sources or ensuring your applications are running smoothly, Debian and its tools offer robust solutions for both tasks.</p>
+<p>Taking care of your system’s configurations thoughtfully can save a lot of time and hassle.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://upinel.github.io/2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="@Upinel">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Upinel TechSpace">
+      <meta itemprop="description" content="Code, Homelab, and everything tech">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Upinel TechSpace">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/" class="post-title-link" itemprop="url">Intel NUC12 1240P 10TB (4*SSD) Super HomeLab Build</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-05-13 12:58:47" itemprop="dateCreated datePublished" datetime="2024-05-13T12:58:47+01:00">2024-05-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-07-13 13:09:47" itemprop="dateModified" datetime="2024-07-13T13:09:47+01:00">2024-07-13</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>I’m excited to share my recent project of building an ultra-compact, all-SSD HomeLab with the incredible Intel NUC12. Below, I will walk you through the specifications and the detailed process of creating this monster build.</p>
+<p><img src="/2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/8tb-3xssd-pve-homelab-setup-nuc-12-nuc12wski5-wall-street-v0-edvkkkp9x83d1.jpg" alt="NUC12 HomeLab Setup"></p>
+<h2 id="Specifications"><a href="#Specifications" class="headerlink" title="Specifications"></a>Specifications</h2><p><strong>Processor:</strong> Intel i5-1240P (12 Cores &#x2F; 16 Threads, Underclock at 18&#x2F;28W)</p>
+<p><strong>RAM:</strong> 64GB</p>
+<p><strong>Storage:</strong> Total 10TB across four SSDs:</p>
+<ul>
+<li><strong>Samsung 980Pro 2TB</strong> (Gen 4x4) 2280 NVMe SSD</li>
+<li><strong>Solidigm P41 Plus 2TB</strong> (Gen 4x4 Downgraded to Gen 3x1) 2280 NVMe SSD</li>
+<li><strong>Sandisk SN740 2TB</strong> (Gen 4x4 Downgraded to Gen 3x1) 2230 NVMe SSD</li>
+<li><strong>Samsung 870 EVO 4TB</strong> SATA SSD</li>
+</ul>
+<h2 id="Installation-Process"><a href="#Installation-Process" class="headerlink" title="Installation Process"></a>Installation Process</h2><h3 id="Step-1-Default-Configuration"><a href="#Step-1-Default-Configuration" class="headerlink" title="Step 1: Default Configuration"></a>Step 1: Default Configuration</h3><p>The Intel NUC12 can naturally accommodate two SSDs: </p>
+<ul>
+<li><strong>M.2 2280 SSD slot:</strong> Where I installed the <strong>Samsung 980 Pro 2TB</strong>.</li>
+<li><strong>SATA SSD slot:</strong> Which houses the <strong>Samsung 870 EVO 4TB</strong>.</li>
+</ul>
+<p>This setup provided me with 6TB of high-speed storage.</p>
+<h3 id="Step-2-Maximizing-Expandability-with-M-2-2242-Slot"><a href="#Step-2-Maximizing-Expandability-with-M-2-2242-Slot" class="headerlink" title="Step 2: Maximizing Expandability with M.2 2242 Slot"></a>Step 2: Maximizing Expandability with M.2 2242 Slot</h3><p>I discovered that the NUC12’s 2242 M.2 slot includes a PCIe Gen3x1 lane. By using a <strong>Key B to Key M converter</strong>, this allowed me to connect a <strong>Sandisk SN740 2TB</strong> as a 2242 form-factor drive.</p>
+<p><em>Note: Connecting the <strong>SN740</strong> via <strong>Key B</strong> scales down its speed from Gen4x4 (<del>5000MB&#x2F;s) to Gen3x1 (</del>900MB&#x2F;s).</em></p>
+<p><img src="/2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/8tb-3xssd-pve-homelab-setup-nuc-12-nuc12wski5-wall-street-v0-y5zxrkp9x83d1.jpg" alt="SSD Conversion"></p>
+<h3 id="Step-3-Utilizing-the-WiFi-Slot"><a href="#Step-3-Utilizing-the-WiFi-Slot" class="headerlink" title="Step 3: Utilizing the WiFi Slot"></a>Step 3: Utilizing the WiFi Slot</h3><p>Since I seldom use the WiFi chip, my HomeLab runs mainly on a 2.5Gbps Ethernet connection. By converting the <strong>Key A+E to Key M</strong> via another converter, I effectively utilized the <strong>WiFi slot’s PCIe Gen3x1 lane</strong>. This connected the <strong>Solidigm P41 2TB SSD</strong> to the WiFi slot via an <strong>FFC cable</strong> routed to the remaining area designated for the SATA drive, providing an additional 2TB at PCIe Gen3x1 (~900MB&#x2F;s).</p>
+<p><img src="/2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/13.56.47.png" alt="WiFi Slot SSD"></p>
+<h3 id="Step-4-Underclocking-for-Optimal-Performance"><a href="#Step-4-Underclocking-for-Optimal-Performance" class="headerlink" title="Step 4: Underclocking for Optimal Performance"></a>Step 4: Underclocking for Optimal Performance</h3><p>To keep noise and heat in check, I underclocked the Intel i5-1240P CPU to:</p>
+<ul>
+<li><strong>PL1 &#x3D; 18W</strong></li>
+<li><strong>PL2 &#x3D; 28W</strong></li>
+</ul>
+<p>This adjustment still provides 80% of the CPU’s power potential, which is more than sufficient for my workloads. Additionally, the CPU typically operates below a 10% load, thus maintaining an efficient and quiet environment.</p>
+<p><img src="/2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/13.11.45.png" alt="CPU Load Overview"></p>
+<h2 id="Enhancing-Capabilities-with-Thunderbolt-4-Ports"><a href="#Enhancing-Capabilities-with-Thunderbolt-4-Ports" class="headerlink" title="Enhancing Capabilities with Thunderbolt 4 Ports"></a>Enhancing Capabilities with Thunderbolt 4 Ports</h2><p>The NUC12 also features <strong>2 Thunderbolt 4 ports</strong>, each offering a 40Gbps link. This provides the flexibility to expand storage further by connecting to external SSD enclosures or HDD RAID setups—potentially accommodating up to <strong>8x10Gbps (Gen3x1) external SSDs</strong> via TB3&#x2F;4 4-bay enclosures.</p>
+<p><img src="/2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/14.01.43.png" alt="Thunderbolt 4 Ports"></p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>By fully utilizing the Gen4x4 M.2 slot, SATA slot, Gen3x1 2242 slot, and the Gen3x1 WiFi slot, I successfully installed four SSDs into a single 4x4 NUC12 with ease. This setup provides an impressive 10TB of high-speed storage in a remarkably compact form factor.</p>
+<p><img src="/2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/13.21.09.png" alt="Completed HomeLab"></p>
+<p>I am thrilled with how compact yet powerful the Intel NUC12 1240P has proven to be for this HomeLab build. It not only meets my storage needs but also leverages advanced features for potential future expansions.</p>
+<p>Feel free to share your thoughts or ask questions in the comments below. Happy building!</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://upinel.github.io/2023/10/05/check-SSD-Temperature-in-ESXi8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1160,7 +1196,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-07-13 11:23:05" itemprop="dateModified" datetime="2024-07-13T11:23:05+01:00">2024-07-13</time>
+      <time title="Modified: 2024-07-13 13:09:51" itemprop="dateModified" datetime="2024-07-13T13:09:51+01:00">2024-07-13</time>
     </span>
 
   

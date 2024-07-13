@@ -19,29 +19,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"upinel.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="When managing servers or desktops, knowing the details of your PCIe configuration can be very beneficial. This information is essential for troubleshooting hardware issues, upgrading components, or op">
+    <meta name="description" content="Are you looking to install Windows 11 on an older PC that doesn’t meet the official hardware requirements? Don’t worry; there’s a way to bypass the TPM, RAM, and Secure Boot checks during the installa">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Check PCIe lane with lspci">
-<meta property="og:url" content="https://upinel.github.io/2024/07/13/Check-PCIe-lane-with-lspci/index.html">
+<meta property="og:title" content="Windows 10 &#x2F; 11 installation bypass TPM, Ram and Secure Boot Requirements">
+<meta property="og:url" content="https://upinel.github.io/2024/07/02/Windows-10-11-installation-bypass-TPM-Ram-and-Secure-Boot-Requirements/index.html">
 <meta property="og:site_name" content="Upinel TechSpace">
-<meta property="og:description" content="When managing servers or desktops, knowing the details of your PCIe configuration can be very beneficial. This information is essential for troubleshooting hardware issues, upgrading components, or op">
+<meta property="og:description" content="Are you looking to install Windows 11 on an older PC that doesn’t meet the official hardware requirements? Don’t worry; there’s a way to bypass the TPM, RAM, and Secure Boot checks during the installa">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-07-13T09:24:09.000Z">
-<meta property="article:modified_time" content="2024-07-13T10:14:44.115Z">
+<meta property="article:published_time" content="2024-07-02T09:36:15.000Z">
+<meta property="article:modified_time" content="2024-07-13T12:10:07.029Z">
 <meta property="article:author" content="@Upinel">
-<meta property="article:tag" content="debian">
-<meta property="article:tag" content="server">
+<meta property="article:tag" content="windows">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://upinel.github.io/2024/07/13/Check-PCIe-lane-with-lspci/">
+<link rel="canonical" href="https://upinel.github.io/2024/07/02/Windows-10-11-installation-bypass-TPM-Ram-and-Secure-Boot-Requirements/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://upinel.github.io/2024/07/13/Check-PCIe-lane-with-lspci/","path":"2024/07/13/Check-PCIe-lane-with-lspci/","title":"Check PCIe lane with lspci"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://upinel.github.io/2024/07/02/Windows-10-11-installation-bypass-TPM-Ram-and-Secure-Boot-Requirements/","path":"2024/07/02/Windows-10-11-installation-bypass-TPM-Ram-and-Secure-Boot-Requirements/","title":"Windows 10 / 11 installation bypass TPM, Ram and Secure Boot Requirements"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Check PCIe lane with lspci | Upinel TechSpace</title>
+<title>Windows 10 / 11 installation bypass TPM, Ram and Secure Boot Requirements | Upinel TechSpace</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RXXHH7871N"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-RXXHH7871N","only_pageview":false,"measure_protocol_api_secret":null}</script>
@@ -144,7 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Using-lspci-to-Check-PCIe-Lanes"><span class="nav-number">1.</span> <span class="nav-text">Using lspci to Check PCIe Lanes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Breaking-Down-the-Command"><span class="nav-number">1.1.</span> <span class="nav-text">Breaking Down the Command</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example-Output"><span class="nav-number">1.2.</span> <span class="nav-text">Example Output</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Why-Is-This-Information-Important"><span class="nav-number">2.</span> <span class="nav-text">Why Is This Information Important?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conclusion"><span class="nav-number">3.</span> <span class="nav-text">Conclusion</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Step-by-Step-Guide-to-Bypass-Hardware-Requirements"><span class="nav-number">1.</span> <span class="nav-text">Step-by-Step Guide to Bypass Hardware Requirements</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Boot-Off-Your-Windows-11-Install-Disk"><span class="nav-number">1.1.</span> <span class="nav-text">1. Boot Off Your Windows 11 Install Disk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Launch-Command-Prompt"><span class="nav-number">1.2.</span> <span class="nav-text">2. Launch Command Prompt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Launch-Registry-Editor"><span class="nav-number">1.3.</span> <span class="nav-text">3. Launch Registry Editor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Navigate-to-Setup-Key"><span class="nav-number">1.4.</span> <span class="nav-text">4. Navigate to Setup Key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Create-a-New-Registry-Key-Named-LabConfig"><span class="nav-number">1.5.</span> <span class="nav-text">5. Create a New Registry Key Named LabConfig</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Create-DWORDs-to-Bypass-TPM-Secure-Boot-and-RAM-Checks"><span class="nav-number">1.6.</span> <span class="nav-text">6. Create DWORDs to Bypass TPM, Secure Boot and RAM Checks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-Close-Registry-Editor-and-Command-Prompt"><span class="nav-number">1.7.</span> <span class="nav-text">7. Close Registry Editor and Command Prompt</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -198,7 +197,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://upinel.github.io/2024/07/13/Check-PCIe-lane-with-lspci/">
+    <link itemprop="mainEntityOfPage" href="https://upinel.github.io/2024/07/02/Windows-10-11-installation-bypass-TPM-Ram-and-Secure-Boot-Requirements/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -211,12 +210,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Check PCIe lane with lspci | Upinel TechSpace">
+      <meta itemprop="name" content="Windows 10 / 11 installation bypass TPM, Ram and Secure Boot Requirements | Upinel TechSpace">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Check PCIe lane with lspci
+          Windows 10 / 11 installation bypass TPM, Ram and Secure Boot Requirements
         </h1>
 
         <div class="post-meta-container">
@@ -226,9 +225,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2024-07-13 10:24:09 / Modified: 11:14:44" itemprop="dateCreated datePublished" datetime="2024-07-13T10:24:09+01:00">2024-07-13</time>
+      <time title="Created: 2024-07-02 10:36:15" itemprop="dateCreated datePublished" datetime="2024-07-02T10:36:15+01:00">2024-07-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-07-13 13:10:07" itemprop="dateModified" datetime="2024-07-13T13:10:07+01:00">2024-07-13</time>
     </span>
 
   
@@ -240,8 +245,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2024/07/13/Check-PCIe-lane-with-lspci/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/07/13/Check-PCIe-lane-with-lspci/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2024/07/02/Windows-10-11-installation-bypass-TPM-Ram-and-Secure-Boot-Requirements/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/07/02/Windows-10-11-installation-bypass-TPM-Ram-and-Secure-Boot-Requirements/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -254,41 +259,25 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>When managing servers or desktops, knowing the details of your PCIe configuration can be very beneficial. This information is essential for troubleshooting hardware issues, upgrading components, or optimizing performance. One of the most powerful tools for examining PCIe details on Debian-based systems is <code>lspci</code>.</p>
-<p>In this blog post, we’ll show you a quick command to check the PCIe lane configuration using <code>lspci</code>.</p>
-<h2 id="Using-lspci-to-Check-PCIe-Lanes"><a href="#Using-lspci-to-Check-PCIe-Lanes" class="headerlink" title="Using lspci to Check PCIe Lanes"></a>Using lspci to Check PCIe Lanes</h2><p>The <code>lspci</code> command is a standard utility to list all PCI devices on your system. However, to get detailed information about PCIe lanes, you’ll need to use it with certain options and grep for specific fields.</p>
-<p>Here’s the command you need:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lspci -vv | grep -P <span class="string">&quot;[0-9a-f]&#123;2&#125;:[0-9a-f]&#123;2&#125;\.[0-9a-f]|LnkSta:&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Breaking-Down-the-Command"><a href="#Breaking-Down-the-Command" class="headerlink" title="Breaking Down the Command"></a>Breaking Down the Command</h3><ul>
-<li><p><strong><code>lspci -vv</code></strong>: The <code>-vv</code> option tells <code>lspci</code> to be very verbose, providing detailed information about each PCI device.</p>
-</li>
-<li><p><strong><code>grep -P &quot;[0-9a-f]&#123;2&#125;:[0-9a-f]&#123;2&#125;\.[0-9a-f]|LnkSta:&quot;</code></strong>: This grep command uses a Perl-compatible regular expression. It searches for:</p>
+    <div class="post-body" itemprop="articleBody"><p>Are you looking to install Windows 11 on an older PC that doesn’t meet the official hardware requirements? Don’t worry; there’s a way to bypass the TPM, RAM, and Secure Boot checks during the installation process. Follow the steps below to get Windows 11 up and running on your system.</p>
+<h2 id="Step-by-Step-Guide-to-Bypass-Hardware-Requirements"><a href="#Step-by-Step-Guide-to-Bypass-Hardware-Requirements" class="headerlink" title="Step-by-Step Guide to Bypass Hardware Requirements"></a>Step-by-Step Guide to Bypass Hardware Requirements</h2><h3 id="1-Boot-Off-Your-Windows-11-Install-Disk"><a href="#1-Boot-Off-Your-Windows-11-Install-Disk" class="headerlink" title="1. Boot Off Your Windows 11 Install Disk"></a>1. Boot Off Your Windows 11 Install Disk</h3><p>If you don’t already have a Windows 11 installation disk, you can create one by following our guide on <a target="_blank" rel="noopener" href="https://www.tomshardware.com/how-to/clean-install-windows-11">how to download Windows 11</a>. Once you have the install disk ready, boot from it. You should see a screen that asks you to choose the language of your install.</p>
+<h3 id="2-Launch-Command-Prompt"><a href="#2-Launch-Command-Prompt" class="headerlink" title="2. Launch Command Prompt"></a>2. Launch Command Prompt</h3><p>Once you’re at the language selection screen, press <code>SHIFT + F10</code> to open the Command Prompt.</p>
+<h3 id="3-Launch-Registry-Editor"><a href="#3-Launch-Registry-Editor" class="headerlink" title="3. Launch Registry Editor"></a>3. Launch Registry Editor</h3><p>Type <code>regedit</code> into the Command Prompt and hit Enter to launch the Registry Editor.</p>
+<h3 id="4-Navigate-to-Setup-Key"><a href="#4-Navigate-to-Setup-Key" class="headerlink" title="4. Navigate to Setup Key"></a>4. Navigate to Setup Key</h3><p>In the Registry Editor, navigate to <code>HKEY_LOCAL_MACHINE\SYSTEM\Setup</code>.</p>
+<h3 id="5-Create-a-New-Registry-Key-Named-LabConfig"><a href="#5-Create-a-New-Registry-Key-Named-LabConfig" class="headerlink" title="5. Create a New Registry Key Named LabConfig"></a>5. Create a New Registry Key Named LabConfig</h3><p>Right-click in the right window pane, select New -&gt; Key, and name the new key <code>LabConfig</code>.</p>
+<h3 id="6-Create-DWORDs-to-Bypass-TPM-Secure-Boot-and-RAM-Checks"><a href="#6-Create-DWORDs-to-Bypass-TPM-Secure-Boot-and-RAM-Checks" class="headerlink" title="6. Create DWORDs to Bypass TPM, Secure Boot and RAM Checks"></a>6. Create DWORDs to Bypass TPM, Secure Boot and RAM Checks</h3><p>Within the <code>LabConfig</code> key, create the following <code>DWORD 32</code> values and set each to <code>1</code>:</p>
 <ul>
-<li><strong><code>[0-9a-f]&#123;2&#125;:[0-9a-f]&#123;2&#125;\.[0-9a-f]</code></strong>: This part matches the PCI address.</li>
-<li><strong><code>LnkSta:</code></strong>: This part searches for the link status, which includes the current PCIe lane configuration.</li>
+<li><code>BypassTPMCheck</code></li>
+<li><code>BypassSecureBootCheck</code></li>
+<li><code>BypassRAMCheck</code> (if you also want to bypass the RAM requirement)</li>
 </ul>
-</li>
-</ul>
-<h3 id="Example-Output"><a href="#Example-Output" class="headerlink" title="Example Output"></a>Example Output</h3><p>Running this command, you might see output similar to the following:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">00:1c.0 PCI bridge: Intel Corporation 82801 Mobile PCI Bridge (rev f2)</span><br><span class="line">        LnkSta: Speed 2.5GT/s, Width x1</span><br><span class="line">01:00.0 VGA compatible controller: NVIDIA Corporation GP107GL [Quadro P400] (rev a1)</span><br><span class="line">        LnkSta: Speed 8GT/s, Width x16</span><br></pre></td></tr></table></figure>
-
-<p>In the example above:</p>
-<ul>
-<li>The PCI bridge at address <code>00:1c.0</code> operates at 2.5GT&#x2F;s (Giga-transfers per second) and uses 1 lane.</li>
-<li>The NVIDIA Quadro P400 at address <code>01:00.0</code> operates at 8GT&#x2F;s and uses 16 lanes.</li>
-</ul>
-<h2 id="Why-Is-This-Information-Important"><a href="#Why-Is-This-Information-Important" class="headerlink" title="Why Is This Information Important?"></a>Why Is This Information Important?</h2><p>Understanding the PCIe lane configuration is crucial for several reasons:</p>
-<ol>
-<li><p><strong>Performance Optimization</strong>: Ensuring that high-performance devices, like GPUs, are connected via the correct number of PCIe lanes can significantly impact performance.</p>
-</li>
-<li><p><strong>Troubleshooting</strong>: Sometimes, hardware issues might be related to improper PCIe configurations or limitations.</p>
-</li>
-<li><p><strong>Upgrading Hardware</strong>: Knowing your system’s current PCIe configuration can help determine compatibility with new components.</p>
-</li>
-</ol>
-<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Checking your PCIe lane configuration is a straightforward process with the <code>lspci</code> command. This information can be pivotal for optimizing performance, troubleshooting, and general hardware management. </p>
-<p>If you have any further questions or if there’s a specific task you need help with, feel free to ask in the comments below. Happy computing, and may your system always run smoothly!</p>
+<p>To create a new DWORD value, right-click in the right window pane, select New -&gt; DWORD (32-bit) Value, name the key, then double-click the entry to set it to <code>1</code>.</p>
+<p>For a more straightforward solution, you can use the following <code>reg.exe</code> commands to automate this process via the Command Prompt:</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reg.exe add HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig /v BypassTPMCheck /t REG_DWORD /d <span class="number">1</span> /f</span><br><span class="line">reg.exe add HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig /v BypassSecureBootCheck /t REG_DWORD /d <span class="number">1</span> /f</span><br><span class="line">reg.exe add HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig /v BypassRAMCheck /t REG_DWORD /d <span class="number">1</span> /f</span><br></pre></td></tr></table></figure>
+<p>Simply copy and paste these commands into the Command Prompt and hit Enter.</p>
+<h3 id="7-Close-Registry-Editor-and-Command-Prompt"><a href="#7-Close-Registry-Editor-and-Command-Prompt" class="headerlink" title="7. Close Registry Editor and Command Prompt"></a>7. Close Registry Editor and Command Prompt</h3><p>Close the Registry Editor and the Command Prompt. You should then be able to proceed with the Windows 11 installation process without encountering any of the hardware requirement checks.</p>
+<p>By following these steps, you can bypass the TPM, RAM, and Secure Boot checks and install Windows 11 on your older PC effortlessly.</p>
+<p>Happy installing!</p>
 
     </div>
 
@@ -298,21 +287,20 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/debian/" rel="tag"># debian</a>
-              <a href="/tags/server/" rel="tag"># server</a>
+              <a href="/tags/windows/" rel="tag"># windows</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2024/07/13/nodejs-webApp-auto-deploy-using-pm2-and-GitHub-Action/" rel="prev" title="Node.js WebApp Auto Deployment Using PM2 and GitHub Actions">
-                  <i class="fa fa-angle-left"></i> Node.js WebApp Auto Deployment Using PM2 and GitHub Actions
+                <a href="/2024/07/02/Uninstall-debian-desktop-enviorment/" rel="prev" title="Uninstall debian desktop enviorment">
+                  <i class="fa fa-angle-left"></i> Uninstall debian desktop enviorment
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2024/07/13/Windows-KMS-activation/" rel="next" title="Windows KMS activation">
-                  Windows KMS activation <i class="fa fa-angle-right"></i>
+                <a href="/2024/07/11/Check-PCIe-lane-with-lspci/" rel="next" title="Check PCIe lane with lspci">
+                  Check PCIe lane with lspci <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -388,7 +376,7 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://upinel.github.io/2024/07/13/Check-PCIe-lane-with-lspci/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://upinel.github.io/2024/07/02/Windows-10-11-installation-bypass-TPM-Ram-and-Secure-Boot-Requirements/"}</script>
   <script src="/js/third-party/quicklink.js"></script>
 <script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"upinel-tech","count":true,"i18n":{"disqus":"disqus"}}</script>
 <script src="/js/third-party/comments/disqus.js"></script>

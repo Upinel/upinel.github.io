@@ -229,7 +229,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-07-13 21:21:32" itemprop="dateModified" datetime="2024-07-13T21:21:32+01:00">2024-07-13</time>
+      <time title="Modified: 2024-07-13 21:22:57" itemprop="dateModified" datetime="2024-07-13T21:22:57+01:00">2024-07-13</time>
     </span>
 
   
@@ -256,8 +256,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>Video editing can be a time-consuming process, especially when you need to trim out long pauses or silences manually. However, there’s a powerful tool called <strong>Auto-Editor</strong> that can automate the process for you. In this blog post, we’ll walk you through the steps to use Auto-Editor to automatically remove silences in your video clips, making your editing workflow faster and more efficient.</p>
-<p><img src="https://example.com/auto-editor-logo.png" alt="Auto-Editor Logo"></p>
+          <p>Video editing can be a time-consuming process, especially when you need to trim out long pauses or silences manually. However, there’s a powerful tool called <strong><a target="_blank" rel="noopener" href="https://github.com/WyattBlue/auto-editor">Auto-Editor</a></strong> that can automate the process for you. In this blog post, we’ll walk you through the steps to use Auto-Editor to automatically remove silences in your video clips, making your editing workflow faster and more efficient.</p>
 <h2 id="What-is-Auto-Editor"><a href="#What-is-Auto-Editor" class="headerlink" title="What is Auto-Editor?"></a>What is Auto-Editor?</h2><p>Auto-Editor is an open-source software that automatically edits video and audio by analyzing the content to detect and remove silences, stutters, and long pauses. It significantly speeds up the editing process, especially for vloggers, podcasters, and streamers who frequently need to clean up raw footage.</p>
 <h3 id="Key-Features-of-Auto-Editor"><a href="#Key-Features-of-Auto-Editor" class="headerlink" title="Key Features of Auto-Editor"></a>Key Features of Auto-Editor</h3><ul>
 <li>Automatically removes silences</li>
@@ -267,10 +266,12 @@
 <h2 id="Installing-Auto-Editor"><a href="#Installing-Auto-Editor" class="headerlink" title="Installing Auto-Editor"></a>Installing Auto-Editor</h2><p>Before we get started, you need to have Auto-Editor installed on your system. Follow these steps to install it:</p>
 <h3 id="Step-1-Install-Python"><a href="#Step-1-Install-Python" class="headerlink" title="Step 1: Install Python"></a>Step 1: Install Python</h3><p>Auto-Editor is a Python package, so ensure you have Python installed on your machine. You can download and install Python from the <a target="_blank" rel="noopener" href="https://www.python.org/downloads/">official website</a>.</p>
 <h3 id="Step-2-Install-Auto-Editor"><a href="#Step-2-Install-Auto-Editor" class="headerlink" title="Step 2: Install Auto-Editor"></a>Step 2: Install Auto-Editor</h3><p>You can install Auto-Editor via pip, the package installer for Python. Open your terminal or command prompt and run the following command:</p>
-<p>&#x2F;&#x2F;&#x2F;bash<br>pip install auto-editor<br>&#x2F;&#x2F;&#x2F;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install auto-editor</span><br></pre></td></tr></table></figure>
+
 <h2 id="Removing-Silences-with-Auto-Editor"><a href="#Removing-Silences-with-Auto-Editor" class="headerlink" title="Removing Silences with Auto-Editor"></a>Removing Silences with Auto-Editor</h2><p>Now that we have Auto-Editor installed, let’s dive into an example to remove silences from a video clip.</p>
 <h3 id="Sample-Command-Basic-Usage"><a href="#Sample-Command-Basic-Usage" class="headerlink" title="Sample Command: Basic Usage"></a>Sample Command: Basic Usage</h3><p>Here’s a basic command to remove silences from a video named <code>example.mp4</code>:</p>
-<p>&#x2F;&#x2F;&#x2F;bash<br>auto-editor example.mp4 –margin 0.2sec –export final-cut-pro<br>&#x2F;&#x2F;&#x2F;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auto-editor example.mp4 --margin 0.2sec --<span class="built_in">export</span> final-cut-pro</span><br></pre></td></tr></table></figure>
+
 <h3 id="Breaking-Down-the-Command"><a href="#Breaking-Down-the-Command" class="headerlink" title="Breaking Down the Command"></a>Breaking Down the Command</h3><ul>
 <li><strong>example.mp4</strong>: The input video file.</li>
 <li><strong>–margin 0.2sec</strong>: Adds a 0.2-second margin before and after detected audio. This helps in maintaining a smooth transition between audio segments.</li>
@@ -289,7 +290,8 @@
 </ul>
 <h2 id="Example-Advanced-Usage"><a href="#Example-Advanced-Usage" class="headerlink" title="Example: Advanced Usage"></a>Example: Advanced Usage</h2><p>Let’s say you have a video clip (<code>interview.mp4</code>) that you want to edit. You want to remove silences, add a 5-frame margin, consider anything quieter than -45dB as silence, and speed up non-silent parts to 1.5x the normal speed.</p>
 <p>Your command will look like this:</p>
-<p>&#x2F;&#x2F;&#x2F;bash<br>auto-editor interview.mp4 –silent-threshold -45dB –margin 0.3sec –video-speed 1.5 –frame-margin 5 –export premiere<br>&#x2F;&#x2F;&#x2F;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auto-editor interview.mp4 --silent-threshold -45dB --margin 0.3sec --video-speed 1.5 --frame-margin 5 --<span class="built_in">export</span> premiere</span><br></pre></td></tr></table></figure>
+
 <h3 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h3><ul>
 <li><strong>–silent-threshold -45dB</strong>: More stringent threshold for detecting silence.</li>
 <li><strong>–margin 0.3sec</strong>: Slightly larger audio margin to ensure smooth transitions.</li>

@@ -19,16 +19,18 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"upinel.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="install enviroment install nodejs and npm install screen vim and others install pm²1sudo npm install -g pm2 allow non-root using port 80 (*optional) (libcap2-bin)1sudo setcap &#x27;cap_net_bind_servic">
+    <meta name="description" content="Automating the deployment process for your Node.js web application can save you a significant amount of time and effort. By integrating PM2 with GitHub Actions, you can set up a continuous deployment">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nodejs webApp auto deploy using pm2 and GitHub Action">
+<meta property="og:title" content="Node.js WebApp Auto Deployment Using PM2 and GitHub Actions">
 <meta property="og:url" content="https://upinel.github.io/2024/07/13/nodejs-webApp-auto-deploy-using-pm2-and-GitHub-Action/index.html">
 <meta property="og:site_name" content="Upinel TechSpace">
-<meta property="og:description" content="install enviroment install nodejs and npm install screen vim and others install pm²1sudo npm install -g pm2 allow non-root using port 80 (*optional) (libcap2-bin)1sudo setcap &#x27;cap_net_bind_servic">
+<meta property="og:description" content="Automating the deployment process for your Node.js web application can save you a significant amount of time and effort. By integrating PM2 with GitHub Actions, you can set up a continuous deployment">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-07-13T09:16:05.000Z">
-<meta property="article:modified_time" content="2024-07-13T09:16:49.022Z">
+<meta property="article:modified_time" content="2024-07-13T10:04:36.748Z">
 <meta property="article:author" content="Nova Chow">
+<meta property="article:tag" content="nodeJS">
+<meta property="article:tag" content="development">
 <meta name="twitter:card" content="summary">
 
 
@@ -36,10 +38,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://upinel.github.io/2024/07/13/nodejs-webApp-auto-deploy-using-pm2-and-GitHub-Action/","path":"2024/07/13/nodejs-webApp-auto-deploy-using-pm2-and-GitHub-Action/","title":"nodejs webApp auto deploy using pm2 and GitHub Action"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://upinel.github.io/2024/07/13/nodejs-webApp-auto-deploy-using-pm2-and-GitHub-Action/","path":"2024/07/13/nodejs-webApp-auto-deploy-using-pm2-and-GitHub-Action/","title":"Node.js WebApp Auto Deployment Using PM2 and GitHub Actions"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>nodejs webApp auto deploy using pm2 and GitHub Action | Upinel TechSpace</title>
+<title>Node.js WebApp Auto Deployment Using PM2 and GitHub Actions | Upinel TechSpace</title>
   
 
 
@@ -105,22 +107,26 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#install-enviroment"><span class="nav-number">1.</span> <span class="nav-text">install enviroment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#create-GitHub-self-hosted-runner"><span class="nav-number">2.</span> <span class="nav-text">create GitHub self-hosted runner</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#create-GitHub-Acton-CD-yml"><span class="nav-number">3.</span> <span class="nav-text">create GitHub Acton : CD.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#setup-pm%C2%B2-services"><span class="nav-number">4.</span> <span class="nav-text">setup pm² services</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Done"><span class="nav-number">5.</span> <span class="nav-text">Done</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Step-1-Install-Environment"><span class="nav-number">1.</span> <span class="nav-text">Step 1: Install Environment</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Install-Node-js-and-npm"><span class="nav-number">1.1.</span> <span class="nav-text">1. Install Node.js and npm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Install-Essential-Tools"><span class="nav-number">1.2.</span> <span class="nav-text">2. Install Essential Tools</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Install-PM2"><span class="nav-number">1.3.</span> <span class="nav-text">3. Install PM2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Allow-Non-Root-User-to-Use-Port-80-optional"><span class="nav-number">1.4.</span> <span class="nav-text">4. Allow Non-Root User to Use Port 80 (optional)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Create-GitHub-Self-Hosted-Runner"><span class="nav-number">2.</span> <span class="nav-text">5. Create GitHub Self-Hosted Runner</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Create-GitHub-Action-Workflow-deploy-yml"><span class="nav-number">3.</span> <span class="nav-text">6. Create GitHub Action Workflow: deploy.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-setup-pm2-services"><span class="nav-number">4.</span> <span class="nav-text">7. setup pm2 services</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Verify-and-Monitor-Your-Application"><span class="nav-number">5.</span> <span class="nav-text">Verify and Monitor Your Application</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Check-PM2-Status"><span class="nav-number">5.1.</span> <span class="nav-text">Check PM2 Status</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Check-PM2-Logs"><span class="nav-number">5.2.</span> <span class="nav-text">Check PM2 Logs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Real-Time-Monitoring"><span class="nav-number">5.3.</span> <span class="nav-text">Real-Time Monitoring</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Other-Useful-PM2-Commands"><span class="nav-number">5.4.</span> <span class="nav-text">Other Useful PM2 Commands</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">Nova Chow</p>
-  <div class="site-description" itemprop="description">My TechSpace record my tech life</div>
+  <div class="site-description" itemprop="description">Code, Homelab, and everything tech</div>
 </div>
 <div class="site-state-wrap animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">posts</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">tags</span>
       </div>
   </nav>
 </div>
@@ -155,16 +161,16 @@
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Upinel TechSpace">
-      <meta itemprop="description" content="My TechSpace record my tech life">
+      <meta itemprop="description" content="Code, Homelab, and everything tech">
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="nodejs webApp auto deploy using pm2 and GitHub Action | Upinel TechSpace">
+      <meta itemprop="name" content="Node.js WebApp Auto Deployment Using PM2 and GitHub Actions | Upinel TechSpace">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          nodejs webApp auto deploy using pm2 and GitHub Action
+          Node.js WebApp Auto Deployment Using PM2 and GitHub Actions
         </h1>
 
         <div class="post-meta-container">
@@ -176,7 +182,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2024-07-13 10:16:05 / Modified: 10:16:49" itemprop="dateCreated datePublished" datetime="2024-07-13T10:16:05+01:00">2024-07-13</time>
+      <time title="Created: 2024-07-13 10:16:05 / Modified: 11:04:36" itemprop="dateCreated datePublished" datetime="2024-07-13T10:16:05+01:00">2024-07-13</time>
     </span>
 
   
@@ -188,26 +194,31 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="install-enviroment"><a href="#install-enviroment" class="headerlink" title="install enviroment"></a>install enviroment</h2><ol>
-<li>install nodejs and npm</li>
-<li>install screen vim and others</li>
-<li>install pm²<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> npm install -g pm2</span><br></pre></td></tr></table></figure></li>
-<li>allow non-root using port 80 (*optional) (libcap2-bin)<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">setcap</span> <span class="string">&#x27;cap_net_bind_service=+ep&#x27;</span> $(<span class="built_in">which</span> node)</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="create-GitHub-self-hosted-runner"><a href="#create-GitHub-self-hosted-runner" class="headerlink" title="create GitHub self-hosted runner"></a>create GitHub self-hosted runner</h2><p>follow repo-setting-action-self-host</p>
-<h2 id="create-GitHub-Acton-CD-yml"><a href="#create-GitHub-Acton-CD-yml" class="headerlink" title="create GitHub Acton : CD.yml"></a>create GitHub Acton : CD.yml</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">name: Node.js CI</span><br><span class="line"></span><br><span class="line">on:</span><br><span class="line">  push:</span><br><span class="line">    branches: [ &quot;main&quot; ]</span><br><span class="line">  pull_request:</span><br><span class="line">    branches: [ &quot;main&quot; ]</span><br><span class="line"></span><br><span class="line">jobs:</span><br><span class="line">  build:</span><br><span class="line"></span><br><span class="line">    runs-on: [self-hosted, Production]</span><br><span class="line"></span><br><span class="line">    steps:</span><br><span class="line">    - uses: actions/checkout@v4</span><br><span class="line">    - name: Use Node.js 20.x</span><br><span class="line">      uses: actions/setup-node@v2</span><br><span class="line">      with:</span><br><span class="line">        node-version: 20.x</span><br><span class="line">    - run: npm install</span><br><span class="line">    - run: pm2 restart cyberbluffAPI</span><br></pre></td></tr></table></figure>
+    <div class="post-body" itemprop="articleBody"><p>Automating the deployment process for your Node.js web application can save you a significant amount of time and effort. By integrating PM2 with GitHub Actions, you can set up a continuous deployment pipeline that ensures your application is always up-to-date. This guide will walk you through the steps to set up your environment and create a seamless deployment workflow.</p>
+<h2 id="Step-1-Install-Environment"><a href="#Step-1-Install-Environment" class="headerlink" title="Step 1: Install Environment"></a>Step 1: Install Environment</h2><h3 id="1-Install-Node-js-and-npm"><a href="#1-Install-Node-js-and-npm" class="headerlink" title="1. Install Node.js and npm"></a>1. Install Node.js and npm</h3><p>Ensure you have Node.js and npm installed on your server. You can do this by downloading the installer from the <a target="_blank" rel="noopener" href="https://nodejs.org/">official Node.js website</a> or using a package manager.</p>
+<h3 id="2-Install-Essential-Tools"><a href="#2-Install-Essential-Tools" class="headerlink" title="2. Install Essential Tools"></a>2. Install Essential Tools</h3><p>Install additional necessary tools like <code>screen</code> and <code>vim</code>. These tools are useful for managing terminal sessions and editing files, respectively.</p>
+<h3 id="3-Install-PM2"><a href="#3-Install-PM2" class="headerlink" title="3. Install PM2"></a>3. Install PM2</h3><p>PM2 is a process manager for Node.js applications. You can install it globally using npm:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> npm install -g pm2</span><br></pre></td></tr></table></figure>
 
-<h2 id="setup-pm²-services"><a href="#setup-pm²-services" class="headerlink" title="setup pm² services"></a>setup pm² services</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 start server.js --name cyberbluffAPI --time</span><br></pre></td></tr></table></figure>
+<h3 id="4-Allow-Non-Root-User-to-Use-Port-80-optional"><a href="#4-Allow-Non-Root-User-to-Use-Port-80-optional" class="headerlink" title="4. Allow Non-Root User to Use Port 80 (optional)"></a>4. Allow Non-Root User to Use Port 80 (optional)</h3><p>To let a non-root user bind to port 80, you can use libcap2-bin. This step is optional but recommended for running your application on standard HTTP port:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt install libcap2-bin -y</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">setcap</span> <span class="string">&#x27;cap_net_bind_service=+ep&#x27;</span> $(<span class="built_in">which</span> node)</span><br></pre></td></tr></table></figure>
 
-<h2 id="Done"><a href="#Done" class="headerlink" title="Done"></a>Done</h2><p>check pm² status:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 status</span><br></pre></td></tr></table></figure>
-<p>check pm² logs</p>
+<h2 id="5-Create-GitHub-Self-Hosted-Runner"><a href="#5-Create-GitHub-Self-Hosted-Runner" class="headerlink" title="5. Create GitHub Self-Hosted Runner"></a>5. Create GitHub Self-Hosted Runner</h2><p>Set up a self-hosted runner on GitHub by following the instructions in your repository settings under “Actions”. This runner will be responsible for executing your deployment pipeline.<br>follow <a target="_blank" rel="noopener" href="https://docs.github.com/en/actions/hosting-your-own-runners">repo-setting-action-self-host</a></p>
+<h2 id="6-Create-GitHub-Action-Workflow-deploy-yml"><a href="#6-Create-GitHub-Action-Workflow-deploy-yml" class="headerlink" title="6. Create GitHub Action Workflow: deploy.yml"></a>6. Create GitHub Action Workflow: deploy.yml</h2><p>Create a GitHub Actions workflow file in your repository under .github&#x2F;workflows&#x2F;deploy.yml:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Node.js</span> <span class="string">CI</span></span><br><span class="line"></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span> [ <span class="string">&quot;main&quot;</span> ]</span><br><span class="line">  <span class="attr">pull_request:</span></span><br><span class="line">    <span class="attr">branches:</span> [ <span class="string">&quot;main&quot;</span> ]</span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">build:</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">runs-on:</span> [<span class="string">self-hosted</span>, <span class="string">Production</span>]</span><br><span class="line"></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">actions/checkout@v4</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Use</span> <span class="string">Node.js</span> <span class="number">20.</span><span class="string">x</span></span><br><span class="line">      <span class="attr">uses:</span> <span class="string">actions/setup-node@v2</span></span><br><span class="line">      <span class="attr">with:</span></span><br><span class="line">        <span class="attr">node-version:</span> <span class="number">20.</span><span class="string">x</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">npm</span> <span class="string">install</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">pm2</span> <span class="string">restart</span> <span class="string">YOUR-WEBAPP-NAME</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="7-setup-pm2-services"><a href="#7-setup-pm2-services" class="headerlink" title="7. setup pm2 services"></a>7. setup pm2 services</h2><p>Start your Node.js application with PM2. For example, if your entry file is server.js:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 start server.js --name YOUR-WEBAPP-NAME --time</span><br></pre></td></tr></table></figure>
+
+<h2 id="Verify-and-Monitor-Your-Application"><a href="#Verify-and-Monitor-Your-Application" class="headerlink" title="Verify and Monitor Your Application"></a>Verify and Monitor Your Application</h2><h3 id="Check-PM2-Status"><a href="#Check-PM2-Status" class="headerlink" title="Check PM2 Status"></a>Check PM2 Status</h3><p>Verify that your application is running properly with:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 status</span><br></pre></td></tr></table></figure>
+<h3 id="Check-PM2-Logs"><a href="#Check-PM2-Logs" class="headerlink" title="Check PM2 Logs"></a>Check PM2 Logs</h3><p>View your application’s logs:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 logs</span><br></pre></td></tr></table></figure>
-<p>real time logs</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 monit</span><br></pre></td></tr></table></figure>
-<p>other useful command</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pm2 del *<span class="built_in">id</span>*</span><br><span class="line">pm2 del all</span><br><span class="line">pm2 start *name*</span><br><span class="line">pm2 stop *name*</span><br></pre></td></tr></table></figure>
-<p>auto start<br>    pm2 startup<br>pm² save<br><a target="_blank" rel="noopener" href="https://pm2.io/docs/plus/overview/">https://pm2.io/docs/plus/overview/</a></p>
+<h3 id="Real-Time-Monitoring"><a href="#Real-Time-Monitoring" class="headerlink" title="Real-Time Monitoring"></a>Real-Time Monitoring</h3><p>Monitor your application’s performance and logs in real-time:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 monit</span><br></pre></td></tr></table></figure>
+<h3 id="Other-Useful-PM2-Commands"><a href="#Other-Useful-PM2-Commands" class="headerlink" title="Other Useful PM2 Commands"></a>Other Useful PM2 Commands</h3><p>Manage your PM2 processes with these additional commands:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Delete a process by its id</span></span><br><span class="line">pm2 del &lt;<span class="built_in">id</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Delete all processes</span></span><br><span class="line">pm2 del all</span><br><span class="line"></span><br><span class="line"><span class="comment"># Start a specific process by name</span></span><br><span class="line">pm2 start &lt;name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Stop a specific process by name</span></span><br><span class="line">pm2 stop &lt;name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Configure PM2 to start on system startup</span></span><br><span class="line">pm2 startup</span><br><span class="line"></span><br><span class="line"><span class="comment"># Save the process list to be loaded on startup</span></span><br><span class="line">pm2 save</span><br></pre></td></tr></table></figure>
+<p>For more detailed information on PM2 features and usage, visit the <a target="_blank" rel="noopener" href="https://pm2.io/docs/plus/overview/">PM2 Documentation</a>.</p>
 
     </div>
 
@@ -216,9 +227,25 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/nodeJS/" rel="tag"># nodeJS</a>
+              <a href="/tags/development/" rel="tag"># development</a>
+          </div>
 
         
 
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/10/05/check-SSD-Temperature-in-ESXi8/" rel="prev" title="How to Check SSD Temperature in ESXi 8.0">
+                  <i class="fa fa-angle-left"></i> How to Check SSD Temperature in ESXi 8.0
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/07/13/Check-PCIe-lane-with-lspci/" rel="next" title="Check PCIe lane with lspci">
+                  Check PCIe lane with lspci <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
     </footer>
   </article>
 </div>

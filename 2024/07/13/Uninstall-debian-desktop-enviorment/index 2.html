@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"upinel.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Have you installed a desktop environment on Debian that you no longer need? Whether you’re looking to free up space or want to use a minimal install without a GUI, this guide will walk you through the">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Uninstall debian desktop enviorment">
+<meta property="og:url" content="https://upinel.github.io/2024/07/13/Uninstall-debian-desktop-enviorment/index.html">
+<meta property="og:site_name" content="Upinel TechSpace">
+<meta property="og:description" content="Have you installed a desktop environment on Debian that you no longer need? Whether you’re looking to free up space or want to use a minimal install without a GUI, this guide will walk you through the">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-07-13T09:34:13.000Z">
+<meta property="article:modified_time" content="2024-07-13T09:52:29.028Z">
+<meta property="article:author" content="Nova Chow">
+<meta property="article:tag" content="debian">
+<meta property="article:tag" content="server">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://upinel.github.io/2024/07/13/Uninstall-debian-desktop-enviorment/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://upinel.github.io/2024/07/13/Uninstall-debian-desktop-enviorment/","path":"2024/07/13/Uninstall-debian-desktop-enviorment/","title":"Uninstall debian desktop enviorment"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Uninstall debian desktop enviorment | Upinel TechSpace</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Upinel TechSpace</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Code, Homelab, and everything tech</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Step-by-Step-Guide-to-Uninstall-Desktop-Environment"><span class="nav-number">1.</span> <span class="nav-text">Step-by-Step Guide to Uninstall Desktop Environment</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Check-Packages-Related-to-Desktop-Environment"><span class="nav-number">1.1.</span> <span class="nav-text">1. Check Packages Related to Desktop Environment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Uninstall-the-Desktop-Environment-Packages"><span class="nav-number">1.2.</span> <span class="nav-text">2. Uninstall the Desktop Environment Packages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Autoremove-Unnecessary-Packages"><span class="nav-number">1.3.</span> <span class="nav-text">3. Autoremove Unnecessary Packages</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Nova Chow</p>
+  <div class="site-description" itemprop="description">Code, Homelab, and everything tech</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://upinel.github.io/2024/07/13/Uninstall-debian-desktop-enviorment/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Nova Chow">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Upinel TechSpace">
+      <meta itemprop="description" content="Code, Homelab, and everything tech">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Uninstall debian desktop enviorment | Upinel TechSpace">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Uninstall debian desktop enviorment
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2024-07-13 10:34:13 / Modified: 10:52:29" itemprop="dateCreated datePublished" datetime="2024-07-13T10:34:13+01:00">2024-07-13</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>Have you installed a desktop environment on Debian that you no longer need? Whether you’re looking to free up space or want to use a minimal install without a GUI, this guide will walk you through the steps to uninstall the desktop environment on Debian.</p>
+<h2 id="Step-by-Step-Guide-to-Uninstall-Desktop-Environment"><a href="#Step-by-Step-Guide-to-Uninstall-Desktop-Environment" class="headerlink" title="Step-by-Step Guide to Uninstall Desktop Environment"></a>Step-by-Step Guide to Uninstall Desktop Environment</h2><h3 id="1-Check-Packages-Related-to-Desktop-Environment"><a href="#1-Check-Packages-Related-to-Desktop-Environment" class="headerlink" title="1. Check Packages Related to Desktop Environment"></a>1. Check Packages Related to Desktop Environment</h3><p>Firstly, you can identify the packages related to the desktop environment using the following command:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># check package related to desktop</span></span><br><span class="line">tasksel --task-packages desktop</span><br></pre></td></tr></table></figure>
+<h3 id="2-Uninstall-the-Desktop-Environment-Packages"><a href="#2-Uninstall-the-Desktop-Environment-Packages" class="headerlink" title="2. Uninstall the Desktop Environment Packages"></a>2. Uninstall the Desktop Environment Packages</h3><p>You can then use apt-get purge to remove all the packages related to the desktop environment. This can be done efficiently by combining the output from the previous command:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get purge $(tasksel --task-packages desktop)</span><br></pre></td></tr></table></figure>
+<p>Alternatively, you might consider a more comprehensive removal using the following command:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt purge task-desktop hyphen-en-us libglu1-mesa libreoffice-* libu2f-udev mythes-en-us x11-apps x11-session-utils xinit xorg xserver-* desktop-base task-german task-german-desktop totem gedit gedit-common gir1.2-* gnome-* gstreamer* sound-icons speech-dispatcher totem-common xserver-* xfonts-* xwayland gir1.2* gnome-*</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-Autoremove-Unnecessary-Packages"><a href="#3-Autoremove-Unnecessary-Packages" class="headerlink" title="3. Autoremove Unnecessary Packages"></a>3. Autoremove Unnecessary Packages</h3><p>After purging, you should also run apt autoremove –purge to clean up any remaining dependencies that were automatically installed with the desktop environment and are no longer needed:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt autoremove --purge</span><br></pre></td></tr></table></figure>
+<p>By following these steps, you can successfully remove the desktop environment from your Debian system, leaving you with a leaner and more minimal setup.</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/debian/" rel="tag"># debian</a>
+              <a href="/tags/server/" rel="tag"># server</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/07/13/Debian-installation-remove-cd-rom-apt-source/" rel="prev" title="Debian installation remove cd-rom apt source">
+                  <i class="fa fa-angle-left"></i> Debian installation remove cd-rom apt source
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/07/13/Windows-10-11-installation-bypass-TPM-Ram-and-Secure-Boot-Requirements/" rel="next" title="Windows 10 / 11 installation bypass TPM, Ram and Secure Boot Requirements">
+                  Windows 10 / 11 installation bypass TPM, Ram and Secure Boot Requirements <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Nova Chow</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Debian installation remove cd-rom apt source</title>
+    <url>/2024/07/13/Debian-installation-remove-cd-rom-apt-source/</url>
+    <content><![CDATA[<p>A local CD can act as an APT repository, just as if it were a distant server. This feature is incredibly useful when you are installing Debian on systems without a fast internet connection or when you need to install packages from localized media. However, once the installation is done or if you prefer using online repositories, you might want to disable the CD-ROM source to avoid any unnecessary prompts. </p>
+<p>If you don’t want <code>apt-get</code> to search the CD, you can achieve this easily by editing the <code>/etc/apt/sources.list</code> file. Here’s how to do it:</p>
+<h2 id="Steps-to-Remove-CD-ROM-apt-Source"><a href="#Steps-to-Remove-CD-ROM-apt-Source" class="headerlink" title="Steps to Remove CD-ROM apt Source"></a>Steps to Remove CD-ROM apt Source</h2><ol>
+<li><strong>Open the <code>/etc/apt/sources.list</code> file</strong>:<br>  To edit the file, you need administrative privileges. You can use <code>nano</code> or any other text editor you prefer. If you’re using <code>nano</code>, the command would look like this:</li>
+</ol>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nano /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><strong>Find the CD-ROM source line</strong>:<br>  Look for the line that specifies the CD-ROM as a source. It will look something like this:</li>
+</ol>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">deb cdrom:[deb95amd64d1]/ stretch contrib main</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><strong>Comment out the CD-ROM source line</strong>:<br>  To disable this source, simply comment out the line by adding a <code>#</code> at the beginning of it. The result should look like this:</li>
+</ol>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># deb cdrom:[deb95amd64d1]/ stretch contrib main</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li><p><strong>Save and close the file</strong>:<br>  In <code>nano</code>, you can do this by pressing <code>CTRL+X</code>, then <code>Y</code> to confirm the changes, and <code>Enter</code> to exit.</p>
+</li>
+<li><p><strong>Update your package list</strong>:<br>  After making these changes, ensure your package list is up to date by running:</p>
+</li>
+</ol>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt-get update</span><br></pre></td></tr></table></figure>
+
+<p>By following these steps, you instruct <code>apt-get</code> to ignore the CD-ROM as a source, relying instead on your other sources for package installations and updates.</p>
+<p>Whether you’re managing package sources or ensuring your applications are running smoothly, Debian and its tools offer robust solutions for both tasks.</p>
+<p>Taking care of your system’s configurations thoughtfully can save a lot of time and hassle.</p>
+]]></content>
+      <tags>
+        <tag>debian</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Uninstall debian desktop enviorment</title>
+    <url>/2024/07/13/Uninstall-debian-desktop-enviorment/</url>
+    <content><![CDATA[<p>Have you installed a desktop environment on Debian that you no longer need? Whether you’re looking to free up space or want to use a minimal install without a GUI, this guide will walk you through the steps to uninstall the desktop environment on Debian.</p>
+<h2 id="Step-by-Step-Guide-to-Uninstall-Desktop-Environment"><a href="#Step-by-Step-Guide-to-Uninstall-Desktop-Environment" class="headerlink" title="Step-by-Step Guide to Uninstall Desktop Environment"></a>Step-by-Step Guide to Uninstall Desktop Environment</h2><h3 id="1-Check-Packages-Related-to-Desktop-Environment"><a href="#1-Check-Packages-Related-to-Desktop-Environment" class="headerlink" title="1. Check Packages Related to Desktop Environment"></a>1. Check Packages Related to Desktop Environment</h3><p>Firstly, you can identify the packages related to the desktop environment using the following command:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># check package related to desktop</span></span><br><span class="line">tasksel --task-packages desktop</span><br></pre></td></tr></table></figure>
+<h3 id="2-Uninstall-the-Desktop-Environment-Packages"><a href="#2-Uninstall-the-Desktop-Environment-Packages" class="headerlink" title="2. Uninstall the Desktop Environment Packages"></a>2. Uninstall the Desktop Environment Packages</h3><p>You can then use apt-get purge to remove all the packages related to the desktop environment. This can be done efficiently by combining the output from the previous command:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt-get purge $(tasksel --task-packages desktop)</span><br></pre></td></tr></table></figure>
+<p>Alternatively, you might consider a more comprehensive removal using the following command:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt purge task-desktop hyphen-en-us libglu1-mesa libreoffice-* libu2f-udev mythes-en-us x11-apps x11-session-utils xinit xorg xserver-* desktop-base task-german task-german-desktop totem gedit gedit-common gir1.2-* gnome-* gstreamer* sound-icons speech-dispatcher totem-common xserver-* xfonts-* xwayland gir1.2* gnome-*</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-Autoremove-Unnecessary-Packages"><a href="#3-Autoremove-Unnecessary-Packages" class="headerlink" title="3. Autoremove Unnecessary Packages"></a>3. Autoremove Unnecessary Packages</h3><p>After purging, you should also run apt autoremove –purge to clean up any remaining dependencies that were automatically installed with the desktop environment and are no longer needed:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt autoremove --purge</span><br></pre></td></tr></table></figure>
+<p>By following these steps, you can successfully remove the desktop environment from your Debian system, leaving you with a leaner and more minimal setup.</p>
+]]></content>
+      <tags>
+        <tag>debian</tag>
+        <tag>server</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows 10 / 11 installation bypass TPM, Ram and Secure Boot Requirements</title>
+    <url>/2024/07/13/Windows-10-11-installation-bypass-TPM-Ram-and-Secure-Boot-Requirements/</url>
+    <content><![CDATA[<p>Are you looking to install Windows 11 on an older PC that doesn’t meet the official hardware requirements? Don’t worry; there’s a way to bypass the TPM, RAM, and Secure Boot checks during the installation process. Follow the steps below to get Windows 11 up and running on your system.</p>
+<h2 id="Step-by-Step-Guide-to-Bypass-Hardware-Requirements"><a href="#Step-by-Step-Guide-to-Bypass-Hardware-Requirements" class="headerlink" title="Step-by-Step Guide to Bypass Hardware Requirements"></a>Step-by-Step Guide to Bypass Hardware Requirements</h2><h3 id="1-Boot-Off-Your-Windows-11-Install-Disk"><a href="#1-Boot-Off-Your-Windows-11-Install-Disk" class="headerlink" title="1. Boot Off Your Windows 11 Install Disk"></a>1. Boot Off Your Windows 11 Install Disk</h3><p>If you don’t already have a Windows 11 installation disk, you can create one by following our guide on <a href="https://www.tomshardware.com/how-to/clean-install-windows-11">how to download Windows 11</a>. Once you have the install disk ready, boot from it. You should see a screen that asks you to choose the language of your install.</p>
+<h3 id="2-Launch-Command-Prompt"><a href="#2-Launch-Command-Prompt" class="headerlink" title="2. Launch Command Prompt"></a>2. Launch Command Prompt</h3><p>Once you’re at the language selection screen, press <code>SHIFT + F10</code> to open the Command Prompt.</p>
+<h3 id="3-Launch-Registry-Editor"><a href="#3-Launch-Registry-Editor" class="headerlink" title="3. Launch Registry Editor"></a>3. Launch Registry Editor</h3><p>Type <code>regedit</code> into the Command Prompt and hit Enter to launch the Registry Editor.</p>
+<h3 id="4-Navigate-to-Setup-Key"><a href="#4-Navigate-to-Setup-Key" class="headerlink" title="4. Navigate to Setup Key"></a>4. Navigate to Setup Key</h3><p>In the Registry Editor, navigate to <code>HKEY_LOCAL_MACHINE\SYSTEM\Setup</code>.</p>
+<h3 id="5-Create-a-New-Registry-Key-Named-LabConfig"><a href="#5-Create-a-New-Registry-Key-Named-LabConfig" class="headerlink" title="5. Create a New Registry Key Named LabConfig"></a>5. Create a New Registry Key Named LabConfig</h3><p>Right-click in the right window pane, select New -&gt; Key, and name the new key <code>LabConfig</code>.</p>
+<h3 id="6-Create-DWORDs-to-Bypass-TPM-Secure-Boot-and-RAM-Checks"><a href="#6-Create-DWORDs-to-Bypass-TPM-Secure-Boot-and-RAM-Checks" class="headerlink" title="6. Create DWORDs to Bypass TPM, Secure Boot and RAM Checks"></a>6. Create DWORDs to Bypass TPM, Secure Boot and RAM Checks</h3><p>Within the <code>LabConfig</code> key, create the following <code>DWORD 32</code> values and set each to <code>1</code>:</p>
+<ul>
+<li><code>BypassTPMCheck</code></li>
+<li><code>BypassSecureBootCheck</code></li>
+<li><code>BypassRAMCheck</code> (if you also want to bypass the RAM requirement)</li>
+</ul>
+<p>To create a new DWORD value, right-click in the right window pane, select New -&gt; DWORD (32-bit) Value, name the key, then double-click the entry to set it to <code>1</code>.</p>
+<p>For a more straightforward solution, you can use the following <code>reg.exe</code> commands to automate this process via the Command Prompt:</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">reg.exe add HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig /v BypassTPMCheck /t REG_DWORD /d <span class="number">1</span> /f</span><br><span class="line">reg.exe add HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig /v BypassSecureBootCheck /t REG_DWORD /d <span class="number">1</span> /f</span><br><span class="line">reg.exe add HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig /v BypassRAMCheck /t REG_DWORD /d <span class="number">1</span> /f</span><br></pre></td></tr></table></figure>
+<p>Simply copy and paste these commands into the Command Prompt and hit Enter.</p>
+<h3 id="7-Close-Registry-Editor-and-Command-Prompt"><a href="#7-Close-Registry-Editor-and-Command-Prompt" class="headerlink" title="7. Close Registry Editor and Command Prompt"></a>7. Close Registry Editor and Command Prompt</h3><p>Close the Registry Editor and the Command Prompt. You should then be able to proceed with the Windows 11 installation process without encountering any of the hardware requirement checks.</p>
+<p>By following these steps, you can bypass the TPM, RAM, and Secure Boot checks and install Windows 11 on your older PC effortlessly.</p>
+<p>Happy installing!</p>
+]]></content>
+      <tags>
+        <tag>windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows KMS activation</title>
+    <url>/2024/07/13/Windows-KMS-activation/</url>
+    <content><![CDATA[<h2 id="Basic-Commands-for-KMS-Activation"><a href="#Basic-Commands-for-KMS-Activation" class="headerlink" title="Basic Commands for KMS Activation"></a>Basic Commands for KMS Activation</h2><p>If you’re looking to activate your Windows system using KMS (Key Management Service), you’ll need to use a few essential commands. Below are the basic commands to get you started:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">slmgr /skms YOUR-KMS-SERVER</span><br><span class="line">slmgr /ipk KMS-KEY</span><br><span class="line">slmgr /ato</span><br><span class="line">slmgr /dlv</span><br></pre></td></tr></table></figure>
+
+<h2 id="Command-Breakdown"><a href="#Command-Breakdown" class="headerlink" title="Command Breakdown:"></a>Command Breakdown:</h2><ol>
+<li>slmgr &#x2F;skms YOUR-KMS-SERVER: Sets the address of the KMS server.  </li>
+<li>slmgr &#x2F;ipk KMS-KEY: Installs the KMS client key.  </li>
+<li>slmgr &#x2F;ato: Activates Windows with the specified KMS server.  </li>
+<li>slmgr &#x2F;dlv: Displays detailed license information.</li>
+</ol>
+<h2 id="KMS-Key-Collection"><a href="#KMS-Key-Collection" class="headerlink" title="KMS Key Collection"></a>KMS Key Collection</h2><p>Below is a collection of KMS client product keys for various Windows operating system editions. These keys can be used with the commands above to facilitate activation.</p>
+<table>
+<thead>
+<tr>
+<th>Operating system edition</th>
+<th>KMS Client Product Key</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Windows Server 2022 Standard</td>
+<td>VDYBN-27WPP-V4HQT-9VMD4-VMK7H</td>
+</tr>
+<tr>
+<td>Windows Server 2022 Datacenter</td>
+<td>WX4NM-KYWYW-QJJR4-XV3QB-6VM33</td>
+</tr>
+<tr>
+<td>Windows Server 2022 Datacenter: Azure Edition</td>
+<td>NTBV8-9K7Q8-V27C6-M2BTV-KHMXV</td>
+</tr>
+<tr>
+<td>Windows Server 2019 Standard</td>
+<td>N69G4-B89J2-4G8F4-WWYCC-J464C</td>
+</tr>
+<tr>
+<td>Windows Server 2019 Datacenter</td>
+<td>WMDGN-G9PQG-XVVXX-R3X43-63DFG</td>
+</tr>
+<tr>
+<td>Windows Server 2019 Essentials</td>
+<td>WVDHN-86M7X-466P6-VHXV7-YY726</td>
+</tr>
+<tr>
+<td>Windows Server 2016 Standard</td>
+<td>WC2BQ-8NRM3-FDDYY-2BFGV-KHKQY</td>
+</tr>
+<tr>
+<td>Windows Server 2016 Datacenter</td>
+<td>CB7KF-BWN84-R7R2Y-793K2-8XDDG</td>
+</tr>
+<tr>
+<td>Windows Server 2016 Essentials</td>
+<td>JCKRF-N37P4-C2D82-9YXRT-4M63B</td>
+</tr>
+<tr>
+<td>Windows Server Standard</td>
+<td>N2KJX-J94YW-TQVFB-DG9YT-724CC</td>
+</tr>
+<tr>
+<td>Windows Server Datacenter</td>
+<td>6NMRW-2C8FM-D24W7-TQWMY-CWH2D</td>
+</tr>
+<tr>
+<td>Windows 11 Pro</td>
+<td>W269N-WFGWX-YVC9B-4J6C9-T83GX</td>
+</tr>
+<tr>
+<td>Windows 10 Pro</td>
+<td>W269N-WFGWX-YVC9B-4J6C9-T83GX</td>
+</tr>
+<tr>
+<td>Windows 11 Pro N</td>
+<td>MH37W-N47XK-V7XM9-C7227-GCQG9</td>
+</tr>
+<tr>
+<td>Windows 10 Pro N</td>
+<td>MH37W-N47XK-V7XM9-C7227-GCQG9</td>
+</tr>
+<tr>
+<td>Windows 11 Pro for Workstations</td>
+<td>NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J</td>
+</tr>
+<tr>
+<td>Windows 10 Pro for Workstations</td>
+<td>NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J</td>
+</tr>
+<tr>
+<td>Windows 11 Pro for Workstations N</td>
+<td>9FNHH-K3HBT-3W4TD-6383H-6XYWF</td>
+</tr>
+<tr>
+<td>Windows 10 Pro for Workstations N</td>
+<td>9FNHH-K3HBT-3W4TD-6383H-6XYWF</td>
+</tr>
+<tr>
+<td>Windows 11 Pro Education</td>
+<td>6TP4R-GNPTD-KYYHQ-7B7DP-J447Y</td>
+</tr>
+<tr>
+<td>Windows 10 Pro Education</td>
+<td>6TP4R-GNPTD-KYYHQ-7B7DP-J447Y</td>
+</tr>
+<tr>
+<td>Windows 11 Pro Education N</td>
+<td>YVWGF-BXNMC-HTQYQ-CPQ99-66QFC</td>
+</tr>
+<tr>
+<td>Windows 10 Pro Education N</td>
+<td>YVWGF-BXNMC-HTQYQ-CPQ99-66QFC</td>
+</tr>
+<tr>
+<td>Windows 11 Education</td>
+<td>NW6C2-QMPVW-D7KKK-3GKT6-VCFB2</td>
+</tr>
+<tr>
+<td>Windows 10 Education</td>
+<td>NW6C2-QMPVW-D7KKK-3GKT6-VCFB2</td>
+</tr>
+<tr>
+<td>Windows 11 Education N</td>
+<td>2WH4N-8QGBV-H22JP-CT43Q-MDWWJ</td>
+</tr>
+<tr>
+<td>Windows 10 Education N</td>
+<td>2WH4N-8QGBV-H22JP-CT43Q-MDWWJ</td>
+</tr>
+<tr>
+<td>Windows 11 Enterprise</td>
+<td>NPPR9-FWDCX-D2C8J-H872K-2YT43</td>
+</tr>
+<tr>
+<td>Windows 10 Enterprise</td>
+<td>NPPR9-FWDCX-D2C8J-H872K-2YT43</td>
+</tr>
+<tr>
+<td>Windows 11 Enterprise N</td>
+<td>DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4</td>
+</tr>
+<tr>
+<td>Windows 10 Enterprise N</td>
+<td>DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4</td>
+</tr>
+<tr>
+<td>Windows 11 Enterprise G</td>
+<td>YYVX9-NTFWV-6MDM3-9PT4T-4M68B</td>
+</tr>
+<tr>
+<td>Windows 10 Enterprise G</td>
+<td>YYVX9-NTFWV-6MDM3-9PT4T-4M68B</td>
+</tr>
+<tr>
+<td>Windows 11 Enterprise G N</td>
+<td>44RPN-FTY23-9VTTB-MP9BX-T84FV</td>
+</tr>
+<tr>
+<td>Windows 10 Enterprise G N</td>
+<td>44RPN-FTY23-9VTTB-MP9BX-T84FV</td>
+</tr>
+<tr>
+<td>Windows 10 Enterprise LTSC 2021</td>
+<td>M7XTQ-FN8P6-TTKYV-9D4CC-J462D</td>
+</tr>
+<tr>
+<td>Windows 10 Enterprise LTSC 2019</td>
+<td>M7XTQ-FN8P6-TTKYV-9D4CC-J462D</td>
+</tr>
+<tr>
+<td>Windows 10 Enterprise N LTSC 2021</td>
+<td>92NFX-8DJQP-P6BBQ-THF9C-7CG2H</td>
+</tr>
+<tr>
+<td>Windows 10 Enterprise N LTSC 2019</td>
+<td>92NFX-8DJQP-P6BBQ-THF9C-7CG2H</td>
+</tr>
+<tr>
+<td>Windows 10 Enterprise LTSB 2016</td>
+<td>DCPHK-NFMTC-H88MJ-PFHPY-QJ4BJ</td>
+</tr>
+<tr>
+<td>Windows 10 Enterprise N LTSB 2016</td>
+<td>QFFDN-GRT3P-VKWWX-X7T3R-8B639</td>
+</tr>
+<tr>
+<td>Windows 10 Enterprise LTSB 2015</td>
+<td>WNMTR-4C88C-JK8YV-HQ7T2-76DF9</td>
+</tr>
+<tr>
+<td>Windows 10 Enterprise LTSB N 2015</td>
+<td>2F77B-TNFGY-69QQF-B8YKP-D69TJ</td>
+</tr>
+<tr>
+<td>Windows IoT Enterprise LTSC 2021</td>
+<td>KBN8V-HFGQ4-MGXVD-347P6-PDQGT</td>
+</tr>
+</tbody></table>
+<p>Source: <a href="https://learn.microsoft.com/en-us/windows-server/get-started/kms-client-activation-keys?tabs=server2016,windows102015,version1803,windows81">Microsoft KMS Client Activation Keys</a></p>
+<p>These keys are specifically tailored for use with KMS servers and should not be used for other types of activations. Make sure to replace YOUR-KMS-SERVER and KMS-KEY in the commands with the appropriate server address and key from the list above.</p>
+<p>Happy Activating!</p>
+]]></content>
+      <tags>
+        <tag>windows</tag>
+        <tag>kms</tag>
+        <tag>activation</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Check PCIe lane with lspci</title>
+    <url>/2024/07/13/Check-PCIe-lane-with-lspci/</url>
+    <content><![CDATA[<p>When managing servers or desktops, knowing the details of your PCIe configuration can be very beneficial. This information is essential for troubleshooting hardware issues, upgrading components, or optimizing performance. One of the most powerful tools for examining PCIe details on Debian-based systems is <code>lspci</code>.</p>
+<p>In this blog post, we’ll show you a quick command to check the PCIe lane configuration using <code>lspci</code>.</p>
+<h2 id="Using-lspci-to-Check-PCIe-Lanes"><a href="#Using-lspci-to-Check-PCIe-Lanes" class="headerlink" title="Using lspci to Check PCIe Lanes"></a>Using lspci to Check PCIe Lanes</h2><p>The <code>lspci</code> command is a standard utility to list all PCI devices on your system. However, to get detailed information about PCIe lanes, you’ll need to use it with certain options and grep for specific fields.</p>
+<p>Here’s the command you need:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">lspci -vv | grep -P <span class="string">&quot;[0-9a-f]&#123;2&#125;:[0-9a-f]&#123;2&#125;\.[0-9a-f]|LnkSta:&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Breaking-Down-the-Command"><a href="#Breaking-Down-the-Command" class="headerlink" title="Breaking Down the Command"></a>Breaking Down the Command</h3><ul>
+<li><p><strong><code>lspci -vv</code></strong>: The <code>-vv</code> option tells <code>lspci</code> to be very verbose, providing detailed information about each PCI device.</p>
+</li>
+<li><p><strong><code>grep -P &quot;[0-9a-f]&#123;2&#125;:[0-9a-f]&#123;2&#125;\.[0-9a-f]|LnkSta:&quot;</code></strong>: This grep command uses a Perl-compatible regular expression. It searches for:</p>
+<ul>
+<li><strong><code>[0-9a-f]&#123;2&#125;:[0-9a-f]&#123;2&#125;\.[0-9a-f]</code></strong>: This part matches the PCI address.</li>
+<li><strong><code>LnkSta:</code></strong>: This part searches for the link status, which includes the current PCIe lane configuration.</li>
+</ul>
+</li>
+</ul>
+<h3 id="Example-Output"><a href="#Example-Output" class="headerlink" title="Example Output"></a>Example Output</h3><p>Running this command, you might see output similar to the following:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">00:1c.0 PCI bridge: Intel Corporation 82801 Mobile PCI Bridge (rev f2)</span><br><span class="line">        LnkSta: Speed 2.5GT/s, Width x1</span><br><span class="line">01:00.0 VGA compatible controller: NVIDIA Corporation GP107GL [Quadro P400] (rev a1)</span><br><span class="line">        LnkSta: Speed 8GT/s, Width x16</span><br></pre></td></tr></table></figure>
+
+<p>In the example above:</p>
+<ul>
+<li>The PCI bridge at address <code>00:1c.0</code> operates at 2.5GT&#x2F;s (Giga-transfers per second) and uses 1 lane.</li>
+<li>The NVIDIA Quadro P400 at address <code>01:00.0</code> operates at 8GT&#x2F;s and uses 16 lanes.</li>
+</ul>
+<h2 id="Why-Is-This-Information-Important"><a href="#Why-Is-This-Information-Important" class="headerlink" title="Why Is This Information Important?"></a>Why Is This Information Important?</h2><p>Understanding the PCIe lane configuration is crucial for several reasons:</p>
+<ol>
+<li><p><strong>Performance Optimization</strong>: Ensuring that high-performance devices, like GPUs, are connected via the correct number of PCIe lanes can significantly impact performance.</p>
+</li>
+<li><p><strong>Troubleshooting</strong>: Sometimes, hardware issues might be related to improper PCIe configurations or limitations.</p>
+</li>
+<li><p><strong>Upgrading Hardware</strong>: Knowing your system’s current PCIe configuration can help determine compatibility with new components.</p>
+</li>
+</ol>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Checking your PCIe lane configuration is a straightforward process with the <code>lspci</code> command. This information can be pivotal for optimizing performance, troubleshooting, and general hardware management. </p>
+<p>If you have any further questions or if there’s a specific task you need help with, feel free to ask in the comments below. Happy computing, and may your system always run smoothly!</p>
+]]></content>
+      <tags>
+        <tag>debian</tag>
+        <tag>server</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Node.js WebApp Auto Deployment Using PM2 and GitHub Actions</title>
+    <url>/2024/07/13/nodejs-webApp-auto-deploy-using-pm2-and-GitHub-Action/</url>
+    <content><![CDATA[<p>Automating the deployment process for your Node.js web application can save you a significant amount of time and effort. By integrating PM2 with GitHub Actions, you can set up a continuous deployment pipeline that ensures your application is always up-to-date. This guide will walk you through the steps to set up your environment and create a seamless deployment workflow.</p>
+<h2 id="Step-1-Install-Environment"><a href="#Step-1-Install-Environment" class="headerlink" title="Step 1: Install Environment"></a>Step 1: Install Environment</h2><h3 id="1-Install-Node-js-and-npm"><a href="#1-Install-Node-js-and-npm" class="headerlink" title="1. Install Node.js and npm"></a>1. Install Node.js and npm</h3><p>Ensure you have Node.js and npm installed on your server. You can do this by downloading the installer from the <a href="https://nodejs.org/">official Node.js website</a> or using a package manager.</p>
+<h3 id="2-Install-Essential-Tools"><a href="#2-Install-Essential-Tools" class="headerlink" title="2. Install Essential Tools"></a>2. Install Essential Tools</h3><p>Install additional necessary tools like <code>screen</code> and <code>vim</code>. These tools are useful for managing terminal sessions and editing files, respectively.</p>
+<h3 id="3-Install-PM2"><a href="#3-Install-PM2" class="headerlink" title="3. Install PM2"></a>3. Install PM2</h3><p>PM2 is a process manager for Node.js applications. You can install it globally using npm:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> npm install -g pm2</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-Allow-Non-Root-User-to-Use-Port-80-optional"><a href="#4-Allow-Non-Root-User-to-Use-Port-80-optional" class="headerlink" title="4. Allow Non-Root User to Use Port 80 (optional)"></a>4. Allow Non-Root User to Use Port 80 (optional)</h3><p>To let a non-root user bind to port 80, you can use libcap2-bin. This step is optional but recommended for running your application on standard HTTP port:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt install libcap2-bin -y</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">setcap</span> <span class="string">&#x27;cap_net_bind_service=+ep&#x27;</span> $(<span class="built_in">which</span> node)</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-Create-GitHub-Self-Hosted-Runner"><a href="#5-Create-GitHub-Self-Hosted-Runner" class="headerlink" title="5. Create GitHub Self-Hosted Runner"></a>5. Create GitHub Self-Hosted Runner</h2><p>Set up a self-hosted runner on GitHub by following the instructions in your repository settings under “Actions”. This runner will be responsible for executing your deployment pipeline.<br>follow <a href="https://docs.github.com/en/actions/hosting-your-own-runners">repo-setting-action-self-host</a></p>
+<h2 id="6-Create-GitHub-Action-Workflow-deploy-yml"><a href="#6-Create-GitHub-Action-Workflow-deploy-yml" class="headerlink" title="6. Create GitHub Action Workflow: deploy.yml"></a>6. Create GitHub Action Workflow: deploy.yml</h2><p>Create a GitHub Actions workflow file in your repository under .github&#x2F;workflows&#x2F;deploy.yml:</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Node.js</span> <span class="string">CI</span></span><br><span class="line"></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span> [ <span class="string">&quot;main&quot;</span> ]</span><br><span class="line">  <span class="attr">pull_request:</span></span><br><span class="line">    <span class="attr">branches:</span> [ <span class="string">&quot;main&quot;</span> ]</span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">build:</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">runs-on:</span> [<span class="string">self-hosted</span>, <span class="string">Production</span>]</span><br><span class="line"></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">actions/checkout@v4</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Use</span> <span class="string">Node.js</span> <span class="number">20.</span><span class="string">x</span></span><br><span class="line">      <span class="attr">uses:</span> <span class="string">actions/setup-node@v2</span></span><br><span class="line">      <span class="attr">with:</span></span><br><span class="line">        <span class="attr">node-version:</span> <span class="number">20.</span><span class="string">x</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">npm</span> <span class="string">install</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">pm2</span> <span class="string">restart</span> <span class="string">YOUR-WEBAPP-NAME</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="7-setup-pm2-services"><a href="#7-setup-pm2-services" class="headerlink" title="7. setup pm2 services"></a>7. setup pm2 services</h2><p>Start your Node.js application with PM2. For example, if your entry file is server.js:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pm2 start server.js --name YOUR-WEBAPP-NAME --time</span><br></pre></td></tr></table></figure>
+
+<h2 id="Verify-and-Monitor-Your-Application"><a href="#Verify-and-Monitor-Your-Application" class="headerlink" title="Verify and Monitor Your Application"></a>Verify and Monitor Your Application</h2><h3 id="Check-PM2-Status"><a href="#Check-PM2-Status" class="headerlink" title="Check PM2 Status"></a>Check PM2 Status</h3><p>Verify that your application is running properly with:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pm2 status</span><br></pre></td></tr></table></figure>
+<h3 id="Check-PM2-Logs"><a href="#Check-PM2-Logs" class="headerlink" title="Check PM2 Logs"></a>Check PM2 Logs</h3><p>View your application’s logs:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pm2 logs</span><br></pre></td></tr></table></figure>
+<h3 id="Real-Time-Monitoring"><a href="#Real-Time-Monitoring" class="headerlink" title="Real-Time Monitoring"></a>Real-Time Monitoring</h3><p>Monitor your application’s performance and logs in real-time:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pm2 monit</span><br></pre></td></tr></table></figure>
+<h3 id="Other-Useful-PM2-Commands"><a href="#Other-Useful-PM2-Commands" class="headerlink" title="Other Useful PM2 Commands"></a>Other Useful PM2 Commands</h3><p>Manage your PM2 processes with these additional commands:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Delete a process by its id</span></span><br><span class="line">pm2 del &lt;<span class="built_in">id</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Delete all processes</span></span><br><span class="line">pm2 del all</span><br><span class="line"></span><br><span class="line"><span class="comment"># Start a specific process by name</span></span><br><span class="line">pm2 start &lt;name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Stop a specific process by name</span></span><br><span class="line">pm2 stop &lt;name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Configure PM2 to start on system startup</span></span><br><span class="line">pm2 startup</span><br><span class="line"></span><br><span class="line"><span class="comment"># Save the process list to be loaded on startup</span></span><br><span class="line">pm2 save</span><br></pre></td></tr></table></figure>
+<p>For more detailed information on PM2 features and usage, visit the <a href="https://pm2.io/docs/plus/overview/">PM2 Documentation</a>.</p>
+]]></content>
+      <tags>
+        <tag>nodeJS</tag>
+        <tag>development</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>How to Check SSD Temperature in ESXi 8.0</title>
+    <url>/2023/10/05/check-SSD-Temperature-in-ESXi8/</url>
+    <content><![CDATA[<p>Monitoring the health and temperature of your SSDs is crucial in any high-performance environment, such as a VMware ESXi server. In the latest ESXi 8.0, you can easily check the SSD temperature and SMART data using the <code>esxcli</code> command-line tool. This blog post will guide you through creating a simple shell script to automate this task.</p>
+<h2 id="Creating-a-Shell-Script-to-Check-SSD-Temperature"><a href="#Creating-a-Shell-Script-to-Check-SSD-Temperature" class="headerlink" title="Creating a Shell Script to Check SSD Temperature"></a>Creating a Shell Script to Check SSD Temperature</h2><p>To simplify the process, we can create a shell script named <code>temp.sh</code>. This script will fetch and display the temperature of all SSDs connected to your ESXi server.</p>
+<h3 id="Step-by-Step-Guide"><a href="#Step-by-Step-Guide" class="headerlink" title="Step-by-Step Guide"></a>Step-by-Step Guide</h3><ol>
+<li><p><strong>Create the shell script file</strong>:</p>
+<p> Log in to your ESXi server and open a terminal. Then use your favorite text editor (like <code>vi</code>) to create the script file.</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vi /usr/local/bin/temp.sh</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Insert the Script Content</strong>:</p>
+<p> Copy and paste the following content into the <code>temp.sh</code> file:</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Get the list of all device UIDs</span></span><br><span class="line">device_list=$(esxcli storage core device list | grep -E <span class="string">&#x27;^t10.|^eui.&#x27;</span> | awk <span class="string">&#x27;&#123;print $1&#125;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Iterate through each device UID and fetch its temperature</span></span><br><span class="line"><span class="keyword">for</span> device <span class="keyword">in</span> <span class="variable">$device_list</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    output=$(esxcli storage core device smart get -d <span class="variable">$device</span>)</span><br><span class="line">    temperature=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$output</span>&quot;</span> | grep <span class="string">&quot;Drive Temperature&quot;</span> | awk <span class="string">&#x27;&#123;print $3&#125;&#x27;</span>)</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;Drive Temperature for device <span class="variable">$device</span>: <span class="variable">$temperature</span>°C&quot;</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Make the Script Executable</strong>:</p>
+<p> Change the file permissions to make the script executable.</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x /usr/local/bin/temp.sh</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Run the Script</strong>:</p>
+<p> Execute the script to display the temperature of each SSD.</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/usr/local/bin/temp.sh</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="Understanding-the-Script"><a href="#Understanding-the-Script" class="headerlink" title="Understanding the Script"></a>Understanding the Script</h3><p><strong>Fetching Device UIDs</strong>:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">device_list=$(esxcli storage core device list | grep -E <span class="string">&#x27;^t10.|^eui.&#x27;</span> | awk <span class="string">&#x27;&#123;print $1&#125;&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>This line extracts all device UIDs (Universal Identifiers) from the ESXi storage core device list.</p>
+<p><strong>Iterating Through Devices</strong>:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> device <span class="keyword">in</span> <span class="variable">$device_list</span></span><br><span class="line"><span class="keyword">do</span></span><br></pre></td></tr></table></figure>
+
+<p>This for loop iterates through each device UID.<br><strong>Getting SMART Data</strong>:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">output=$(esxcli storage core device smart get -d <span class="variable">$device</span>)</span><br></pre></td></tr></table></figure>
+
+<p>This line fetches the SMART data for each device.<br><strong>Extracting Temperature</strong>:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">temperature=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$output</span>&quot;</span> | grep <span class="string">&quot;Drive Temperature&quot;</span> | awk <span class="string">&#x27;&#123;print $3&#125;&#x27;</span>)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Drive Temperature for device <span class="variable">$device</span>: <span class="variable">$temperature</span>°C&quot;</span></span><br></pre></td></tr></table></figure>
+<p>These lines extract the drive temperature from the SMART data and print it.</p>
+<p><strong>Checking Additional SMART Attributes</strong></p>
+<p>In addition to temperature, SMART data provides a wealth of information about the health of your SSDs. To view all SMART attributes for a specific device, use the following command:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">esxcli storage core device smart get -d</span><br></pre></td></tr></table></figure>
+
+<p>This command will display important metrics such as:</p>
+<p>• Read Error Rate<br>• Power On Hours<br>• Reallocated Sectors Count<br>• Wear Leveling Count</p>
+<p>Conclusion</p>
+<p>Keeping track of your SSD’s temperature and overall health is crucial to maintaining the reliability and performance of your VMware ESXi server. By creating and using the temp.sh script, you can quickly and easily monitor these important metrics.</p>
+<p>If you have any questions or need further assistance, feel free to ask in the comments below. Don’t forget to share this post if you found it helpful. Stay tuned for more tips and tricks on managing your ESXi environment!</p>
+<p>Happy monitoring!</p>
+]]></content>
+      <tags>
+        <tag>esxi</tag>
+        <tag>vmware</tag>
+        <tag>ssd</tag>
+        <tag>smart</tag>
+      </tags>
+  </entry>
+</search>

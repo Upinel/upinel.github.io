@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Check PCIe lane with lspci</title>
+    <url>/2024/07/13/Check-PCIe-lane-with-lspci/</url>
+    <content><![CDATA[<p>When managing servers or desktops, knowing the details of your PCIe configuration can be very beneficial. This information is essential for troubleshooting hardware issues, upgrading components, or optimizing performance. One of the most powerful tools for examining PCIe details on Debian-based systems is <code>lspci</code>.</p>
+<p>In this blog post, we’ll show you a quick command to check the PCIe lane configuration using <code>lspci</code>.</p>
+<h2 id="Using-lspci-to-Check-PCIe-Lanes"><a href="#Using-lspci-to-Check-PCIe-Lanes" class="headerlink" title="Using lspci to Check PCIe Lanes"></a>Using lspci to Check PCIe Lanes</h2><p>The <code>lspci</code> command is a standard utility to list all PCI devices on your system. However, to get detailed information about PCIe lanes, you’ll need to use it with certain options and grep for specific fields.</p>
+<p>Here’s the command you need:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">lspci -vv | grep -P <span class="string">&quot;[0-9a-f]&#123;2&#125;:[0-9a-f]&#123;2&#125;\.[0-9a-f]|LnkSta:&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Breaking-Down-the-Command"><a href="#Breaking-Down-the-Command" class="headerlink" title="Breaking Down the Command"></a>Breaking Down the Command</h3><ul>
+<li><p><strong><code>lspci -vv</code></strong>: The <code>-vv</code> option tells <code>lspci</code> to be very verbose, providing detailed information about each PCI device.</p>
+</li>
+<li><p><strong><code>grep -P &quot;[0-9a-f]&#123;2&#125;:[0-9a-f]&#123;2&#125;\.[0-9a-f]|LnkSta:&quot;</code></strong>: This grep command uses a Perl-compatible regular expression. It searches for:</p>
+<ul>
+<li><strong><code>[0-9a-f]&#123;2&#125;:[0-9a-f]&#123;2&#125;\.[0-9a-f]</code></strong>: This part matches the PCI address.</li>
+<li><strong><code>LnkSta:</code></strong>: This part searches for the link status, which includes the current PCIe lane configuration.</li>
+</ul>
+</li>
+</ul>
+<h3 id="Example-Output"><a href="#Example-Output" class="headerlink" title="Example Output"></a>Example Output</h3><p>Running this command, you might see output similar to the following:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">00:1c.0 PCI bridge: Intel Corporation 82801 Mobile PCI Bridge (rev f2)</span><br><span class="line">        LnkSta: Speed 2.5GT/s, Width x1</span><br><span class="line">01:00.0 VGA compatible controller: NVIDIA Corporation GP107GL [Quadro P400] (rev a1)</span><br><span class="line">        LnkSta: Speed 8GT/s, Width x16</span><br></pre></td></tr></table></figure>
+
+<p>In the example above:</p>
+<ul>
+<li>The PCI bridge at address <code>00:1c.0</code> operates at 2.5GT&#x2F;s (Giga-transfers per second) and uses 1 lane.</li>
+<li>The NVIDIA Quadro P400 at address <code>01:00.0</code> operates at 8GT&#x2F;s and uses 16 lanes.</li>
+</ul>
+<h2 id="Why-Is-This-Information-Important"><a href="#Why-Is-This-Information-Important" class="headerlink" title="Why Is This Information Important?"></a>Why Is This Information Important?</h2><p>Understanding the PCIe lane configuration is crucial for several reasons:</p>
+<ol>
+<li><p><strong>Performance Optimization</strong>: Ensuring that high-performance devices, like GPUs, are connected via the correct number of PCIe lanes can significantly impact performance.</p>
+</li>
+<li><p><strong>Troubleshooting</strong>: Sometimes, hardware issues might be related to improper PCIe configurations or limitations.</p>
+</li>
+<li><p><strong>Upgrading Hardware</strong>: Knowing your system’s current PCIe configuration can help determine compatibility with new components.</p>
+</li>
+</ol>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Checking your PCIe lane configuration is a straightforward process with the <code>lspci</code> command. This information can be pivotal for optimizing performance, troubleshooting, and general hardware management. </p>
+<p>If you have any further questions or if there’s a specific task you need help with, feel free to ask in the comments below. Happy computing, and may your system always run smoothly!</p>
+]]></content>
+      <tags>
+        <tag>debian</tag>
+        <tag>server</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Debian installation remove cd-rom apt source</title>
     <url>/2024/07/13/Debian-installation-remove-cd-rom-apt-source/</url>
     <content><![CDATA[<p>A local CD can act as an APT repository, just as if it were a distant server. This feature is incredibly useful when you are installing Debian on systems without a fast internet connection or when you need to install packages from localized media. However, once the installation is done or if you prefer using online repositories, you might want to disable the CD-ROM source to avoid any unnecessary prompts. </p>
@@ -291,84 +335,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Check PCIe lane with lspci</title>
-    <url>/2024/07/13/Check-PCIe-lane-with-lspci/</url>
-    <content><![CDATA[<p>When managing servers or desktops, knowing the details of your PCIe configuration can be very beneficial. This information is essential for troubleshooting hardware issues, upgrading components, or optimizing performance. One of the most powerful tools for examining PCIe details on Debian-based systems is <code>lspci</code>.</p>
-<p>In this blog post, we’ll show you a quick command to check the PCIe lane configuration using <code>lspci</code>.</p>
-<h2 id="Using-lspci-to-Check-PCIe-Lanes"><a href="#Using-lspci-to-Check-PCIe-Lanes" class="headerlink" title="Using lspci to Check PCIe Lanes"></a>Using lspci to Check PCIe Lanes</h2><p>The <code>lspci</code> command is a standard utility to list all PCI devices on your system. However, to get detailed information about PCIe lanes, you’ll need to use it with certain options and grep for specific fields.</p>
-<p>Here’s the command you need:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">lspci -vv | grep -P <span class="string">&quot;[0-9a-f]&#123;2&#125;:[0-9a-f]&#123;2&#125;\.[0-9a-f]|LnkSta:&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Breaking-Down-the-Command"><a href="#Breaking-Down-the-Command" class="headerlink" title="Breaking Down the Command"></a>Breaking Down the Command</h3><ul>
-<li><p><strong><code>lspci -vv</code></strong>: The <code>-vv</code> option tells <code>lspci</code> to be very verbose, providing detailed information about each PCI device.</p>
-</li>
-<li><p><strong><code>grep -P &quot;[0-9a-f]&#123;2&#125;:[0-9a-f]&#123;2&#125;\.[0-9a-f]|LnkSta:&quot;</code></strong>: This grep command uses a Perl-compatible regular expression. It searches for:</p>
-<ul>
-<li><strong><code>[0-9a-f]&#123;2&#125;:[0-9a-f]&#123;2&#125;\.[0-9a-f]</code></strong>: This part matches the PCI address.</li>
-<li><strong><code>LnkSta:</code></strong>: This part searches for the link status, which includes the current PCIe lane configuration.</li>
-</ul>
-</li>
-</ul>
-<h3 id="Example-Output"><a href="#Example-Output" class="headerlink" title="Example Output"></a>Example Output</h3><p>Running this command, you might see output similar to the following:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">00:1c.0 PCI bridge: Intel Corporation 82801 Mobile PCI Bridge (rev f2)</span><br><span class="line">        LnkSta: Speed 2.5GT/s, Width x1</span><br><span class="line">01:00.0 VGA compatible controller: NVIDIA Corporation GP107GL [Quadro P400] (rev a1)</span><br><span class="line">        LnkSta: Speed 8GT/s, Width x16</span><br></pre></td></tr></table></figure>
-
-<p>In the example above:</p>
-<ul>
-<li>The PCI bridge at address <code>00:1c.0</code> operates at 2.5GT&#x2F;s (Giga-transfers per second) and uses 1 lane.</li>
-<li>The NVIDIA Quadro P400 at address <code>01:00.0</code> operates at 8GT&#x2F;s and uses 16 lanes.</li>
-</ul>
-<h2 id="Why-Is-This-Information-Important"><a href="#Why-Is-This-Information-Important" class="headerlink" title="Why Is This Information Important?"></a>Why Is This Information Important?</h2><p>Understanding the PCIe lane configuration is crucial for several reasons:</p>
-<ol>
-<li><p><strong>Performance Optimization</strong>: Ensuring that high-performance devices, like GPUs, are connected via the correct number of PCIe lanes can significantly impact performance.</p>
-</li>
-<li><p><strong>Troubleshooting</strong>: Sometimes, hardware issues might be related to improper PCIe configurations or limitations.</p>
-</li>
-<li><p><strong>Upgrading Hardware</strong>: Knowing your system’s current PCIe configuration can help determine compatibility with new components.</p>
-</li>
-</ol>
-<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Checking your PCIe lane configuration is a straightforward process with the <code>lspci</code> command. This information can be pivotal for optimizing performance, troubleshooting, and general hardware management. </p>
-<p>If you have any further questions or if there’s a specific task you need help with, feel free to ask in the comments below. Happy computing, and may your system always run smoothly!</p>
-]]></content>
-      <tags>
-        <tag>debian</tag>
-        <tag>server</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Node.js WebApp Auto Deployment Using PM2 and GitHub Actions</title>
-    <url>/2024/07/13/nodejs-webApp-auto-deploy-using-pm2-and-GitHub-Action/</url>
-    <content><![CDATA[<p>Automating the deployment process for your Node.js web application can save you a significant amount of time and effort. By integrating PM2 with GitHub Actions, you can set up a continuous deployment pipeline that ensures your application is always up-to-date. This guide will walk you through the steps to set up your environment and create a seamless deployment workflow.</p>
-<h2 id="Step-1-Install-Environment"><a href="#Step-1-Install-Environment" class="headerlink" title="Step 1: Install Environment"></a>Step 1: Install Environment</h2><h3 id="1-Install-Node-js-and-npm"><a href="#1-Install-Node-js-and-npm" class="headerlink" title="1. Install Node.js and npm"></a>1. Install Node.js and npm</h3><p>Ensure you have Node.js and npm installed on your server. You can do this by downloading the installer from the <a href="https://nodejs.org/">official Node.js website</a> or using a package manager.</p>
-<h3 id="2-Install-Essential-Tools"><a href="#2-Install-Essential-Tools" class="headerlink" title="2. Install Essential Tools"></a>2. Install Essential Tools</h3><p>Install additional necessary tools like <code>screen</code> and <code>vim</code>. These tools are useful for managing terminal sessions and editing files, respectively.</p>
-<h3 id="3-Install-PM2"><a href="#3-Install-PM2" class="headerlink" title="3. Install PM2"></a>3. Install PM2</h3><p>PM2 is a process manager for Node.js applications. You can install it globally using npm:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> npm install -g pm2</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-Allow-Non-Root-User-to-Use-Port-80-optional"><a href="#4-Allow-Non-Root-User-to-Use-Port-80-optional" class="headerlink" title="4. Allow Non-Root User to Use Port 80 (optional)"></a>4. Allow Non-Root User to Use Port 80 (optional)</h3><p>To let a non-root user bind to port 80, you can use libcap2-bin. This step is optional but recommended for running your application on standard HTTP port:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt install libcap2-bin -y</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">setcap</span> <span class="string">&#x27;cap_net_bind_service=+ep&#x27;</span> $(<span class="built_in">which</span> node)</span><br></pre></td></tr></table></figure>
-
-<h2 id="5-Create-GitHub-Self-Hosted-Runner"><a href="#5-Create-GitHub-Self-Hosted-Runner" class="headerlink" title="5. Create GitHub Self-Hosted Runner"></a>5. Create GitHub Self-Hosted Runner</h2><p>Set up a self-hosted runner on GitHub by following the instructions in your repository settings under “Actions”. This runner will be responsible for executing your deployment pipeline.<br>follow <a href="https://docs.github.com/en/actions/hosting-your-own-runners">repo-setting-action-self-host</a></p>
-<h2 id="6-Create-GitHub-Action-Workflow-deploy-yml"><a href="#6-Create-GitHub-Action-Workflow-deploy-yml" class="headerlink" title="6. Create GitHub Action Workflow: deploy.yml"></a>6. Create GitHub Action Workflow: deploy.yml</h2><p>Create a GitHub Actions workflow file in your repository under .github&#x2F;workflows&#x2F;deploy.yml:</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Node.js</span> <span class="string">CI</span></span><br><span class="line"></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span> [ <span class="string">&quot;main&quot;</span> ]</span><br><span class="line">  <span class="attr">pull_request:</span></span><br><span class="line">    <span class="attr">branches:</span> [ <span class="string">&quot;main&quot;</span> ]</span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">build:</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">runs-on:</span> [<span class="string">self-hosted</span>, <span class="string">Production</span>]</span><br><span class="line"></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">actions/checkout@v4</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Use</span> <span class="string">Node.js</span> <span class="number">20.</span><span class="string">x</span></span><br><span class="line">      <span class="attr">uses:</span> <span class="string">actions/setup-node@v2</span></span><br><span class="line">      <span class="attr">with:</span></span><br><span class="line">        <span class="attr">node-version:</span> <span class="number">20.</span><span class="string">x</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">npm</span> <span class="string">install</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">pm2</span> <span class="string">restart</span> <span class="string">YOUR-WEBAPP-NAME</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="7-setup-pm2-services"><a href="#7-setup-pm2-services" class="headerlink" title="7. setup pm2 services"></a>7. setup pm2 services</h2><p>Start your Node.js application with PM2. For example, if your entry file is server.js:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pm2 start server.js --name YOUR-WEBAPP-NAME --time</span><br></pre></td></tr></table></figure>
-
-<h2 id="Verify-and-Monitor-Your-Application"><a href="#Verify-and-Monitor-Your-Application" class="headerlink" title="Verify and Monitor Your Application"></a>Verify and Monitor Your Application</h2><h3 id="Check-PM2-Status"><a href="#Check-PM2-Status" class="headerlink" title="Check PM2 Status"></a>Check PM2 Status</h3><p>Verify that your application is running properly with:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pm2 status</span><br></pre></td></tr></table></figure>
-<h3 id="Check-PM2-Logs"><a href="#Check-PM2-Logs" class="headerlink" title="Check PM2 Logs"></a>Check PM2 Logs</h3><p>View your application’s logs:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pm2 logs</span><br></pre></td></tr></table></figure>
-<h3 id="Real-Time-Monitoring"><a href="#Real-Time-Monitoring" class="headerlink" title="Real-Time Monitoring"></a>Real-Time Monitoring</h3><p>Monitor your application’s performance and logs in real-time:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pm2 monit</span><br></pre></td></tr></table></figure>
-<h3 id="Other-Useful-PM2-Commands"><a href="#Other-Useful-PM2-Commands" class="headerlink" title="Other Useful PM2 Commands"></a>Other Useful PM2 Commands</h3><p>Manage your PM2 processes with these additional commands:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Delete a process by its id</span></span><br><span class="line">pm2 del &lt;<span class="built_in">id</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Delete all processes</span></span><br><span class="line">pm2 del all</span><br><span class="line"></span><br><span class="line"><span class="comment"># Start a specific process by name</span></span><br><span class="line">pm2 start &lt;name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Stop a specific process by name</span></span><br><span class="line">pm2 stop &lt;name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Configure PM2 to start on system startup</span></span><br><span class="line">pm2 startup</span><br><span class="line"></span><br><span class="line"><span class="comment"># Save the process list to be loaded on startup</span></span><br><span class="line">pm2 save</span><br></pre></td></tr></table></figure>
-<p>For more detailed information on PM2 features and usage, visit the <a href="https://pm2.io/docs/plus/overview/">PM2 Documentation</a>.</p>
-]]></content>
-      <tags>
-        <tag>nodeJS</tag>
-        <tag>development</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>How to Check SSD Temperature in ESXi 8.0</title>
     <url>/2023/10/05/check-SSD-Temperature-in-ESXi8/</url>
     <content><![CDATA[<p>Monitoring the health and temperature of your SSDs is crucial in any high-performance environment, such as a VMware ESXi server. In the latest ESXi 8.0, you can easily check the SSD temperature and SMART data using the <code>esxcli</code> command-line tool. This blog post will guide you through creating a simple shell script to automate this task.</p>
@@ -419,6 +385,40 @@
         <tag>vmware</tag>
         <tag>ssd</tag>
         <tag>smart</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Node.js WebApp Auto Deployment Using PM2 and GitHub Actions</title>
+    <url>/2024/07/13/nodejs-webApp-auto-deploy-using-pm2-and-GitHub-Action/</url>
+    <content><![CDATA[<p>Automating the deployment process for your Node.js web application can save you a significant amount of time and effort. By integrating PM2 with GitHub Actions, you can set up a continuous deployment pipeline that ensures your application is always up-to-date. This guide will walk you through the steps to set up your environment and create a seamless deployment workflow.</p>
+<h2 id="Step-1-Install-Environment"><a href="#Step-1-Install-Environment" class="headerlink" title="Step 1: Install Environment"></a>Step 1: Install Environment</h2><h3 id="1-Install-Node-js-and-npm"><a href="#1-Install-Node-js-and-npm" class="headerlink" title="1. Install Node.js and npm"></a>1. Install Node.js and npm</h3><p>Ensure you have Node.js and npm installed on your server. You can do this by downloading the installer from the <a href="https://nodejs.org/">official Node.js website</a> or using a package manager.</p>
+<h3 id="2-Install-Essential-Tools"><a href="#2-Install-Essential-Tools" class="headerlink" title="2. Install Essential Tools"></a>2. Install Essential Tools</h3><p>Install additional necessary tools like <code>screen</code> and <code>vim</code>. These tools are useful for managing terminal sessions and editing files, respectively.</p>
+<h3 id="3-Install-PM2"><a href="#3-Install-PM2" class="headerlink" title="3. Install PM2"></a>3. Install PM2</h3><p>PM2 is a process manager for Node.js applications. You can install it globally using npm:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> npm install -g pm2</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-Allow-Non-Root-User-to-Use-Port-80-optional"><a href="#4-Allow-Non-Root-User-to-Use-Port-80-optional" class="headerlink" title="4. Allow Non-Root User to Use Port 80 (optional)"></a>4. Allow Non-Root User to Use Port 80 (optional)</h3><p>To let a non-root user bind to port 80, you can use libcap2-bin. This step is optional but recommended for running your application on standard HTTP port:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt install libcap2-bin -y</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">setcap</span> <span class="string">&#x27;cap_net_bind_service=+ep&#x27;</span> $(<span class="built_in">which</span> node)</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-Create-GitHub-Self-Hosted-Runner"><a href="#5-Create-GitHub-Self-Hosted-Runner" class="headerlink" title="5. Create GitHub Self-Hosted Runner"></a>5. Create GitHub Self-Hosted Runner</h2><p>Set up a self-hosted runner on GitHub by following the instructions in your repository settings under “Actions”. This runner will be responsible for executing your deployment pipeline.<br>follow <a href="https://docs.github.com/en/actions/hosting-your-own-runners">repo-setting-action-self-host</a></p>
+<h2 id="6-Create-GitHub-Action-Workflow-deploy-yml"><a href="#6-Create-GitHub-Action-Workflow-deploy-yml" class="headerlink" title="6. Create GitHub Action Workflow: deploy.yml"></a>6. Create GitHub Action Workflow: deploy.yml</h2><p>Create a GitHub Actions workflow file in your repository under .github&#x2F;workflows&#x2F;deploy.yml:</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Node.js</span> <span class="string">CI</span></span><br><span class="line"></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span> [ <span class="string">&quot;main&quot;</span> ]</span><br><span class="line">  <span class="attr">pull_request:</span></span><br><span class="line">    <span class="attr">branches:</span> [ <span class="string">&quot;main&quot;</span> ]</span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">build:</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">runs-on:</span> [<span class="string">self-hosted</span>, <span class="string">Production</span>]</span><br><span class="line"></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">actions/checkout@v4</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Use</span> <span class="string">Node.js</span> <span class="number">20.</span><span class="string">x</span></span><br><span class="line">      <span class="attr">uses:</span> <span class="string">actions/setup-node@v2</span></span><br><span class="line">      <span class="attr">with:</span></span><br><span class="line">        <span class="attr">node-version:</span> <span class="number">20.</span><span class="string">x</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">npm</span> <span class="string">install</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">pm2</span> <span class="string">restart</span> <span class="string">YOUR-WEBAPP-NAME</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="7-setup-pm2-services"><a href="#7-setup-pm2-services" class="headerlink" title="7. setup pm2 services"></a>7. setup pm2 services</h2><p>Start your Node.js application with PM2. For example, if your entry file is server.js:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pm2 start server.js --name YOUR-WEBAPP-NAME --time</span><br></pre></td></tr></table></figure>
+
+<h2 id="Verify-and-Monitor-Your-Application"><a href="#Verify-and-Monitor-Your-Application" class="headerlink" title="Verify and Monitor Your Application"></a>Verify and Monitor Your Application</h2><h3 id="Check-PM2-Status"><a href="#Check-PM2-Status" class="headerlink" title="Check PM2 Status"></a>Check PM2 Status</h3><p>Verify that your application is running properly with:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pm2 status</span><br></pre></td></tr></table></figure>
+<h3 id="Check-PM2-Logs"><a href="#Check-PM2-Logs" class="headerlink" title="Check PM2 Logs"></a>Check PM2 Logs</h3><p>View your application’s logs:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pm2 logs</span><br></pre></td></tr></table></figure>
+<h3 id="Real-Time-Monitoring"><a href="#Real-Time-Monitoring" class="headerlink" title="Real-Time Monitoring"></a>Real-Time Monitoring</h3><p>Monitor your application’s performance and logs in real-time:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pm2 monit</span><br></pre></td></tr></table></figure>
+<h3 id="Other-Useful-PM2-Commands"><a href="#Other-Useful-PM2-Commands" class="headerlink" title="Other Useful PM2 Commands"></a>Other Useful PM2 Commands</h3><p>Manage your PM2 processes with these additional commands:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Delete a process by its id</span></span><br><span class="line">pm2 del &lt;<span class="built_in">id</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Delete all processes</span></span><br><span class="line">pm2 del all</span><br><span class="line"></span><br><span class="line"><span class="comment"># Start a specific process by name</span></span><br><span class="line">pm2 start &lt;name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Stop a specific process by name</span></span><br><span class="line">pm2 stop &lt;name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Configure PM2 to start on system startup</span></span><br><span class="line">pm2 startup</span><br><span class="line"></span><br><span class="line"><span class="comment"># Save the process list to be loaded on startup</span></span><br><span class="line">pm2 save</span><br></pre></td></tr></table></figure>
+<p>For more detailed information on PM2 features and usage, visit the <a href="https://pm2.io/docs/plus/overview/">PM2 Documentation</a>.</p>
+]]></content>
+      <tags>
+        <tag>nodeJS</tag>
+        <tag>development</tag>
       </tags>
   </entry>
 </search>

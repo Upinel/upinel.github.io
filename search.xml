@@ -1,42 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Debian installation remove cd-rom apt source</title>
-    <url>/2024/06/13/Debian-installation-remove-cd-rom-apt-source/</url>
-    <content><![CDATA[<p>A local CD can act as an APT repository, just as if it were a distant server. This feature is incredibly useful when you are installing Debian on systems without a fast internet connection or when you need to install packages from localized media. However, once the installation is done or if you prefer using online repositories, you might want to disable the CD-ROM source to avoid any unnecessary prompts. </p>
-<p>If you don’t want <code>apt-get</code> to search the CD, you can achieve this easily by editing the <code>/etc/apt/sources.list</code> file. Here’s how to do it:</p>
-<h2 id="Steps-to-Remove-CD-ROM-apt-Source"><a href="#Steps-to-Remove-CD-ROM-apt-Source" class="headerlink" title="Steps to Remove CD-ROM apt Source"></a>Steps to Remove CD-ROM apt Source</h2><ol>
-<li><strong>Open the <code>/etc/apt/sources.list</code> file</strong>:<br>  To edit the file, you need administrative privileges. You can use <code>nano</code> or any other text editor you prefer. If you’re using <code>nano</code>, the command would look like this:</li>
-</ol>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nano /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li><strong>Find the CD-ROM source line</strong>:<br>  Look for the line that specifies the CD-ROM as a source. It will look something like this:</li>
-</ol>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">deb cdrom:[deb95amd64d1]/ stretch contrib main</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li><strong>Comment out the CD-ROM source line</strong>:<br>  To disable this source, simply comment out the line by adding a <code>#</code> at the beginning of it. The result should look like this:</li>
-</ol>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># deb cdrom:[deb95amd64d1]/ stretch contrib main</span></span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li><p><strong>Save and close the file</strong>:<br>  In <code>nano</code>, you can do this by pressing <code>CTRL+X</code>, then <code>Y</code> to confirm the changes, and <code>Enter</code> to exit.</p>
-</li>
-<li><p><strong>Update your package list</strong>:<br>  After making these changes, ensure your package list is up to date by running:</p>
-</li>
-</ol>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt-get update</span><br></pre></td></tr></table></figure>
-
-<p>By following these steps, you instruct <code>apt-get</code> to ignore the CD-ROM as a source, relying instead on your other sources for package installations and updates.</p>
-<p>Whether you’re managing package sources or ensuring your applications are running smoothly, Debian and its tools offer robust solutions for both tasks.</p>
-<p>Taking care of your system’s configurations thoughtfully can save a lot of time and hassle.</p>
-]]></content>
-      <tags>
-        <tag>debian</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Check PCIe lane with lspci</title>
     <url>/2024/07/11/Check-PCIe-lane-with-lspci/</url>
     <content><![CDATA[<p>When managing servers or desktops, knowing the details of your PCIe configuration can be very beneficial. This information is essential for troubleshooting hardware issues, upgrading components, or optimizing performance. One of the most powerful tools for examining PCIe details on Debian-based systems is <code>lspci</code>.</p>
@@ -78,6 +42,42 @@
       <tags>
         <tag>debian</tag>
         <tag>server</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Debian installation remove cd-rom apt source</title>
+    <url>/2024/06/13/Debian-installation-remove-cd-rom-apt-source/</url>
+    <content><![CDATA[<p>A local CD can act as an APT repository, just as if it were a distant server. This feature is incredibly useful when you are installing Debian on systems without a fast internet connection or when you need to install packages from localized media. However, once the installation is done or if you prefer using online repositories, you might want to disable the CD-ROM source to avoid any unnecessary prompts. </p>
+<p>If you don’t want <code>apt-get</code> to search the CD, you can achieve this easily by editing the <code>/etc/apt/sources.list</code> file. Here’s how to do it:</p>
+<h2 id="Steps-to-Remove-CD-ROM-apt-Source"><a href="#Steps-to-Remove-CD-ROM-apt-Source" class="headerlink" title="Steps to Remove CD-ROM apt Source"></a>Steps to Remove CD-ROM apt Source</h2><ol>
+<li><strong>Open the <code>/etc/apt/sources.list</code> file</strong>:<br>  To edit the file, you need administrative privileges. You can use <code>nano</code> or any other text editor you prefer. If you’re using <code>nano</code>, the command would look like this:</li>
+</ol>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nano /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><strong>Find the CD-ROM source line</strong>:<br>  Look for the line that specifies the CD-ROM as a source. It will look something like this:</li>
+</ol>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">deb cdrom:[deb95amd64d1]/ stretch contrib main</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><strong>Comment out the CD-ROM source line</strong>:<br>  To disable this source, simply comment out the line by adding a <code>#</code> at the beginning of it. The result should look like this:</li>
+</ol>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># deb cdrom:[deb95amd64d1]/ stretch contrib main</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li><p><strong>Save and close the file</strong>:<br>  In <code>nano</code>, you can do this by pressing <code>CTRL+X</code>, then <code>Y</code> to confirm the changes, and <code>Enter</code> to exit.</p>
+</li>
+<li><p><strong>Update your package list</strong>:<br>  After making these changes, ensure your package list is up to date by running:</p>
+</li>
+</ol>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt-get update</span><br></pre></td></tr></table></figure>
+
+<p>By following these steps, you instruct <code>apt-get</code> to ignore the CD-ROM as a source, relying instead on your other sources for package installations and updates.</p>
+<p>Whether you’re managing package sources or ensuring your applications are running smoothly, Debian and its tools offer robust solutions for both tasks.</p>
+<p>Taking care of your system’s configurations thoughtfully can save a lot of time and hassle.</p>
+]]></content>
+      <tags>
+        <tag>debian</tag>
       </tags>
   </entry>
   <entry>
@@ -136,6 +136,31 @@
       </tags>
   </entry>
   <entry>
+    <title>ESXi SMART Script to Check All Disk Health</title>
+    <url>/2024/07/17/ESXi-SMART-Script/</url>
+    <content><![CDATA[<p>In managing an ESXi server, ensuring all disks are healthy and functional is crucial to maintaining overall system reliability and performance. A failed disk can lead to data loss or even system downtime. Thus, proactively monitoring disk health using SMART (Self-Monitoring, Analysis, and Reporting Technology) data is a smart practice. This blog post walks you through a shell script designed to check the health of all disks on your ESXi server.</p>
+<h2 id="Introduction-to-the-Script"><a href="#Introduction-to-the-Script" class="headerlink" title="Introduction to the Script"></a>Introduction to the Script</h2><p>The script leverages <code>esxcli</code> commands to fetch SMART data for each disk and formats the output in a readable table, logging it along with a timestamp. Key information such as health status, drive temperature, power-on hours, power cycle count, and reallocated sector count is extracted and displayed, helping you quickly identify potential issues.</p>
+<h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><ul>
+<li>A working ESXi server</li>
+<li>SSH access enabled on the ESXi server</li>
+<li>Basic familiarity with shell scripts</li>
+</ul>
+<h2 id="The-Script"><a href="#The-Script" class="headerlink" title="The Script"></a>The Script</h2><p>Here is the complete shell script for checking disk health using SMART data on ESXi, Place it in your ESXi, and <code>chmod +x smart.sh</code> so you can execute the script.</p>
+<p><code>smart.sh</code>:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Get the list of all device UIDs</span></span><br><span class="line">device_list=$(esxcli storage core device list | grep -E <span class="string">&#x27;^t10.|^eui.&#x27;</span> | awk <span class="string">&#x27;&#123;print $1&#125;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Timestamp for log</span></span><br><span class="line">timestamp=$(<span class="built_in">date</span> <span class="string">&#x27;+%Y-%m-%d %H:%M:%S&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Header for the output</span></span><br><span class="line">header=<span class="string">&quot;Drive                                   | Health Status | Drive Temperature | Power-on Hours | Power Cycle Count | Reallocated Sector Count&quot;</span></span><br><span class="line">separator=<span class="string">&quot;---------------------------------------------------------------------------------------------------------------------------------------------&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$header</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$separator</span>&quot;</span></span><br><span class="line"><span class="comment"># Begin logging output with timestamp</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;Timestamp: <span class="variable">$timestamp</span>&quot;</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$header</span>&quot;</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$separator</span>&quot;</span></span><br><span class="line">&#125; &gt;&gt; smart.log</span><br><span class="line"></span><br><span class="line"><span class="comment"># Function to process device name</span></span><br><span class="line"><span class="function"><span class="title">process_device_name</span></span>() &#123;</span><br><span class="line">    <span class="built_in">local</span> device_name=<span class="variable">$1</span></span><br><span class="line">    <span class="comment"># Replace multiple underscores with a single period</span></span><br><span class="line">    device_name=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$device_name</span>&quot;</span> | sed <span class="string">&#x27;s/_\+/\./g&#x27;</span>)</span><br><span class="line">    <span class="comment"># Truncate to a maximum of 40 characters</span></span><br><span class="line">    device_name=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$device_name</span>&quot;</span> | <span class="built_in">cut</span> -c 1-40)</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$device_name</span>&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Iterate through each device UID and fetch its SMART data</span></span><br><span class="line"><span class="keyword">for</span> device <span class="keyword">in</span> <span class="variable">$device_list</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="comment"># Process the device name</span></span><br><span class="line">    processed_device_name=$(process_device_name <span class="string">&quot;<span class="variable">$device</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Get the SMART data</span></span><br><span class="line">    output=$(esxcli storage core device smart get -d <span class="variable">$device</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Format the output</span></span><br><span class="line">    formatted_output=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$output</span>&quot;</span> | awk -v device=<span class="string">&quot;<span class="variable">$processed_device_name</span>&quot;</span> <span class="string">&#x27;</span></span><br><span class="line"><span class="string">    BEGIN &#123;</span></span><br><span class="line"><span class="string">        # Initialize default values</span></span><br><span class="line"><span class="string">        status[&quot;Health Status&quot;] = &quot;N/A&quot;</span></span><br><span class="line"><span class="string">        status[&quot;Power-on Hours&quot;] = &quot;N/A&quot;</span></span><br><span class="line"><span class="string">        status[&quot;Drive Temperature&quot;] = &quot;N/A/N/A&quot;</span></span><br><span class="line"><span class="string">        status[&quot;Power Cycle Count&quot;] = &quot;N/A&quot;</span></span><br><span class="line"><span class="string">        status[&quot;Reallocated Sector Count&quot;] = &quot;N/A/N/A&quot;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    # Capture specific parameters and thresholds</span></span><br><span class="line"><span class="string">    /Health Status/ &#123;status[&quot;Health Status&quot;] = $3 ? $3 : &quot;N/A&quot;&#125;</span></span><br><span class="line"><span class="string">    /Power-on Hours/ &#123;status[&quot;Power-on Hours&quot;] = $3 ? $3 : &quot;N/A&quot;&#125;</span></span><br><span class="line"><span class="string">    /Drive Temperature/ &#123;</span></span><br><span class="line"><span class="string">        value = $3 ? $3 : &quot;-&quot;</span></span><br><span class="line"><span class="string">        threshold = $4 ? $4 : &quot;-&quot;</span></span><br><span class="line"><span class="string">        status[&quot;Drive Temperature&quot;] = value &quot;/&quot; threshold</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    /Power Cycle Count/ &#123;status[&quot;Power Cycle Count&quot;] = $4 ? $4 : &quot;N/A&quot;&#125;</span></span><br><span class="line"><span class="string">    /Reallocated Sector Count/ &#123;</span></span><br><span class="line"><span class="string">        value = $4 ? $4 : &quot;0&quot;</span></span><br><span class="line"><span class="string">        threshold = $5 ? $5 : &quot;-&quot;</span></span><br><span class="line"><span class="string">        status[&quot;Reallocated Sector Count&quot;] = value &quot;/&quot; threshold</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    END &#123;</span></span><br><span class="line"><span class="string">        # Print the results with formatted and truncated drive name (40 characters max)</span></span><br><span class="line"><span class="string">        printf &quot;%-41s %-15s %-19s %-16s %-19s %-36s\n&quot;,</span></span><br><span class="line"><span class="string">        device,</span></span><br><span class="line"><span class="string">        status[&quot;Health Status&quot;],</span></span><br><span class="line"><span class="string">        status[&quot;Drive Temperature&quot;],</span></span><br><span class="line"><span class="string">        status[&quot;Power-on Hours&quot;],</span></span><br><span class="line"><span class="string">        status[&quot;Power Cycle Count&quot;],</span></span><br><span class="line"><span class="string">        status[&quot;Reallocated Sector Count&quot;]</span></span><br><span class="line"><span class="string">    &#125;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Append formatted output to the log file</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$formatted_output</span>&quot;</span> &gt;&gt; smart.log</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$formatted_output</span>&quot;</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Print an empty line for readability in the log</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;&quot;</span> &gt;&gt; smart.log</span><br></pre></td></tr></table></figure>
+
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Regularly checking your disk health can help prevent unexpected failures and prolong the lifespan of your hardware. The script presented here aims to facilitate this process, making it easier to monitor and log the SMART health status of all drives on your ESXi server.</p>
+<p>With these additional customizations, you can tailor the script to best fit your monitoring and alerting needs. Monitoring disk health may be just one component of your broader system health strategy, but it’s an essential one that ensures data integrity and server reliability.</p>
+<p>Feel free to share your improvements or variations of the script in the comments below. If this guide helped you, let us know by leaving feedback or sharing it with others who might benefit from it.</p>
+]]></content>
+      <tags>
+        <tag>ESXi</tag>
+        <tag>Server Management</tag>
+        <tag>Disk Health</tag>
+        <tag>SMART</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Intel NUC12 1240P 10TB (4*SSD) Super HomeLab Build</title>
     <url>/2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/</url>
     <content><![CDATA[<p>I’m excited to share my recent project of building an ultra-compact, all-SSD HomeLab with the incredible Intel NUC12. Below, I will walk you through the specifications and the detailed process of creating this monster build.</p>
@@ -179,26 +204,6 @@
         <tag>NUC12</tag>
         <tag>HomeLab</tag>
         <tag>SSD</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Uninstall debian desktop enviorment</title>
-    <url>/2024/07/02/Uninstall-debian-desktop-enviorment/</url>
-    <content><![CDATA[<p>Have you installed a desktop environment on Debian that you no longer need? Whether you’re looking to free up space or want to use a minimal install without a GUI, this guide will walk you through the steps to uninstall the desktop environment on Debian.</p>
-<h2 id="Step-by-Step-Guide-to-Uninstall-Desktop-Environment"><a href="#Step-by-Step-Guide-to-Uninstall-Desktop-Environment" class="headerlink" title="Step-by-Step Guide to Uninstall Desktop Environment"></a>Step-by-Step Guide to Uninstall Desktop Environment</h2><h3 id="1-Check-Packages-Related-to-Desktop-Environment"><a href="#1-Check-Packages-Related-to-Desktop-Environment" class="headerlink" title="1. Check Packages Related to Desktop Environment"></a>1. Check Packages Related to Desktop Environment</h3><p>Firstly, you can identify the packages related to the desktop environment using the following command:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># check package related to desktop</span></span><br><span class="line">tasksel --task-packages desktop</span><br></pre></td></tr></table></figure>
-<h3 id="2-Uninstall-the-Desktop-Environment-Packages"><a href="#2-Uninstall-the-Desktop-Environment-Packages" class="headerlink" title="2. Uninstall the Desktop Environment Packages"></a>2. Uninstall the Desktop Environment Packages</h3><p>You can then use apt-get purge to remove all the packages related to the desktop environment. This can be done efficiently by combining the output from the previous command:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt-get purge $(tasksel --task-packages desktop)</span><br></pre></td></tr></table></figure>
-<p>Alternatively, you might consider a more comprehensive removal using the following command:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt purge task-desktop hyphen-en-us libglu1-mesa libreoffice-* libu2f-udev mythes-en-us x11-apps x11-session-utils xinit xorg xserver-* desktop-base task-german task-german-desktop totem gedit gedit-common gir1.2-* gnome-* gstreamer* sound-icons speech-dispatcher totem-common xserver-* xfonts-* xwayland gir1.2* gnome-*</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-Autoremove-Unnecessary-Packages"><a href="#3-Autoremove-Unnecessary-Packages" class="headerlink" title="3. Autoremove Unnecessary Packages"></a>3. Autoremove Unnecessary Packages</h3><p>After purging, you should also run apt autoremove –purge to clean up any remaining dependencies that were automatically installed with the desktop environment and are no longer needed:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt autoremove --purge</span><br></pre></td></tr></table></figure>
-<p>By following these steps, you can successfully remove the desktop environment from your Debian system, leaving you with a leaner and more minimal setup.</p>
-]]></content>
-      <tags>
-        <tag>debian</tag>
-        <tag>server</tag>
       </tags>
   </entry>
   <entry>
@@ -523,26 +528,23 @@
       </tags>
   </entry>
   <entry>
-    <title>ESXi SMART Script to Check All Disk Health</title>
-    <url>/2024/07/17/ESXi-SMART-Script/</url>
-    <content><![CDATA[<p>In managing an ESXi server, ensuring all disks are healthy and functional is crucial to maintaining overall system reliability and performance. A failed disk can lead to data loss or even system downtime. Thus, proactively monitoring disk health using SMART (Self-Monitoring, Analysis, and Reporting Technology) data is a smart practice. This blog post walks you through a shell script designed to check the health of all disks on your ESXi server.</p>
-<h2 id="Introduction-to-the-Script"><a href="#Introduction-to-the-Script" class="headerlink" title="Introduction to the Script"></a>Introduction to the Script</h2><p>The script leverages <code>esxcli</code> commands to fetch SMART data for each disk and formats the output in a readable table, logging it along with a timestamp. Key information such as health status, drive temperature, power-on hours, power cycle count, and reallocated sector count is extracted and displayed, helping you quickly identify potential issues.</p>
-<h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><ul>
-<li>A working ESXi server</li>
-<li>SSH access enabled on the ESXi server</li>
-<li>Basic familiarity with shell scripts</li>
-</ul>
-<h2 id="The-Script"><a href="#The-Script" class="headerlink" title="The Script"></a>The Script</h2><p>Here is the complete shell script for checking disk health using SMART data on ESXi, Place it in your ESXi, and <code>chmod +x smart.sh</code> so you can execute the script.</p>
-<p><code>smart.sh</code>:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Get the list of all device UIDs</span></span><br><span class="line">device_list=$(esxcli storage core device list | grep -E <span class="string">&#x27;^t10.|^eui.&#x27;</span> | awk <span class="string">&#x27;&#123;print $1&#125;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Timestamp for log</span></span><br><span class="line">timestamp=$(<span class="built_in">date</span> <span class="string">&#x27;+%Y-%m-%d %H:%M:%S&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Header for the output</span></span><br><span class="line">header=<span class="string">&quot;Drive                                   | Health Status | Drive Temperature | Power-on Hours | Power Cycle Count | Reallocated Sector Count&quot;</span></span><br><span class="line">separator=<span class="string">&quot;---------------------------------------------------------------------------------------------------------------------------------------------&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$header</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$separator</span>&quot;</span></span><br><span class="line"><span class="comment"># Begin logging output with timestamp</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;Timestamp: <span class="variable">$timestamp</span>&quot;</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$header</span>&quot;</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$separator</span>&quot;</span></span><br><span class="line">&#125; &gt;&gt; smart.log</span><br><span class="line"></span><br><span class="line"><span class="comment"># Function to process device name</span></span><br><span class="line"><span class="function"><span class="title">process_device_name</span></span>() &#123;</span><br><span class="line">    <span class="built_in">local</span> device_name=<span class="variable">$1</span></span><br><span class="line">    <span class="comment"># Replace multiple underscores with a single period</span></span><br><span class="line">    device_name=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$device_name</span>&quot;</span> | sed <span class="string">&#x27;s/_\+/\./g&#x27;</span>)</span><br><span class="line">    <span class="comment"># Truncate to a maximum of 40 characters</span></span><br><span class="line">    device_name=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$device_name</span>&quot;</span> | <span class="built_in">cut</span> -c 1-40)</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$device_name</span>&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Iterate through each device UID and fetch its SMART data</span></span><br><span class="line"><span class="keyword">for</span> device <span class="keyword">in</span> <span class="variable">$device_list</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="comment"># Process the device name</span></span><br><span class="line">    processed_device_name=$(process_device_name <span class="string">&quot;<span class="variable">$device</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Get the SMART data</span></span><br><span class="line">    output=$(esxcli storage core device smart get -d <span class="variable">$device</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Format the output</span></span><br><span class="line">    formatted_output=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$output</span>&quot;</span> | awk -v device=<span class="string">&quot;<span class="variable">$processed_device_name</span>&quot;</span> <span class="string">&#x27;</span></span><br><span class="line"><span class="string">    BEGIN &#123;</span></span><br><span class="line"><span class="string">        # Initialize default values</span></span><br><span class="line"><span class="string">        status[&quot;Health Status&quot;] = &quot;N/A&quot;</span></span><br><span class="line"><span class="string">        status[&quot;Power-on Hours&quot;] = &quot;N/A&quot;</span></span><br><span class="line"><span class="string">        status[&quot;Drive Temperature&quot;] = &quot;N/A/N/A&quot;</span></span><br><span class="line"><span class="string">        status[&quot;Power Cycle Count&quot;] = &quot;N/A&quot;</span></span><br><span class="line"><span class="string">        status[&quot;Reallocated Sector Count&quot;] = &quot;N/A/N/A&quot;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    # Capture specific parameters and thresholds</span></span><br><span class="line"><span class="string">    /Health Status/ &#123;status[&quot;Health Status&quot;] = $3 ? $3 : &quot;N/A&quot;&#125;</span></span><br><span class="line"><span class="string">    /Power-on Hours/ &#123;status[&quot;Power-on Hours&quot;] = $3 ? $3 : &quot;N/A&quot;&#125;</span></span><br><span class="line"><span class="string">    /Drive Temperature/ &#123;</span></span><br><span class="line"><span class="string">        value = $3 ? $3 : &quot;-&quot;</span></span><br><span class="line"><span class="string">        threshold = $4 ? $4 : &quot;-&quot;</span></span><br><span class="line"><span class="string">        status[&quot;Drive Temperature&quot;] = value &quot;/&quot; threshold</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    /Power Cycle Count/ &#123;status[&quot;Power Cycle Count&quot;] = $4 ? $4 : &quot;N/A&quot;&#125;</span></span><br><span class="line"><span class="string">    /Reallocated Sector Count/ &#123;</span></span><br><span class="line"><span class="string">        value = $4 ? $4 : &quot;0&quot;</span></span><br><span class="line"><span class="string">        threshold = $5 ? $5 : &quot;-&quot;</span></span><br><span class="line"><span class="string">        status[&quot;Reallocated Sector Count&quot;] = value &quot;/&quot; threshold</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    END &#123;</span></span><br><span class="line"><span class="string">        # Print the results with formatted and truncated drive name (40 characters max)</span></span><br><span class="line"><span class="string">        printf &quot;%-41s %-15s %-19s %-16s %-19s %-36s\n&quot;,</span></span><br><span class="line"><span class="string">        device,</span></span><br><span class="line"><span class="string">        status[&quot;Health Status&quot;],</span></span><br><span class="line"><span class="string">        status[&quot;Drive Temperature&quot;],</span></span><br><span class="line"><span class="string">        status[&quot;Power-on Hours&quot;],</span></span><br><span class="line"><span class="string">        status[&quot;Power Cycle Count&quot;],</span></span><br><span class="line"><span class="string">        status[&quot;Reallocated Sector Count&quot;]</span></span><br><span class="line"><span class="string">    &#125;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Append formatted output to the log file</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$formatted_output</span>&quot;</span> &gt;&gt; smart.log</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$formatted_output</span>&quot;</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Print an empty line for readability in the log</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;&quot;</span> &gt;&gt; smart.log</span><br></pre></td></tr></table></figure>
+    <title>Uninstall debian desktop enviorment</title>
+    <url>/2024/07/02/Uninstall-debian-desktop-enviorment/</url>
+    <content><![CDATA[<p>Have you installed a desktop environment on Debian that you no longer need? Whether you’re looking to free up space or want to use a minimal install without a GUI, this guide will walk you through the steps to uninstall the desktop environment on Debian.</p>
+<h2 id="Step-by-Step-Guide-to-Uninstall-Desktop-Environment"><a href="#Step-by-Step-Guide-to-Uninstall-Desktop-Environment" class="headerlink" title="Step-by-Step Guide to Uninstall Desktop Environment"></a>Step-by-Step Guide to Uninstall Desktop Environment</h2><h3 id="1-Check-Packages-Related-to-Desktop-Environment"><a href="#1-Check-Packages-Related-to-Desktop-Environment" class="headerlink" title="1. Check Packages Related to Desktop Environment"></a>1. Check Packages Related to Desktop Environment</h3><p>Firstly, you can identify the packages related to the desktop environment using the following command:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># check package related to desktop</span></span><br><span class="line">tasksel --task-packages desktop</span><br></pre></td></tr></table></figure>
+<h3 id="2-Uninstall-the-Desktop-Environment-Packages"><a href="#2-Uninstall-the-Desktop-Environment-Packages" class="headerlink" title="2. Uninstall the Desktop Environment Packages"></a>2. Uninstall the Desktop Environment Packages</h3><p>You can then use apt-get purge to remove all the packages related to the desktop environment. This can be done efficiently by combining the output from the previous command:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt-get purge $(tasksel --task-packages desktop)</span><br></pre></td></tr></table></figure>
+<p>Alternatively, you might consider a more comprehensive removal using the following command:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt purge task-desktop hyphen-en-us libglu1-mesa libreoffice-* libu2f-udev mythes-en-us x11-apps x11-session-utils xinit xorg xserver-* desktop-base task-german task-german-desktop totem gedit gedit-common gir1.2-* gnome-* gstreamer* sound-icons speech-dispatcher totem-common xserver-* xfonts-* xwayland gir1.2* gnome-*</span><br></pre></td></tr></table></figure>
 
-<h2 id="Dive-Deeper-Customizing-the-Script"><a href="#Dive-Deeper-Customizing-the-Script" class="headerlink" title="Dive Deeper: Customizing the Script"></a>Dive Deeper: Customizing the Script</h2><p>The script provided is designed to give you a comprehensive overview of your disks’ health status. However, you may want to tailor it further to suit your specific requirements. Here are some additional customizations you can consider:</p>
+<h3 id="3-Autoremove-Unnecessary-Packages"><a href="#3-Autoremove-Unnecessary-Packages" class="headerlink" title="3. Autoremove Unnecessary Packages"></a>3. Autoremove Unnecessary Packages</h3><p>After purging, you should also run apt autoremove –purge to clean up any remaining dependencies that were automatically installed with the desktop environment and are no longer needed:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt autoremove --purge</span><br></pre></td></tr></table></figure>
+<p>By following these steps, you can successfully remove the desktop environment from your Debian system, leaving you with a leaner and more minimal setup.</p>
 ]]></content>
       <tags>
-        <tag>ESXi</tag>
-        <tag>Server Management</tag>
-        <tag>Disk Health</tag>
-        <tag>SMART</tag>
+        <tag>debian</tag>
+        <tag>server</tag>
       </tags>
   </entry>
 </search>

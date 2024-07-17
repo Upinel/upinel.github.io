@@ -27,7 +27,7 @@
 <meta property="og:description" content="In managing an ESXi server, ensuring all disks are healthy and functional is crucial to maintaining overall system reliability and performance. A failed disk can lead to data loss or even system downt">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-07-17T11:24:31.000Z">
-<meta property="article:modified_time" content="2024-07-17T11:38:19.867Z">
+<meta property="article:modified_time" content="2024-07-17T11:40:53.220Z">
 <meta property="article:author" content="@Upinel">
 <meta property="article:tag" content="ESXi">
 <meta property="article:tag" content="Server Management">
@@ -230,7 +230,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2024-07-17 12:24:31 / Modified: 12:38:19" itemprop="dateCreated datePublished" datetime="2024-07-17T12:24:31+01:00">2024-07-17</time>
+      <time title="Created: 2024-07-17 12:24:31 / Modified: 12:40:53" itemprop="dateCreated datePublished" datetime="2024-07-17T12:24:31+01:00">2024-07-17</time>
     </span>
 
   
@@ -258,6 +258,9 @@
     
     <div class="post-body" itemprop="articleBody"><p>In managing an ESXi server, ensuring all disks are healthy and functional is crucial to maintaining overall system reliability and performance. A failed disk can lead to data loss or even system downtime. Thus, proactively monitoring disk health using SMART (Self-Monitoring, Analysis, and Reporting Technology) data is a smart practice. This blog post walks you through a shell script designed to check the health of all disks on your ESXi server.</p>
 <h2 id="Introduction-to-the-Script"><a href="#Introduction-to-the-Script" class="headerlink" title="Introduction to the Script"></a>Introduction to the Script</h2><p>The script leverages <code>esxcli</code> commands to fetch SMART data for each disk and formats the output in a readable table, logging it along with a timestamp. Key information such as health status, drive temperature, power-on hours, power cycle count, and reallocated sector count is extracted and displayed, helping you quickly identify potential issues.</p>
+<p>You will able to check the SMART information as below sample:<br><code>&gt; ./smart.sh</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Drive                                   | Health Status | Drive Temperature | Power-on Hours | Power Cycle Count | Reallocated Sector Count</span><br><span class="line">---------------------------------------------------------------------------------------------------------------------------------------------</span><br><span class="line">eui.0000000001000000b7d6c88d0a080f00      OK              40/77               3118             81                  0/90                                </span><br><span class="line">t10.NVMe.WD.PC.SN740.SDDPTQE2D2T00.02F2E  OK              42/84               549              1473                0/90                                                             </span><br><span class="line">t10.NVMe.EDILOCA.EN870.4TB.4334424002000  OK              44/90               20               3                   0/99                                </span><br><span class="line">t10.NVMe.SAMSUNG.MZVL22T0HBLB2D00B00.5D8  OK              44/81               11498            346                 0/90                                </span><br><span class="line">t10.NVMe.EDILOCA.EN870.4TB.5435424002000  OK              44/90               19               4                   0/99 </span><br></pre></td></tr></table></figure>
+
 <h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><ul>
 <li>A working ESXi server</li>
 <li>SSH access enabled on the ESXi server</li>

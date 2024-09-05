@@ -1,6 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>UniFi 2024 HomeLab 家庭網絡購買推薦</title>
+    <url>/2024/09/05/2024-HomeLab-UniFi-Network-Guide/</url>
+    <content><![CDATA[<p>UniFi 2024 HomeLab 家庭網絡購買推薦<br><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/unifi.png" alt="UniFi"><br>#藍圈科技 #UniFi #HomeLab<br>#移民人士：UniFi可以網絡層級連接香港的VPN(eg. Surfshark, Nord, Wireguard)，令你可以直接條件式自動「返香港」（eg. 睇Viu) 而應用程式係分唔到你係唔係VPN緊（因為你手機真係無開到「VPN」）</p>
+<p><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/UX1.png" alt="UX1"><br>入門級：UniFi Express (£123) (不推薦UDR)<br>推薦人群：想要穩定的無線網路環境，並想開始接觸企業級&#x2F;Prosumer 等級的網絡設置 (vLan, VPN, Static Route, Multiple SSID, 條件網絡設定，等)<br>限制：1Gbps 網絡，沒有IPS&#x2F;IDS，只有一孔LAN口但可以接駁switch增加LAN port，最大支援5台UniFi Network設備統一管理(實際上接unmanaged switch則沒有上限)<br><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/UX2.png" alt="UX2"><br>為什麼不推薦UDR：由於先天限制，UDR的WAN最多只能跑700Mbps，而且CPU效能比較不行，如果安裝了UniFi Protect會更慢，因此如果只需要網絡跑UniFi Express就好</p>
+<p><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/UCG-Max1.png" alt="UCG-Max1"><br>ProSumer 級：UniFi Cloud Gateway Max (£190) (不推薦Cloud Gateway Ultra)<br>推薦人群：需要IPS&#x2F;IDS，需要2.5Gbps WAN&#x2F;LAN，需要雙WAN備援，或需要UniFi Protect (Survellience Camera) &#x2F; UniFi Access &#x2F; UniFi Talk 等<br>限制：除了沒有10Gbps WAN孔外基本上沒有太大限制，是新的家用全家桶之選了<br><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/UCG-Max2.png" alt="UCG-Max1"><br>為什麼不推薦Cloud Gateway Ultra：雖然有2.5Gbps WAN，但由於先天限制，LAN和背版頻寬只有1Gbps，又不能跑UniFi Protect，又沒有內建WiFi，有點卡在中間的感覺，倒不如買Express，或者有Protect需求就買Cloud Gateway Max。當然如果你非常清楚你的需求是什麼(例如跑5+ AP)也是可以買的</p>
+<p><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/UDM-SE1.png" alt="UDM-SE1"><br>我全都要級：UniFi Dream Machine SE (一般 £478) &#x2F; UniFi Dream Machine Max (不缺錢錢 £574) （基本版UDM-Pro就不推薦了)<br>推薦人群：我全都要，喜歡機架，有大規模布建需求，10Gbps WAN，需要SFP+ port，或純粹不想有任何遺憾的人<br>限制：沒什麼限制的，SE自帶8口PoE，適合預期7-8台UniFi 的AP&#x2F;Camera，如果預期會使用多於8台PoE設備，則買UDM Max再另購24&#x2F;48口 PoE Switch<br><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/UDM-SE2.png" alt="UDM-SE2"><br>為什麼不推薦UDM-Pro：買到這個等級了，需要布建7-8台PoE設備的話買UDM-Pro-SE的價差會比多買一台PoE Switch 便宜，布建大量 PoE設備的話，UDM-Pro-Max的效能才可以比較開心的處理多台Camera。基本版的UDM-Pro就卡在中間不上不下的。</p>
+<p>關於Cloud Gateway &#x2F; UDM-Pro的AP選擇：要不買U6+ (£94)，要不買U7 Pro (£171)，中間的都可以skip掉<br>為什麼不買：<br>U7 Pro Max (£267)：主要是多了scanning功能，不值這個價錢，除非你需求清楚<br>U7 Pro Wall (£190)：U7 Pro其實也可以掛牆，但U7 Pro Wall掛頂就怪怪的，除非你是K11要將AP放進牆體中看不見<br>U7 Outdoor (£190)：按需選擇<br>U6 Enterprise (£267) &#x2F; Pro (£152) &#x2F; LR (£171)：看看價錢，直接買U7 Pro 吧（我們是Home Network，不會有100+ devices的，U7 Pro 的 300 connected devices 夠用了）</p>
+<p>關於Cloud Gateway &#x2F; UDM-Pro的Camera選擇：基本上除非有清楚需求，否則無腦G5 Turret Ultra (£94) 就可以了，足夠清晰，戶內戶外防水，你要的都大概有了<br>特殊需求：</p>
+<ul>
+<li>需要車牌識別警示（一般只會在前門裝一台）：UniFi AI Pro (£478)</li>
+<li>其他特殊需求&#x2F;指定外觀請自行到ui.com查看</li>
+</ul>
+<p>這不是工商文，只是作為一個UniFi粉分享我自己的UniFi使用建議，我幾乎都玩齊了，UniFi 的Site Manager能做遠端管理真的是超方便，父母家遠距輕鬆支援<br><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/myUniFi.png" alt="myUniFi"></p>
+]]></content>
+      <tags>
+        <tag>UniFi</tag>
+        <tag>Network</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Debian installation remove cd-rom apt source</title>
+    <url>/2024/06/13/Debian-installation-remove-cd-rom-apt-source/</url>
+    <content><![CDATA[<p>A local CD can act as an APT repository, just as if it were a distant server. This feature is incredibly useful when you are installing Debian on systems without a fast internet connection or when you need to install packages from localized media. However, once the installation is done or if you prefer using online repositories, you might want to disable the CD-ROM source to avoid any unnecessary prompts. </p>
+<p>If you don’t want <code>apt-get</code> to search the CD, you can achieve this easily by editing the <code>/etc/apt/sources.list</code> file. Here’s how to do it:</p>
+<h2 id="Steps-to-Remove-CD-ROM-apt-Source"><a href="#Steps-to-Remove-CD-ROM-apt-Source" class="headerlink" title="Steps to Remove CD-ROM apt Source"></a>Steps to Remove CD-ROM apt Source</h2><ol>
+<li><strong>Open the <code>/etc/apt/sources.list</code> file</strong>:<br>  To edit the file, you need administrative privileges. You can use <code>nano</code> or any other text editor you prefer. If you’re using <code>nano</code>, the command would look like this:</li>
+</ol>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nano /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><strong>Find the CD-ROM source line</strong>:<br>  Look for the line that specifies the CD-ROM as a source. It will look something like this:</li>
+</ol>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">deb cdrom:[deb95amd64d1]/ stretch contrib main</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><strong>Comment out the CD-ROM source line</strong>:<br>  To disable this source, simply comment out the line by adding a <code>#</code> at the beginning of it. The result should look like this:</li>
+</ol>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># deb cdrom:[deb95amd64d1]/ stretch contrib main</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li><p><strong>Save and close the file</strong>:<br>  In <code>nano</code>, you can do this by pressing <code>CTRL+X</code>, then <code>Y</code> to confirm the changes, and <code>Enter</code> to exit.</p>
+</li>
+<li><p><strong>Update your package list</strong>:<br>  After making these changes, ensure your package list is up to date by running:</p>
+</li>
+</ol>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt-get update</span><br></pre></td></tr></table></figure>
+
+<p>By following these steps, you instruct <code>apt-get</code> to ignore the CD-ROM as a source, relying instead on your other sources for package installations and updates.</p>
+<p>Whether you’re managing package sources or ensuring your applications are running smoothly, Debian and its tools offer robust solutions for both tasks.</p>
+<p>Taking care of your system’s configurations thoughtfully can save a lot of time and hassle.</p>
+]]></content>
+      <tags>
+        <tag>debian</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Check PCIe lane with lspci</title>
     <url>/2024/07/11/Check-PCIe-lane-with-lspci/</url>
     <content><![CDATA[<p>When managing servers or desktops, knowing the details of your PCIe configuration can be very beneficial. This information is essential for troubleshooting hardware issues, upgrading components, or optimizing performance. One of the most powerful tools for examining PCIe details on Debian-based systems is <code>lspci</code>.</p>
@@ -45,39 +101,29 @@
       </tags>
   </entry>
   <entry>
-    <title>Debian installation remove cd-rom apt source</title>
-    <url>/2024/06/13/Debian-installation-remove-cd-rom-apt-source/</url>
-    <content><![CDATA[<p>A local CD can act as an APT repository, just as if it were a distant server. This feature is incredibly useful when you are installing Debian on systems without a fast internet connection or when you need to install packages from localized media. However, once the installation is done or if you prefer using online repositories, you might want to disable the CD-ROM source to avoid any unnecessary prompts. </p>
-<p>If you don’t want <code>apt-get</code> to search the CD, you can achieve this easily by editing the <code>/etc/apt/sources.list</code> file. Here’s how to do it:</p>
-<h2 id="Steps-to-Remove-CD-ROM-apt-Source"><a href="#Steps-to-Remove-CD-ROM-apt-Source" class="headerlink" title="Steps to Remove CD-ROM apt Source"></a>Steps to Remove CD-ROM apt Source</h2><ol>
-<li><strong>Open the <code>/etc/apt/sources.list</code> file</strong>:<br>  To edit the file, you need administrative privileges. You can use <code>nano</code> or any other text editor you prefer. If you’re using <code>nano</code>, the command would look like this:</li>
-</ol>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nano /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+    <title>ESXi SMART Script to Check All Disk Health</title>
+    <url>/2024/07/17/ESXi-SMART-Script/</url>
+    <content><![CDATA[<p>In managing an ESXi server, ensuring all disks are healthy and functional is crucial to maintaining overall system reliability and performance. A failed disk can lead to data loss or even system downtime. Thus, proactively monitoring disk health using SMART (Self-Monitoring, Analysis, and Reporting Technology) data is a smart practice. This blog post walks you through a shell script designed to check the health of all disks on your ESXi server.</p>
+<h2 id="Introduction-to-the-Script"><a href="#Introduction-to-the-Script" class="headerlink" title="Introduction to the Script"></a>Introduction to the Script</h2><p>The script leverages <code>esxcli</code> commands to fetch SMART data for each disk and formats the output in a readable table, logging it along with a timestamp. Key information such as health status, drive temperature, power-on hours, power cycle count, and reallocated sector count is extracted and displayed, helping you quickly identify potential issues.</p>
+<p>You will able to check the SMART information as below sample:<br><code>&gt; ./smart.sh</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Drive                                   | Health Status | Drive Temperature | Power-on Hours | Power Cycle Count | Reallocated Sector Count</span><br><span class="line">---------------------------------------------------------------------------------------------------------------------------------------------</span><br><span class="line">eui.0000000001000000b7d6c88d0a080f00      OK              40/77               3118             81                  0/90                                </span><br><span class="line">t10.NVMe.WD.PC.SN740.SDDPTQE2D2T00.02F2E  OK              42/84               549              1473                0/90                                                             </span><br><span class="line">t10.NVMe.EDILOCA.EN870.4TB.4334424002000  OK              44/90               20               3                   0/99                                </span><br><span class="line">t10.NVMe.SAMSUNG.MZVL22T0HBLB2D00B00.5D8  OK              44/81               11498            346                 0/90                                </span><br><span class="line">t10.NVMe.EDILOCA.EN870.4TB.5435424002000  OK              44/90               19               4                   0/99 </span><br></pre></td></tr></table></figure>
 
-<ol start="2">
-<li><strong>Find the CD-ROM source line</strong>:<br>  Look for the line that specifies the CD-ROM as a source. It will look something like this:</li>
-</ol>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">deb cdrom:[deb95amd64d1]/ stretch contrib main</span><br></pre></td></tr></table></figure>
+<h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><ul>
+<li>A working ESXi server</li>
+<li>SSH access enabled on the ESXi server</li>
+<li>Basic familiarity with shell scripts</li>
+</ul>
+<h2 id="The-Script"><a href="#The-Script" class="headerlink" title="The Script"></a>The Script</h2><p>You can download here: <a href="https://github.com/Upinel/ESXi-SMART-and-Temp/releases/tag/v1.0">GitHub Download</a><br>or you can copy the following script to your ESXi.<br>Here is the complete shell script for checking disk health using SMART data on ESXi, Place it in your ESXi, and <code>chmod +x smart.sh</code> so you can execute the script.</p>
+<p><code>smart.sh</code>:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="comment">#ESXi SMART Script by @Upinel https://upinel.github.io. All Rights Reserved.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Get the list of all device UIDs</span></span><br><span class="line">device_list=$(esxcli storage core device list | grep -E <span class="string">&#x27;^t10.|^eui.&#x27;</span> | awk <span class="string">&#x27;&#123;print $1&#125;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Timestamp for log</span></span><br><span class="line">timestamp=$(<span class="built_in">date</span> <span class="string">&#x27;+%Y-%m-%d %H:%M:%S&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Header for the output</span></span><br><span class="line">header=<span class="string">&quot;Drive                                   | Health Status | Drive Temperature | Power-on Hours | Power Cycle Count | Reallocated Sector Count&quot;</span></span><br><span class="line">separator=<span class="string">&quot;---------------------------------------------------------------------------------------------------------------------------------------------&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$header</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$separator</span>&quot;</span></span><br><span class="line"><span class="comment"># Begin logging output with timestamp</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;Timestamp: <span class="variable">$timestamp</span>&quot;</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$header</span>&quot;</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$separator</span>&quot;</span></span><br><span class="line">&#125; &gt;&gt; smart.log</span><br><span class="line"></span><br><span class="line"><span class="comment"># Function to process device name</span></span><br><span class="line"><span class="function"><span class="title">process_device_name</span></span>() &#123;</span><br><span class="line">    <span class="built_in">local</span> device_name=<span class="variable">$1</span></span><br><span class="line">    <span class="comment"># Replace multiple underscores with a single period</span></span><br><span class="line">    device_name=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$device_name</span>&quot;</span> | sed <span class="string">&#x27;s/_\+/\./g&#x27;</span>)</span><br><span class="line">    <span class="comment"># Truncate to a maximum of 40 characters</span></span><br><span class="line">    device_name=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$device_name</span>&quot;</span> | <span class="built_in">cut</span> -c 1-40)</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$device_name</span>&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Iterate through each device UID and fetch its SMART data</span></span><br><span class="line"><span class="keyword">for</span> device <span class="keyword">in</span> <span class="variable">$device_list</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="comment"># Process the device name</span></span><br><span class="line">    processed_device_name=$(process_device_name <span class="string">&quot;<span class="variable">$device</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Get the SMART data</span></span><br><span class="line">    output=$(esxcli storage core device smart get -d <span class="variable">$device</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Format the output</span></span><br><span class="line">    formatted_output=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$output</span>&quot;</span> | awk -v device=<span class="string">&quot;<span class="variable">$processed_device_name</span>&quot;</span> <span class="string">&#x27;</span></span><br><span class="line"><span class="string">    BEGIN &#123;</span></span><br><span class="line"><span class="string">        # Initialize default values</span></span><br><span class="line"><span class="string">        status[&quot;Health Status&quot;] = &quot;N/A&quot;</span></span><br><span class="line"><span class="string">        status[&quot;Power-on Hours&quot;] = &quot;N/A&quot;</span></span><br><span class="line"><span class="string">        status[&quot;Drive Temperature&quot;] = &quot;N/A/N/A&quot;</span></span><br><span class="line"><span class="string">        status[&quot;Power Cycle Count&quot;] = &quot;N/A&quot;</span></span><br><span class="line"><span class="string">        status[&quot;Reallocated Sector Count&quot;] = &quot;N/A/N/A&quot;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    # Capture specific parameters and thresholds</span></span><br><span class="line"><span class="string">    /Health Status/ &#123;status[&quot;Health Status&quot;] = $3 ? $3 : &quot;N/A&quot;&#125;</span></span><br><span class="line"><span class="string">    /Power-on Hours/ &#123;status[&quot;Power-on Hours&quot;] = $3 ? $3 : &quot;N/A&quot;&#125;</span></span><br><span class="line"><span class="string">    /Drive Temperature/ &#123;</span></span><br><span class="line"><span class="string">        value = $3 ? $3 : &quot;-&quot;</span></span><br><span class="line"><span class="string">        threshold = $4 ? $4 : &quot;-&quot;</span></span><br><span class="line"><span class="string">        status[&quot;Drive Temperature&quot;] = value &quot;/&quot; threshold</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    /Power Cycle Count/ &#123;status[&quot;Power Cycle Count&quot;] = $4 ? $4 : &quot;N/A&quot;&#125;</span></span><br><span class="line"><span class="string">    /Reallocated Sector Count/ &#123;</span></span><br><span class="line"><span class="string">        value = $4 ? $4 : &quot;0&quot;</span></span><br><span class="line"><span class="string">        threshold = $5 ? $5 : &quot;-&quot;</span></span><br><span class="line"><span class="string">        status[&quot;Reallocated Sector Count&quot;] = value &quot;/&quot; threshold</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    END &#123;</span></span><br><span class="line"><span class="string">        # Print the results with formatted and truncated drive name (40 characters max)</span></span><br><span class="line"><span class="string">        printf &quot;%-41s %-15s %-19s %-16s %-19s %-36s\n&quot;,</span></span><br><span class="line"><span class="string">        device,</span></span><br><span class="line"><span class="string">        status[&quot;Health Status&quot;],</span></span><br><span class="line"><span class="string">        status[&quot;Drive Temperature&quot;],</span></span><br><span class="line"><span class="string">        status[&quot;Power-on Hours&quot;],</span></span><br><span class="line"><span class="string">        status[&quot;Power Cycle Count&quot;],</span></span><br><span class="line"><span class="string">        status[&quot;Reallocated Sector Count&quot;]</span></span><br><span class="line"><span class="string">    &#125;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Append formatted output to the log file</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$formatted_output</span>&quot;</span> &gt;&gt; smart.log</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$formatted_output</span>&quot;</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Print an empty line for readability in the log</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;&quot;</span> &gt;&gt; smart.log</span><br></pre></td></tr></table></figure>
 
-<ol start="3">
-<li><strong>Comment out the CD-ROM source line</strong>:<br>  To disable this source, simply comment out the line by adding a <code>#</code> at the beginning of it. The result should look like this:</li>
-</ol>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># deb cdrom:[deb95amd64d1]/ stretch contrib main</span></span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li><p><strong>Save and close the file</strong>:<br>  In <code>nano</code>, you can do this by pressing <code>CTRL+X</code>, then <code>Y</code> to confirm the changes, and <code>Enter</code> to exit.</p>
-</li>
-<li><p><strong>Update your package list</strong>:<br>  After making these changes, ensure your package list is up to date by running:</p>
-</li>
-</ol>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt-get update</span><br></pre></td></tr></table></figure>
-
-<p>By following these steps, you instruct <code>apt-get</code> to ignore the CD-ROM as a source, relying instead on your other sources for package installations and updates.</p>
-<p>Whether you’re managing package sources or ensuring your applications are running smoothly, Debian and its tools offer robust solutions for both tasks.</p>
-<p>Taking care of your system’s configurations thoughtfully can save a lot of time and hassle.</p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Regularly checking your disk health can help prevent unexpected failures and prolong the lifespan of your hardware. The script presented here aims to facilitate this process, making it easier to monitor and log the SMART health status of all drives on your ESXi server.</p>
 ]]></content>
       <tags>
-        <tag>debian</tag>
+        <tag>ESXi</tag>
+        <tag>Server Management</tag>
+        <tag>Disk Health</tag>
+        <tag>SMART</tag>
       </tags>
   </entry>
   <entry>
@@ -136,26 +182,6 @@
       </tags>
   </entry>
   <entry>
-    <title>UniFi 2024 HomeLab 家庭網絡購買推薦</title>
-    <url>/2024/09/05/2024-HomeLab-UniFi-Network-Guide/</url>
-    <content><![CDATA[<p>UniFi 2024 HomeLab 家庭網絡購買推薦<br><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/unifi.png" alt="UniFi"><br>#藍圈科技 #UniFi #HomeLab<br>#移民人士：UniFi可以網絡層級連接香港的VPN(eg. Surfshark, Nord, Wireguard)，令你可以直接條件式自動「返香港」（eg. 睇Viu) 而應用程式係分唔到你係唔係VPN緊（因為你手機真係無開到「VPN」）</p>
-<p><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/UX1.png" alt="UX1"><br>入門級：UniFi Express (£123) (不推薦UDR)<br>推薦人群：想要穩定的無線網路環境，並想開始接觸企業級&#x2F;Prosumer 等級的網絡設置 (vLan, VPN, Static Route, Multiple SSID, 條件網絡設定，等)<br>限制：1Gbps 網絡，沒有IPS&#x2F;IDS，只有一孔LAN口但可以接駁switch增加LAN port，最大支援5台UniFi Network設備統一管理(實際上接unmanaged switch則沒有上限)<br><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/UX2.png" alt="UX2"><br>為什麼不推薦UDR：由於先天限制，UDR的WAN最多只能跑700Mbps，而且CPU效能比較不行，如果安裝了UniFi Protect會更慢，因此如果只需要網絡跑UniFi Express就好</p>
-<p><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/UCG-Max1.png" alt="UCG-Max1"><br>ProSumer 級：UniFi Cloud Gateway Max (£190) (不推薦Cloud Gateway Ultra)<br>推薦人群：需要IPS&#x2F;IDS，需要2.5Gbps WAN&#x2F;LAN，需要雙WAN備援，或需要UniFi Protect (Survellience Camera) &#x2F; UniFi Access &#x2F; UniFi Talk 等<br>限制：除了沒有10Gbps WAN孔外基本上沒有太大限制，是新的家用全家桶之選了<br><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/UCG-Max2.png" alt="UCG-Max1"><br>為什麼不推薦Cloud Gateway Ultra：雖然有2.5Gbps WAN，但由於先天限制，LAN和背版頻寬只有1Gbps，又不能跑UniFi Protect，又沒有內建WiFi，有點卡在中間的感覺，倒不如買Express，或者有Protect需求就買Cloud Gateway Max。當然如果你非常清楚你的需求是什麼(例如跑5+ AP)也是可以買的</p>
-<p><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/UDM-SE1.png" alt="UDM-SE1"><br>我全都要級：UniFi Dream Machine SE (一般 £478) &#x2F; UniFi Dream Machine Max (不缺錢錢 £574) （基本版UDM-Pro就不推薦了)<br>推薦人群：我全都要，喜歡機架，有大規模布建需求，10Gbps WAN，需要SFP+ port，或純粹不想有任何遺憾的人<br>限制：沒什麼限制的，SE自帶8口PoE，適合預期7-8台UniFi 的AP&#x2F;Camera，如果預期會使用多於8台PoE設備，則買UDM Max再另購24&#x2F;48口 PoE Switch<br><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/UDM-SE2.png" alt="UDM-SE2"><br>為什麼不推薦UDM-Pro：買到這個等級了，需要布建7-8台PoE設備的話買UDM-Pro-SE的價差會比多買一台PoE Switch 便宜，布建大量 PoE設備的話，UDM-Pro-Max的效能才可以比較開心的處理多台Camera。基本版的UDM-Pro就卡在中間不上不下的。</p>
-<p>關於Cloud Gateway &#x2F; UDM-Pro的AP選擇：要不買U6+ (£94)，要不買U7 Pro (£171)，中間的都可以skip掉<br>為什麼不買：<br>U7 Pro Max (£267)：主要是多了scanning功能，不值這個價錢，除非你需求清楚<br>U7 Pro Wall (£190)：U7 Pro其實也可以掛牆，但U7 Pro Wall掛頂就怪怪的，除非你是K11要將AP放進牆體中看不見<br>U7 Outdoor (£190)：按需選擇<br>U6 Enterprise (£267) &#x2F; Pro (£152) &#x2F; LR (£171)：看看價錢，直接買U7 Pro 吧（我們是Home Network，不會有100+ devices的，U7 Pro 的 300 connected devices 夠用了）</p>
-<p>關於Cloud Gateway &#x2F; UDM-Pro的Camera選擇：基本上除非有清楚需求，否則無腦G5 Turret Ultra (£94) 就可以了，足夠清晰，戶內戶外防水，你要的都大概有了<br>特殊需求：</p>
-<ul>
-<li>需要車牌識別警示（一般只會在前門裝一台）：UniFi AI Pro (£478)</li>
-<li>其他特殊需求&#x2F;指定外觀請自行到ui.com查看</li>
-</ul>
-<p>這不是工商文，只是作為一個UniFi粉分享我自己的UniFi使用建議，我幾乎都玩齊了，UniFi 的Site Manager能做遠端管理真的是超方便，父母家遠距輕鬆支援<br><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/myUniFi.png" alt="myUniFi"></p>
-]]></content>
-      <tags>
-        <tag>UniFi</tag>
-        <tag>Network</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Uninstall debian desktop enviorment</title>
     <url>/2024/07/02/Uninstall-debian-desktop-enviorment/</url>
     <content><![CDATA[<p>Have you installed a desktop environment on Debian that you no longer need? Whether you’re looking to free up space or want to use a minimal install without a GUI, this guide will walk you through the steps to uninstall the desktop environment on Debian.</p>
@@ -173,32 +199,6 @@
       <tags>
         <tag>debian</tag>
         <tag>server</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ESXi SMART Script to Check All Disk Health</title>
-    <url>/2024/07/17/ESXi-SMART-Script/</url>
-    <content><![CDATA[<p>In managing an ESXi server, ensuring all disks are healthy and functional is crucial to maintaining overall system reliability and performance. A failed disk can lead to data loss or even system downtime. Thus, proactively monitoring disk health using SMART (Self-Monitoring, Analysis, and Reporting Technology) data is a smart practice. This blog post walks you through a shell script designed to check the health of all disks on your ESXi server.</p>
-<h2 id="Introduction-to-the-Script"><a href="#Introduction-to-the-Script" class="headerlink" title="Introduction to the Script"></a>Introduction to the Script</h2><p>The script leverages <code>esxcli</code> commands to fetch SMART data for each disk and formats the output in a readable table, logging it along with a timestamp. Key information such as health status, drive temperature, power-on hours, power cycle count, and reallocated sector count is extracted and displayed, helping you quickly identify potential issues.</p>
-<p>You will able to check the SMART information as below sample:<br><code>&gt; ./smart.sh</code></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Drive                                   | Health Status | Drive Temperature | Power-on Hours | Power Cycle Count | Reallocated Sector Count</span><br><span class="line">---------------------------------------------------------------------------------------------------------------------------------------------</span><br><span class="line">eui.0000000001000000b7d6c88d0a080f00      OK              40/77               3118             81                  0/90                                </span><br><span class="line">t10.NVMe.WD.PC.SN740.SDDPTQE2D2T00.02F2E  OK              42/84               549              1473                0/90                                                             </span><br><span class="line">t10.NVMe.EDILOCA.EN870.4TB.4334424002000  OK              44/90               20               3                   0/99                                </span><br><span class="line">t10.NVMe.SAMSUNG.MZVL22T0HBLB2D00B00.5D8  OK              44/81               11498            346                 0/90                                </span><br><span class="line">t10.NVMe.EDILOCA.EN870.4TB.5435424002000  OK              44/90               19               4                   0/99 </span><br></pre></td></tr></table></figure>
-
-<h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><ul>
-<li>A working ESXi server</li>
-<li>SSH access enabled on the ESXi server</li>
-<li>Basic familiarity with shell scripts</li>
-</ul>
-<h2 id="The-Script"><a href="#The-Script" class="headerlink" title="The Script"></a>The Script</h2><p>You can download here: <a href="https://github.com/Upinel/ESXi-SMART-and-Temp/releases/tag/v1.0">GitHub Download</a><br>or you can copy the following script to your ESXi.<br>Here is the complete shell script for checking disk health using SMART data on ESXi, Place it in your ESXi, and <code>chmod +x smart.sh</code> so you can execute the script.</p>
-<p><code>smart.sh</code>:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="comment">#ESXi SMART Script by @Upinel https://upinel.github.io. All Rights Reserved.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Get the list of all device UIDs</span></span><br><span class="line">device_list=$(esxcli storage core device list | grep -E <span class="string">&#x27;^t10.|^eui.&#x27;</span> | awk <span class="string">&#x27;&#123;print $1&#125;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Timestamp for log</span></span><br><span class="line">timestamp=$(<span class="built_in">date</span> <span class="string">&#x27;+%Y-%m-%d %H:%M:%S&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Header for the output</span></span><br><span class="line">header=<span class="string">&quot;Drive                                   | Health Status | Drive Temperature | Power-on Hours | Power Cycle Count | Reallocated Sector Count&quot;</span></span><br><span class="line">separator=<span class="string">&quot;---------------------------------------------------------------------------------------------------------------------------------------------&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$header</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$separator</span>&quot;</span></span><br><span class="line"><span class="comment"># Begin logging output with timestamp</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;Timestamp: <span class="variable">$timestamp</span>&quot;</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$header</span>&quot;</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$separator</span>&quot;</span></span><br><span class="line">&#125; &gt;&gt; smart.log</span><br><span class="line"></span><br><span class="line"><span class="comment"># Function to process device name</span></span><br><span class="line"><span class="function"><span class="title">process_device_name</span></span>() &#123;</span><br><span class="line">    <span class="built_in">local</span> device_name=<span class="variable">$1</span></span><br><span class="line">    <span class="comment"># Replace multiple underscores with a single period</span></span><br><span class="line">    device_name=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$device_name</span>&quot;</span> | sed <span class="string">&#x27;s/_\+/\./g&#x27;</span>)</span><br><span class="line">    <span class="comment"># Truncate to a maximum of 40 characters</span></span><br><span class="line">    device_name=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$device_name</span>&quot;</span> | <span class="built_in">cut</span> -c 1-40)</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$device_name</span>&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Iterate through each device UID and fetch its SMART data</span></span><br><span class="line"><span class="keyword">for</span> device <span class="keyword">in</span> <span class="variable">$device_list</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="comment"># Process the device name</span></span><br><span class="line">    processed_device_name=$(process_device_name <span class="string">&quot;<span class="variable">$device</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Get the SMART data</span></span><br><span class="line">    output=$(esxcli storage core device smart get -d <span class="variable">$device</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Format the output</span></span><br><span class="line">    formatted_output=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$output</span>&quot;</span> | awk -v device=<span class="string">&quot;<span class="variable">$processed_device_name</span>&quot;</span> <span class="string">&#x27;</span></span><br><span class="line"><span class="string">    BEGIN &#123;</span></span><br><span class="line"><span class="string">        # Initialize default values</span></span><br><span class="line"><span class="string">        status[&quot;Health Status&quot;] = &quot;N/A&quot;</span></span><br><span class="line"><span class="string">        status[&quot;Power-on Hours&quot;] = &quot;N/A&quot;</span></span><br><span class="line"><span class="string">        status[&quot;Drive Temperature&quot;] = &quot;N/A/N/A&quot;</span></span><br><span class="line"><span class="string">        status[&quot;Power Cycle Count&quot;] = &quot;N/A&quot;</span></span><br><span class="line"><span class="string">        status[&quot;Reallocated Sector Count&quot;] = &quot;N/A/N/A&quot;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    # Capture specific parameters and thresholds</span></span><br><span class="line"><span class="string">    /Health Status/ &#123;status[&quot;Health Status&quot;] = $3 ? $3 : &quot;N/A&quot;&#125;</span></span><br><span class="line"><span class="string">    /Power-on Hours/ &#123;status[&quot;Power-on Hours&quot;] = $3 ? $3 : &quot;N/A&quot;&#125;</span></span><br><span class="line"><span class="string">    /Drive Temperature/ &#123;</span></span><br><span class="line"><span class="string">        value = $3 ? $3 : &quot;-&quot;</span></span><br><span class="line"><span class="string">        threshold = $4 ? $4 : &quot;-&quot;</span></span><br><span class="line"><span class="string">        status[&quot;Drive Temperature&quot;] = value &quot;/&quot; threshold</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    /Power Cycle Count/ &#123;status[&quot;Power Cycle Count&quot;] = $4 ? $4 : &quot;N/A&quot;&#125;</span></span><br><span class="line"><span class="string">    /Reallocated Sector Count/ &#123;</span></span><br><span class="line"><span class="string">        value = $4 ? $4 : &quot;0&quot;</span></span><br><span class="line"><span class="string">        threshold = $5 ? $5 : &quot;-&quot;</span></span><br><span class="line"><span class="string">        status[&quot;Reallocated Sector Count&quot;] = value &quot;/&quot; threshold</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    END &#123;</span></span><br><span class="line"><span class="string">        # Print the results with formatted and truncated drive name (40 characters max)</span></span><br><span class="line"><span class="string">        printf &quot;%-41s %-15s %-19s %-16s %-19s %-36s\n&quot;,</span></span><br><span class="line"><span class="string">        device,</span></span><br><span class="line"><span class="string">        status[&quot;Health Status&quot;],</span></span><br><span class="line"><span class="string">        status[&quot;Drive Temperature&quot;],</span></span><br><span class="line"><span class="string">        status[&quot;Power-on Hours&quot;],</span></span><br><span class="line"><span class="string">        status[&quot;Power Cycle Count&quot;],</span></span><br><span class="line"><span class="string">        status[&quot;Reallocated Sector Count&quot;]</span></span><br><span class="line"><span class="string">    &#125;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Append formatted output to the log file</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$formatted_output</span>&quot;</span> &gt;&gt; smart.log</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$formatted_output</span>&quot;</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Print an empty line for readability in the log</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;&quot;</span> &gt;&gt; smart.log</span><br></pre></td></tr></table></figure>
-
-<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Regularly checking your disk health can help prevent unexpected failures and prolong the lifespan of your hardware. The script presented here aims to facilitate this process, making it easier to monitor and log the SMART health status of all drives on your ESXi server.</p>
-]]></content>
-      <tags>
-        <tag>ESXi</tag>
-        <tag>Server Management</tag>
-        <tag>Disk Health</tag>
-        <tag>SMART</tag>
       </tags>
   </entry>
   <entry>
@@ -226,6 +226,52 @@
 ]]></content>
       <tags>
         <tag>windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Intel NUC12 1240P 10TB (4*SSD) Super HomeLab Build</title>
+    <url>/2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/</url>
+    <content><![CDATA[<p>I’m excited to share my recent project of building an ultra-compact, all-SSD HomeLab with the incredible Intel NUC12. Below, I will walk you through the specifications and the detailed process of creating this monster build.</p>
+<p><img src="/2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/8tb-3xssd-pve-homelab-setup-nuc-12-nuc12wski5-wall-street-v0-edvkkkp9x83d1.jpg" alt="NUC12 HomeLab Setup"></p>
+<h2 id="Specifications"><a href="#Specifications" class="headerlink" title="Specifications"></a>Specifications</h2><p><strong>Processor:</strong> Intel i5-1240P (12 Cores &#x2F; 16 Threads, Underclock at 18&#x2F;28W)</p>
+<p><strong>RAM:</strong> 64GB</p>
+<p><strong>Storage:</strong> Total 10TB across four SSDs:</p>
+<ul>
+<li><strong>Samsung 980Pro 2TB</strong> (Gen 4x4) 2280 NVMe SSD</li>
+<li><strong>Solidigm P41 Plus 2TB</strong> (Gen 4x4 Downgraded to Gen 3x1) 2280 NVMe SSD</li>
+<li><strong>Sandisk SN740 2TB</strong> (Gen 4x4 Downgraded to Gen 3x1) 2230 NVMe SSD</li>
+<li><strong>Samsung 870 EVO 4TB</strong> SATA SSD</li>
+</ul>
+<h2 id="Installation-Process"><a href="#Installation-Process" class="headerlink" title="Installation Process"></a>Installation Process</h2><h3 id="Step-1-Default-Configuration"><a href="#Step-1-Default-Configuration" class="headerlink" title="Step 1: Default Configuration"></a>Step 1: Default Configuration</h3><p>The Intel NUC12 can naturally accommodate two SSDs: </p>
+<ul>
+<li><strong>M.2 2280 SSD slot:</strong> Where I installed the <strong>Samsung 980 Pro 2TB</strong>.</li>
+<li><strong>SATA SSD slot:</strong> Which houses the <strong>Samsung 870 EVO 4TB</strong>.</li>
+</ul>
+<p>This setup provided me with 6TB of high-speed storage.</p>
+<h3 id="Step-2-Maximizing-Expandability-with-M-2-2242-Slot"><a href="#Step-2-Maximizing-Expandability-with-M-2-2242-Slot" class="headerlink" title="Step 2: Maximizing Expandability with M.2 2242 Slot"></a>Step 2: Maximizing Expandability with M.2 2242 Slot</h3><p>I discovered that the NUC12’s 2242 M.2 slot includes a PCIe Gen3x1 lane. By using a <strong>Key B to Key M converter</strong>, this allowed me to connect a <strong>Sandisk SN740 2TB</strong> as a 2242 form-factor drive.</p>
+<p><em>Note: Connecting the <strong>SN740</strong> via <strong>Key B</strong> scales down its speed from Gen4x4 (<del>5000MB&#x2F;s) to Gen3x1 (</del>900MB&#x2F;s).</em></p>
+<p><img src="/2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/8tb-3xssd-pve-homelab-setup-nuc-12-nuc12wski5-wall-street-v0-y5zxrkp9x83d1.jpg" alt="SSD Conversion"></p>
+<h3 id="Step-3-Utilizing-the-WiFi-Slot"><a href="#Step-3-Utilizing-the-WiFi-Slot" class="headerlink" title="Step 3: Utilizing the WiFi Slot"></a>Step 3: Utilizing the WiFi Slot</h3><p>Since I seldom use the WiFi chip, my HomeLab runs mainly on a 2.5Gbps Ethernet connection. By converting the <strong>Key A+E to Key M</strong> via another converter, I effectively utilized the <strong>WiFi slot’s PCIe Gen3x1 lane</strong>. This connected the <strong>Solidigm P41 2TB SSD</strong> to the WiFi slot via an <strong>FFC cable</strong> routed to the remaining area designated for the SATA drive, providing an additional 2TB at PCIe Gen3x1 (~900MB&#x2F;s).</p>
+<p><img src="/2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/13.56.47.png" alt="WiFi Slot SSD"></p>
+<h3 id="Step-4-Underclocking-for-Optimal-Performance"><a href="#Step-4-Underclocking-for-Optimal-Performance" class="headerlink" title="Step 4: Underclocking for Optimal Performance"></a>Step 4: Underclocking for Optimal Performance</h3><p>To keep noise and heat in check, I underclocked the Intel i5-1240P CPU to:</p>
+<ul>
+<li><strong>PL1 &#x3D; 18W</strong></li>
+<li><strong>PL2 &#x3D; 28W</strong></li>
+</ul>
+<p>This adjustment still provides 80% of the CPU’s power potential, which is more than sufficient for my workloads. Additionally, the CPU typically operates below a 10% load, thus maintaining an efficient and quiet environment.</p>
+<p><img src="/2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/13.11.45.png" alt="CPU Load Overview"></p>
+<h2 id="Enhancing-Capabilities-with-Thunderbolt-4-Ports"><a href="#Enhancing-Capabilities-with-Thunderbolt-4-Ports" class="headerlink" title="Enhancing Capabilities with Thunderbolt 4 Ports"></a>Enhancing Capabilities with Thunderbolt 4 Ports</h2><p>The NUC12 also features <strong>2 Thunderbolt 4 ports</strong>, each offering a 40Gbps link. This provides the flexibility to expand storage further by connecting to external SSD enclosures or HDD RAID setups—potentially accommodating up to <strong>8x10Gbps (Gen3x1) external SSDs</strong> via TB3&#x2F;4 4-bay enclosures.</p>
+<p><img src="/2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/14.01.43.png" alt="Thunderbolt 4 Ports"></p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>By fully utilizing the Gen4x4 M.2 slot, SATA slot, Gen3x1 2242 slot, and the Gen3x1 WiFi slot, I successfully installed four SSDs into a single 4x4 NUC12 with ease. This setup provides an impressive 10TB of high-speed storage in a remarkably compact form factor.</p>
+<p><img src="/2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/13.21.09.png" alt="Completed HomeLab"></p>
+<p>I am thrilled with how compact yet powerful the Intel NUC12 1240P has proven to be for this HomeLab build. It not only meets my storage needs but also leverages advanced features for potential future expansions.</p>
+<p>Feel free to share your thoughts or ask questions in the comments below. Happy building!</p>
+]]></content>
+      <tags>
+        <tag>intel</tag>
+        <tag>NUC12</tag>
+        <tag>HomeLab</tag>
+        <tag>SSD</tag>
       </tags>
   </entry>
   <entry>
@@ -313,52 +359,6 @@
       <tags>
         <tag>nodeJS</tag>
         <tag>development</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Intel NUC12 1240P 10TB (4*SSD) Super HomeLab Build</title>
-    <url>/2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/</url>
-    <content><![CDATA[<p>I’m excited to share my recent project of building an ultra-compact, all-SSD HomeLab with the incredible Intel NUC12. Below, I will walk you through the specifications and the detailed process of creating this monster build.</p>
-<p><img src="/2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/8tb-3xssd-pve-homelab-setup-nuc-12-nuc12wski5-wall-street-v0-edvkkkp9x83d1.jpg" alt="NUC12 HomeLab Setup"></p>
-<h2 id="Specifications"><a href="#Specifications" class="headerlink" title="Specifications"></a>Specifications</h2><p><strong>Processor:</strong> Intel i5-1240P (12 Cores &#x2F; 16 Threads, Underclock at 18&#x2F;28W)</p>
-<p><strong>RAM:</strong> 64GB</p>
-<p><strong>Storage:</strong> Total 10TB across four SSDs:</p>
-<ul>
-<li><strong>Samsung 980Pro 2TB</strong> (Gen 4x4) 2280 NVMe SSD</li>
-<li><strong>Solidigm P41 Plus 2TB</strong> (Gen 4x4 Downgraded to Gen 3x1) 2280 NVMe SSD</li>
-<li><strong>Sandisk SN740 2TB</strong> (Gen 4x4 Downgraded to Gen 3x1) 2230 NVMe SSD</li>
-<li><strong>Samsung 870 EVO 4TB</strong> SATA SSD</li>
-</ul>
-<h2 id="Installation-Process"><a href="#Installation-Process" class="headerlink" title="Installation Process"></a>Installation Process</h2><h3 id="Step-1-Default-Configuration"><a href="#Step-1-Default-Configuration" class="headerlink" title="Step 1: Default Configuration"></a>Step 1: Default Configuration</h3><p>The Intel NUC12 can naturally accommodate two SSDs: </p>
-<ul>
-<li><strong>M.2 2280 SSD slot:</strong> Where I installed the <strong>Samsung 980 Pro 2TB</strong>.</li>
-<li><strong>SATA SSD slot:</strong> Which houses the <strong>Samsung 870 EVO 4TB</strong>.</li>
-</ul>
-<p>This setup provided me with 6TB of high-speed storage.</p>
-<h3 id="Step-2-Maximizing-Expandability-with-M-2-2242-Slot"><a href="#Step-2-Maximizing-Expandability-with-M-2-2242-Slot" class="headerlink" title="Step 2: Maximizing Expandability with M.2 2242 Slot"></a>Step 2: Maximizing Expandability with M.2 2242 Slot</h3><p>I discovered that the NUC12’s 2242 M.2 slot includes a PCIe Gen3x1 lane. By using a <strong>Key B to Key M converter</strong>, this allowed me to connect a <strong>Sandisk SN740 2TB</strong> as a 2242 form-factor drive.</p>
-<p><em>Note: Connecting the <strong>SN740</strong> via <strong>Key B</strong> scales down its speed from Gen4x4 (<del>5000MB&#x2F;s) to Gen3x1 (</del>900MB&#x2F;s).</em></p>
-<p><img src="/2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/8tb-3xssd-pve-homelab-setup-nuc-12-nuc12wski5-wall-street-v0-y5zxrkp9x83d1.jpg" alt="SSD Conversion"></p>
-<h3 id="Step-3-Utilizing-the-WiFi-Slot"><a href="#Step-3-Utilizing-the-WiFi-Slot" class="headerlink" title="Step 3: Utilizing the WiFi Slot"></a>Step 3: Utilizing the WiFi Slot</h3><p>Since I seldom use the WiFi chip, my HomeLab runs mainly on a 2.5Gbps Ethernet connection. By converting the <strong>Key A+E to Key M</strong> via another converter, I effectively utilized the <strong>WiFi slot’s PCIe Gen3x1 lane</strong>. This connected the <strong>Solidigm P41 2TB SSD</strong> to the WiFi slot via an <strong>FFC cable</strong> routed to the remaining area designated for the SATA drive, providing an additional 2TB at PCIe Gen3x1 (~900MB&#x2F;s).</p>
-<p><img src="/2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/13.56.47.png" alt="WiFi Slot SSD"></p>
-<h3 id="Step-4-Underclocking-for-Optimal-Performance"><a href="#Step-4-Underclocking-for-Optimal-Performance" class="headerlink" title="Step 4: Underclocking for Optimal Performance"></a>Step 4: Underclocking for Optimal Performance</h3><p>To keep noise and heat in check, I underclocked the Intel i5-1240P CPU to:</p>
-<ul>
-<li><strong>PL1 &#x3D; 18W</strong></li>
-<li><strong>PL2 &#x3D; 28W</strong></li>
-</ul>
-<p>This adjustment still provides 80% of the CPU’s power potential, which is more than sufficient for my workloads. Additionally, the CPU typically operates below a 10% load, thus maintaining an efficient and quiet environment.</p>
-<p><img src="/2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/13.11.45.png" alt="CPU Load Overview"></p>
-<h2 id="Enhancing-Capabilities-with-Thunderbolt-4-Ports"><a href="#Enhancing-Capabilities-with-Thunderbolt-4-Ports" class="headerlink" title="Enhancing Capabilities with Thunderbolt 4 Ports"></a>Enhancing Capabilities with Thunderbolt 4 Ports</h2><p>The NUC12 also features <strong>2 Thunderbolt 4 ports</strong>, each offering a 40Gbps link. This provides the flexibility to expand storage further by connecting to external SSD enclosures or HDD RAID setups—potentially accommodating up to <strong>8x10Gbps (Gen3x1) external SSDs</strong> via TB3&#x2F;4 4-bay enclosures.</p>
-<p><img src="/2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/14.01.43.png" alt="Thunderbolt 4 Ports"></p>
-<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>By fully utilizing the Gen4x4 M.2 slot, SATA slot, Gen3x1 2242 slot, and the Gen3x1 WiFi slot, I successfully installed four SSDs into a single 4x4 NUC12 with ease. This setup provides an impressive 10TB of high-speed storage in a remarkably compact form factor.</p>
-<p><img src="/2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/13.21.09.png" alt="Completed HomeLab"></p>
-<p>I am thrilled with how compact yet powerful the Intel NUC12 1240P has proven to be for this HomeLab build. It not only meets my storage needs but also leverages advanced features for potential future expansions.</p>
-<p>Feel free to share your thoughts or ask questions in the comments below. Happy building!</p>
-]]></content>
-      <tags>
-        <tag>intel</tag>
-        <tag>NUC12</tag>
-        <tag>HomeLab</tag>
-        <tag>SSD</tag>
       </tags>
   </entry>
   <entry>

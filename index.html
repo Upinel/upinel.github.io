@@ -153,7 +153,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -193,6 +193,136 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://upinel.github.io/2024/09/05/2024-HomeLab-UniFi-Network-Guide-EN/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="@Upinel">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Upinel Notebook">
+      <meta itemprop="description" content="Code, Homelab, and everything tech">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Upinel Notebook">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/09/05/2024-HomeLab-UniFi-Network-Guide-EN/" class="post-title-link" itemprop="url">UniFi 2024 HomeLab Home Network Buying Guide</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2024-09-05 22:56:53 / Modified: 23:06:42" itemprop="dateCreated datePublished" datetime="2024-09-05T22:56:53+01:00">2024-09-05</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2024/09/05/2024-HomeLab-UniFi-Network-Guide-EN/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/09/05/2024-HomeLab-UniFi-Network-Guide-EN/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>UniFi 2024 HomeLab Home Network Buying Guide<br><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/EN/unifi.png" alt="UniFi"></p>
+<p><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/EN/UX1.png" alt="UX1"></p>
+<h2 id="Entry-Level-UniFi-Express-£123-Not-recommended-UDR"><a href="#Entry-Level-UniFi-Express-£123-Not-recommended-UDR" class="headerlink" title="Entry-Level: UniFi Express (£123) (Not recommended: UDR)"></a>Entry-Level: UniFi Express (£123) (Not recommended: UDR)</h2><h3 id="Recommended-For"><a href="#Recommended-For" class="headerlink" title="Recommended For"></a>Recommended For</h3><p>Those who want a stable wireless network environment and want to start experiencing enterprise&#x2F;Prosumer-level network setups (vLAN, VPN, Static Route, Multiple SSID, Conditional Network Settings, etc.).</p>
+<h3 id="Limitations"><a href="#Limitations" class="headerlink" title="Limitations"></a>Limitations</h3><ul>
+<li>1Gbps network</li>
+<li>No IPS&#x2F;IDS</li>
+<li>Only one LAN port, but can connect to a switch to increase LAN ports</li>
+<li>Supports a maximum of 5 UniFi Network devices for unified management (in practice, using an unmanaged switch increases the limit).<br><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/EN/UX2.png" alt="UX2"></li>
+</ul>
+<h3 id="Why-Not-UDR"><a href="#Why-Not-UDR" class="headerlink" title="Why Not UDR?"></a>Why Not UDR?</h3><p>Due to inherent limitations, UDR’s WAN can only go up to 700Mbps, and its CPU performance isn’t great. If you install UniFi Protect, it will slow down even more. Hence, for just network needs, UniFi Express is the better choice.</p>
+<p><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/EN/UCG-Max1.png" alt="UCG-Max1"></p>
+<h2 id="ProSumer-Level-UniFi-Cloud-Gateway-Max-£190-Not-recommended-Cloud-Gateway-Ultra"><a href="#ProSumer-Level-UniFi-Cloud-Gateway-Max-£190-Not-recommended-Cloud-Gateway-Ultra" class="headerlink" title="ProSumer-Level: UniFi Cloud Gateway Max (£190) (Not recommended: Cloud Gateway Ultra)"></a>ProSumer-Level: UniFi Cloud Gateway Max (£190) (Not recommended: Cloud Gateway Ultra)</h2><h3 id="Recommended-For-1"><a href="#Recommended-For-1" class="headerlink" title="Recommended For"></a>Recommended For</h3><ul>
+<li>Those who need IPS&#x2F;IDS</li>
+<li>Need 2.5Gbps WAN&#x2F;LAN</li>
+<li>Require Dual WAN backup</li>
+<li>Or need UniFi Protect (Surveillance Camera) &#x2F; UniFi Access &#x2F; UniFi Talk, etc.</li>
+</ul>
+<h3 id="Limitations-1"><a href="#Limitations-1" class="headerlink" title="Limitations"></a>Limitations</h3><ul>
+<li>Besides lacking a 10Gbps WAN port, there are minimal limitations, making this a great choice for home use.<br><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/EN/UCG-Max2.png" alt="UCG-Max1"></li>
+</ul>
+<h3 id="Why-Not-Cloud-Gateway-Ultra"><a href="#Why-Not-Cloud-Gateway-Ultra" class="headerlink" title="Why Not Cloud Gateway Ultra?"></a>Why Not Cloud Gateway Ultra?</h3><p>Although it has a 2.5Gbps WAN, due to inherent limitations, the LAN and backplane bandwidth is only 1Gbps, it can’t run UniFi Protect, and it doesn’t have built-in WiFi, feeling somewhat in-between. It’s better to opt for either Express for network needs or Cloud Gateway Max if Protect is required. Of course, if you clearly know your requirements (e.g., running 5+ APs), it’s okay to buy it.</p>
+<p><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/EN/UDM-SE1.png" alt="UDM-SE1"></p>
+<h2 id="All-in-One-UniFi-Dream-Machine-SE-£478-UniFi-Dream-Machine-Max-£574-Regular-UDM-Pro-not-recommended"><a href="#All-in-One-UniFi-Dream-Machine-SE-£478-UniFi-Dream-Machine-Max-£574-Regular-UDM-Pro-not-recommended" class="headerlink" title="All-in-One: UniFi Dream Machine SE (£478) &#x2F; UniFi Dream Machine Max (£574) (Regular UDM-Pro not recommended)"></a>All-in-One: UniFi Dream Machine SE (£478) &#x2F; UniFi Dream Machine Max (£574) (Regular UDM-Pro not recommended)</h2><h3 id="Recommended-For-2"><a href="#Recommended-For-2" class="headerlink" title="Recommended For"></a>Recommended For</h3><ul>
+<li>Those who want it all</li>
+<li>Like rack mounts</li>
+<li>Have large-scale deployment needs</li>
+<li>Need 10Gbps WAN</li>
+<li>Require SFP+ ports</li>
+<li>Or simply don’t want any regrets.</li>
+</ul>
+<h3 id="Limitations-2"><a href="#Limitations-2" class="headerlink" title="Limitations"></a>Limitations</h3><ul>
+<li>Little to none. The SE comes with 8 PoE ports, suitable for deploying 7-8 UniFi APs&#x2F;Cameras. If expecting more than eight PoE devices, get the UDM Max and additionally buy a 24&#x2F;48 port PoE switch.<br><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/EN/UDM-SE2.png" alt="UDM-SE2"></li>
+</ul>
+<h3 id="Why-Not-UDM-Pro"><a href="#Why-Not-UDM-Pro" class="headerlink" title="Why Not UDM-Pro?"></a>Why Not UDM-Pro?</h3><p>At this level, if you need to deploy 7-8 PoE devices, the price difference for the UDM-Pro-SE will be cheaper than buying an additional PoE switch. For large PoE device deployments, the UDM-Pro-Max’s performance can handle multiple cameras happily. The basic UDM-Pro just feels stuck in between.</p>
+<h2 id="AP-Options-for-Cloud-Gateway-UDM-Pro"><a href="#AP-Options-for-Cloud-Gateway-UDM-Pro" class="headerlink" title="AP Options for Cloud Gateway&#x2F;UDM-Pro"></a>AP Options for Cloud Gateway&#x2F;UDM-Pro</h2><p>Choose either the U6+ (£94) or the U7 Pro (£171). The ones in between can be skipped:</p>
+<h3 id="Why-Not"><a href="#Why-Not" class="headerlink" title="Why Not:"></a>Why Not:</h3><ul>
+<li>U7 Pro Max (£267): Mainly adds scanning features; not worth the price unless you have clear requirements.</li>
+<li>U7 Pro Wall (£190): U7 Pro can also be wall-mounted, but it looks odd mounted on the ceiling. If you’re like K11 and want the AP embedded in the wall out of sight, it’s a choice.</li>
+<li>U7 Outdoor (£190): Choose as needed.</li>
+<li>U6 Enterprise (£267) &#x2F; Pro (£152) &#x2F; LR (£171): Look at the price; just get the U7 Pro. For Home Network, 300 connected devices of the U7 Pro are enough.</li>
+</ul>
+<h2 id="Camera-Options-for-Cloud-Gateway-UDM-Pro"><a href="#Camera-Options-for-Cloud-Gateway-UDM-Pro" class="headerlink" title="Camera Options for Cloud Gateway&#x2F;UDM-Pro"></a>Camera Options for Cloud Gateway&#x2F;UDM-Pro</h2><p>Unless you have clear requirements, the G5 Turret Ultra (£94) is a no-brainer. It’s clear enough, waterproof for indoor&#x2F;outdoor use, and has all you need.</p>
+<h3 id="Special-Needs"><a href="#Special-Needs" class="headerlink" title="Special Needs:"></a>Special Needs:</h3><ul>
+<li>License Plate Recognition: UniFi AI Pro (£478), generally installed at the front door.</li>
+<li>For other specific needs or designs, refer to ui.com.</li>
+</ul>
+<p>This isn’t a commercial post; All equirements are purchased on my own cost. (Although I’d love to have UniFi sponsor me) it’s just a UniFi fan sharing my UniFi setup recommendations. I’ve almost tried them all. UniFi’s Site Manager for remote management is super convenient, providing easy remote support for my parent’s home.<br><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/EN/myUniFi.png" alt="myUniFi"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://upinel.github.io/2024/09/05/2024-HomeLab-UniFi-Network-Guide/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -223,7 +353,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2024-09-05 22:14:49 / Modified: 22:28:27" itemprop="dateCreated datePublished" datetime="2024-09-05T22:14:49+01:00">2024-09-05</time>
+      <time title="Created: 2024-09-05 22:14:49 / Modified: 23:08:58" itemprop="dateCreated datePublished" datetime="2024-09-05T22:14:49+01:00">2024-09-05</time>
     </span>
 
   
@@ -250,13 +380,27 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>UniFi 2024 HomeLab 家庭網絡購買推薦<br><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/unifi.png" alt="UniFi"><br>#藍圈科技 #UniFi #HomeLab<br>#移民人士：UniFi可以網絡層級連接香港的VPN(eg. Surfshark, Nord, Wireguard)，令你可以直接條件式自動「返香港」（eg. 睇Viu) 而應用程式係分唔到你係唔係VPN緊（因為你手機真係無開到「VPN」）</p>
-<p><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/UX1.png" alt="UX1"><br>入門級：UniFi Express (£123) (不推薦UDR)<br>推薦人群：想要穩定的無線網路環境，並想開始接觸企業級&#x2F;Prosumer 等級的網絡設置 (vLan, VPN, Static Route, Multiple SSID, 條件網絡設定，等)<br>限制：1Gbps 網絡，沒有IPS&#x2F;IDS，只有一孔LAN口但可以接駁switch增加LAN port，最大支援5台UniFi Network設備統一管理(實際上接unmanaged switch則沒有上限)<br><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/UX2.png" alt="UX2"><br>為什麼不推薦UDR：由於先天限制，UDR的WAN最多只能跑700Mbps，而且CPU效能比較不行，如果安裝了UniFi Protect會更慢，因此如果只需要網絡跑UniFi Express就好</p>
-<p><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/UCG-Max1.png" alt="UCG-Max1"><br>ProSumer 級：UniFi Cloud Gateway Max (£190) (不推薦Cloud Gateway Ultra)<br>推薦人群：需要IPS&#x2F;IDS，需要2.5Gbps WAN&#x2F;LAN，需要雙WAN備援，或需要UniFi Protect (Survellience Camera) &#x2F; UniFi Access &#x2F; UniFi Talk 等<br>限制：除了沒有10Gbps WAN孔外基本上沒有太大限制，是新的家用全家桶之選了<br><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/UCG-Max2.png" alt="UCG-Max1"><br>為什麼不推薦Cloud Gateway Ultra：雖然有2.5Gbps WAN，但由於先天限制，LAN和背版頻寬只有1Gbps，又不能跑UniFi Protect，又沒有內建WiFi，有點卡在中間的感覺，倒不如買Express，或者有Protect需求就買Cloud Gateway Max。當然如果你非常清楚你的需求是什麼(例如跑5+ AP)也是可以買的</p>
-<p><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/UDM-SE1.png" alt="UDM-SE1"><br>我全都要級：UniFi Dream Machine SE (一般 £478) &#x2F; UniFi Dream Machine Max (不缺錢錢 £574) （基本版UDM-Pro就不推薦了)<br>推薦人群：我全都要，喜歡機架，有大規模布建需求，10Gbps WAN，需要SFP+ port，或純粹不想有任何遺憾的人<br>限制：沒什麼限制的，SE自帶8口PoE，適合預期7-8台UniFi 的AP&#x2F;Camera，如果預期會使用多於8台PoE設備，則買UDM Max再另購24&#x2F;48口 PoE Switch<br><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/UDM-SE2.png" alt="UDM-SE2"><br>為什麼不推薦UDM-Pro：買到這個等級了，需要布建7-8台PoE設備的話買UDM-Pro-SE的價差會比多買一台PoE Switch 便宜，布建大量 PoE設備的話，UDM-Pro-Max的效能才可以比較開心的處理多台Camera。基本版的UDM-Pro就卡在中間不上不下的。</p>
-<p>關於Cloud Gateway &#x2F; UDM-Pro的AP選擇：要不買U6+ (£94)，要不買U7 Pro (£171)，中間的都可以skip掉<br>為什麼不買：<br>U7 Pro Max (£267)：主要是多了scanning功能，不值這個價錢，除非你需求清楚<br>U7 Pro Wall (£190)：U7 Pro其實也可以掛牆，但U7 Pro Wall掛頂就怪怪的，除非你是K11要將AP放進牆體中看不見<br>U7 Outdoor (£190)：按需選擇<br>U6 Enterprise (£267) &#x2F; Pro (£152) &#x2F; LR (£171)：看看價錢，直接買U7 Pro 吧（我們是Home Network，不會有100+ devices的，U7 Pro 的 300 connected devices 夠用了）</p>
-<p>關於Cloud Gateway &#x2F; UDM-Pro的Camera選擇：基本上除非有清楚需求，否則無腦G5 Turret Ultra (£94) 就可以了，足夠清晰，戶內戶外防水，你要的都大概有了<br>特殊需求：</p>
-<ul>
+          <p><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/unifi.png" alt="UniFi"></p>
+<h3 id="移民人士："><a href="#移民人士：" class="headerlink" title="移民人士："></a>移民人士：</h3><p>UniFi可以網絡層級連接香港的VPN(eg. Surfshark, Nord, Wireguard)，令你可以直接條件式自動「返香港」（eg. 睇Viu) 而應用程式係分唔到你係唔係VPN緊（因為你手機真係無開到「VPN」）</p>
+<p><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/UX1.png" alt="UX1"></p>
+<h2 id="入門級：UniFi-Express-£123-不推薦UDR"><a href="#入門級：UniFi-Express-£123-不推薦UDR" class="headerlink" title="入門級：UniFi Express (£123) (不推薦UDR)"></a>入門級：UniFi Express (£123) (不推薦UDR)</h2><h3 id="推薦人群："><a href="#推薦人群：" class="headerlink" title="推薦人群："></a>推薦人群：</h3><p>想要穩定的無線網路環境，並想開始接觸企業級&#x2F;Prosumer 等級的網絡設置 (vLan, VPN, Static Route, Multiple SSID, 條件網絡設定，等)</p>
+<h3 id="限制："><a href="#限制：" class="headerlink" title="限制："></a>限制：</h3><p>1Gbps 網絡，沒有IPS&#x2F;IDS，只有一孔LAN口但可以接駁switch增加LAN port，最大支援5台UniFi Network設備統一管理(實際上接unmanaged switch則沒有上限)<br><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/UX2.png" alt="UX2"></p>
+<h3 id="為什麼不推薦UDR："><a href="#為什麼不推薦UDR：" class="headerlink" title="為什麼不推薦UDR："></a>為什麼不推薦UDR：</h3><p>由於先天限制，UDR的WAN最多只能跑700Mbps，而且CPU效能比較不行，如果安裝了UniFi Protect會更慢，因此如果只需要網絡跑UniFi Express就好</p>
+<p><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/UCG-Max1.png" alt="UCG-Max1"></p>
+<h2 id="ProSumer-級：UniFi-Cloud-Gateway-Max-£190-不推薦Cloud-Gateway-Ultra"><a href="#ProSumer-級：UniFi-Cloud-Gateway-Max-£190-不推薦Cloud-Gateway-Ultra" class="headerlink" title="ProSumer 級：UniFi Cloud Gateway Max (£190) (不推薦Cloud Gateway Ultra)"></a>ProSumer 級：UniFi Cloud Gateway Max (£190) (不推薦Cloud Gateway Ultra)</h2><h3 id="推薦人群：-1"><a href="#推薦人群：-1" class="headerlink" title="推薦人群："></a>推薦人群：</h3><p>需要IPS&#x2F;IDS，需要2.5Gbps WAN&#x2F;LAN，需要雙WAN備援，或需要UniFi Protect (Survellience Camera) &#x2F; UniFi Access &#x2F; UniFi Talk 等</p>
+<h3 id="限制：-1"><a href="#限制：-1" class="headerlink" title="限制："></a>限制：</h3><p>除了沒有10Gbps WAN孔外基本上沒有太大限制，是新的家用全家桶之選了<br><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/UCG-Max2.png" alt="UCG-Max1"></p>
+<h3 id="為什麼不推薦Cloud-Gateway-Ultra："><a href="#為什麼不推薦Cloud-Gateway-Ultra：" class="headerlink" title="為什麼不推薦Cloud Gateway Ultra："></a>為什麼不推薦Cloud Gateway Ultra：</h3><p>雖然有2.5Gbps WAN，但由於先天限制，LAN和背版頻寬只有1Gbps，又不能跑UniFi Protect，又沒有內建WiFi，有點卡在中間的感覺，倒不如買Express，或者有Protect需求就買Cloud Gateway Max。當然如果你非常清楚你的需求是什麼(例如跑5+ AP)也是可以買的</p>
+<p><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/UDM-SE1.png" alt="UDM-SE1"></p>
+<h2 id="我全都要級：UniFi-Dream-Machine-SE-一般-£478-UniFi-Dream-Machine-Max-不缺錢錢-£574-（基本版UDM-Pro就不推薦了"><a href="#我全都要級：UniFi-Dream-Machine-SE-一般-£478-UniFi-Dream-Machine-Max-不缺錢錢-£574-（基本版UDM-Pro就不推薦了" class="headerlink" title="我全都要級：UniFi Dream Machine SE (一般 £478) &#x2F; UniFi Dream Machine Max (不缺錢錢 £574) （基本版UDM-Pro就不推薦了)"></a>我全都要級：UniFi Dream Machine SE (一般 £478) &#x2F; UniFi Dream Machine Max (不缺錢錢 £574) （基本版UDM-Pro就不推薦了)</h2><h3 id="推薦人群：-2"><a href="#推薦人群：-2" class="headerlink" title="推薦人群："></a>推薦人群：</h3><p>我全都要，喜歡機架，有大規模布建需求，10Gbps WAN，需要SFP+ port，或純粹不想有任何遺憾的人</p>
+<h3 id="限制：-2"><a href="#限制：-2" class="headerlink" title="限制："></a>限制：</h3><p>沒什麼限制的，SE自帶8口PoE，適合預期7-8台UniFi 的AP&#x2F;Camera，如果預期會使用多於8台PoE設備，則買UDM Max再另購24&#x2F;48口 PoE Switch<br><img src="/2024/09/05/2024-HomeLab-UniFi-Network-Guide/UDM-SE2.png" alt="UDM-SE2"></p>
+<h3 id="為什麼不推薦UDM-Pro："><a href="#為什麼不推薦UDM-Pro：" class="headerlink" title="為什麼不推薦UDM-Pro："></a>為什麼不推薦UDM-Pro：</h3><p>買到這個等級了，需要布建7-8台PoE設備的話買UDM-Pro-SE的價差會比多買一台PoE Switch 便宜，布建大量 PoE設備的話，UDM-Pro-Max的效能才可以比較開心的處理多台Camera。基本版的UDM-Pro就卡在中間不上不下的。</p>
+<h2 id="關於Cloud-Gateway-UDM-Pro的AP選擇：要不買U6-£94-，要不買U7-Pro-£171-，中間的都可以skip掉"><a href="#關於Cloud-Gateway-UDM-Pro的AP選擇：要不買U6-£94-，要不買U7-Pro-£171-，中間的都可以skip掉" class="headerlink" title="關於Cloud Gateway &#x2F; UDM-Pro的AP選擇：要不買U6+ (£94)，要不買U7 Pro (£171)，中間的都可以skip掉"></a>關於Cloud Gateway &#x2F; UDM-Pro的AP選擇：要不買U6+ (£94)，要不買U7 Pro (£171)，中間的都可以skip掉</h2><h3 id="為什麼不買："><a href="#為什麼不買：" class="headerlink" title="為什麼不買："></a>為什麼不買：</h3><ul>
+<li>U7 Pro Max (£267)：主要是多了scanning功能，不值這個價錢，除非你需求清楚</li>
+<li>U7 Pro Wall (£190)：U7 Pro其實也可以掛牆，但U7 Pro Wall掛頂就怪怪的，除非你是K11要將AP放進牆體中看不見</li>
+<li>U7 Outdoor (£190)：按需選擇</li>
+<li>U6 Enterprise (£267) &#x2F; Pro (£152) &#x2F; LR (£171)：看看價錢，直接買U7 Pro 吧（我們是Home Network，不會有100+ devices的，U7 Pro 的 300 connected devices 夠用了）</li>
+</ul>
+<h2 id="關於Cloud-Gateway-UDM-Pro的Camera選擇：基本上除非有清楚需求，否則無腦G5-Turret-Ultra-£94-就可以了，足夠清晰，戶內戶外防水，你要的都大概有了"><a href="#關於Cloud-Gateway-UDM-Pro的Camera選擇：基本上除非有清楚需求，否則無腦G5-Turret-Ultra-£94-就可以了，足夠清晰，戶內戶外防水，你要的都大概有了" class="headerlink" title="關於Cloud Gateway &#x2F; UDM-Pro的Camera選擇：基本上除非有清楚需求，否則無腦G5 Turret Ultra (£94) 就可以了，足夠清晰，戶內戶外防水，你要的都大概有了"></a>關於Cloud Gateway &#x2F; UDM-Pro的Camera選擇：基本上除非有清楚需求，否則無腦G5 Turret Ultra (£94) 就可以了，足夠清晰，戶內戶外防水，你要的都大概有了</h2><h3 id="特殊需求："><a href="#特殊需求：" class="headerlink" title="特殊需求："></a>特殊需求：</h3><ul>
 <li>需要車牌識別警示（一般只會在前門裝一台）：UniFi AI Pro (£478)</li>
 <li>其他特殊需求&#x2F;指定外觀請自行到ui.com查看</li>
 </ul>
@@ -1336,130 +1480,6 @@
 <p>By following these steps, you instruct <code>apt-get</code> to ignore the CD-ROM as a source, relying instead on your other sources for package installations and updates.</p>
 <p>Whether you’re managing package sources or ensuring your applications are running smoothly, Debian and its tools offer robust solutions for both tasks.</p>
 <p>Taking care of your system’s configurations thoughtfully can save a lot of time and hassle.</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://upinel.github.io/2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="@Upinel">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Upinel Notebook">
-      <meta itemprop="description" content="Code, Homelab, and everything tech">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Upinel Notebook">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/" class="post-title-link" itemprop="url">Intel NUC12 1240P 10TB (4*SSD) Super HomeLab Build</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2024-05-13 12:58:47" itemprop="dateCreated datePublished" datetime="2024-05-13T12:58:47+01:00">2024-05-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-07-13 13:09:47" itemprop="dateModified" datetime="2024-07-13T13:09:47+01:00">2024-07-13</time>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>I’m excited to share my recent project of building an ultra-compact, all-SSD HomeLab with the incredible Intel NUC12. Below, I will walk you through the specifications and the detailed process of creating this monster build.</p>
-<p><img src="/2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/8tb-3xssd-pve-homelab-setup-nuc-12-nuc12wski5-wall-street-v0-edvkkkp9x83d1.jpg" alt="NUC12 HomeLab Setup"></p>
-<h2 id="Specifications"><a href="#Specifications" class="headerlink" title="Specifications"></a>Specifications</h2><p><strong>Processor:</strong> Intel i5-1240P (12 Cores &#x2F; 16 Threads, Underclock at 18&#x2F;28W)</p>
-<p><strong>RAM:</strong> 64GB</p>
-<p><strong>Storage:</strong> Total 10TB across four SSDs:</p>
-<ul>
-<li><strong>Samsung 980Pro 2TB</strong> (Gen 4x4) 2280 NVMe SSD</li>
-<li><strong>Solidigm P41 Plus 2TB</strong> (Gen 4x4 Downgraded to Gen 3x1) 2280 NVMe SSD</li>
-<li><strong>Sandisk SN740 2TB</strong> (Gen 4x4 Downgraded to Gen 3x1) 2230 NVMe SSD</li>
-<li><strong>Samsung 870 EVO 4TB</strong> SATA SSD</li>
-</ul>
-<h2 id="Installation-Process"><a href="#Installation-Process" class="headerlink" title="Installation Process"></a>Installation Process</h2><h3 id="Step-1-Default-Configuration"><a href="#Step-1-Default-Configuration" class="headerlink" title="Step 1: Default Configuration"></a>Step 1: Default Configuration</h3><p>The Intel NUC12 can naturally accommodate two SSDs: </p>
-<ul>
-<li><strong>M.2 2280 SSD slot:</strong> Where I installed the <strong>Samsung 980 Pro 2TB</strong>.</li>
-<li><strong>SATA SSD slot:</strong> Which houses the <strong>Samsung 870 EVO 4TB</strong>.</li>
-</ul>
-<p>This setup provided me with 6TB of high-speed storage.</p>
-<h3 id="Step-2-Maximizing-Expandability-with-M-2-2242-Slot"><a href="#Step-2-Maximizing-Expandability-with-M-2-2242-Slot" class="headerlink" title="Step 2: Maximizing Expandability with M.2 2242 Slot"></a>Step 2: Maximizing Expandability with M.2 2242 Slot</h3><p>I discovered that the NUC12’s 2242 M.2 slot includes a PCIe Gen3x1 lane. By using a <strong>Key B to Key M converter</strong>, this allowed me to connect a <strong>Sandisk SN740 2TB</strong> as a 2242 form-factor drive.</p>
-<p><em>Note: Connecting the <strong>SN740</strong> via <strong>Key B</strong> scales down its speed from Gen4x4 (<del>5000MB&#x2F;s) to Gen3x1 (</del>900MB&#x2F;s).</em></p>
-<p><img src="/2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/8tb-3xssd-pve-homelab-setup-nuc-12-nuc12wski5-wall-street-v0-y5zxrkp9x83d1.jpg" alt="SSD Conversion"></p>
-<h3 id="Step-3-Utilizing-the-WiFi-Slot"><a href="#Step-3-Utilizing-the-WiFi-Slot" class="headerlink" title="Step 3: Utilizing the WiFi Slot"></a>Step 3: Utilizing the WiFi Slot</h3><p>Since I seldom use the WiFi chip, my HomeLab runs mainly on a 2.5Gbps Ethernet connection. By converting the <strong>Key A+E to Key M</strong> via another converter, I effectively utilized the <strong>WiFi slot’s PCIe Gen3x1 lane</strong>. This connected the <strong>Solidigm P41 2TB SSD</strong> to the WiFi slot via an <strong>FFC cable</strong> routed to the remaining area designated for the SATA drive, providing an additional 2TB at PCIe Gen3x1 (~900MB&#x2F;s).</p>
-<p><img src="/2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/13.56.47.png" alt="WiFi Slot SSD"></p>
-<h3 id="Step-4-Underclocking-for-Optimal-Performance"><a href="#Step-4-Underclocking-for-Optimal-Performance" class="headerlink" title="Step 4: Underclocking for Optimal Performance"></a>Step 4: Underclocking for Optimal Performance</h3><p>To keep noise and heat in check, I underclocked the Intel i5-1240P CPU to:</p>
-<ul>
-<li><strong>PL1 &#x3D; 18W</strong></li>
-<li><strong>PL2 &#x3D; 28W</strong></li>
-</ul>
-<p>This adjustment still provides 80% of the CPU’s power potential, which is more than sufficient for my workloads. Additionally, the CPU typically operates below a 10% load, thus maintaining an efficient and quiet environment.</p>
-<p><img src="/2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/13.11.45.png" alt="CPU Load Overview"></p>
-<h2 id="Enhancing-Capabilities-with-Thunderbolt-4-Ports"><a href="#Enhancing-Capabilities-with-Thunderbolt-4-Ports" class="headerlink" title="Enhancing Capabilities with Thunderbolt 4 Ports"></a>Enhancing Capabilities with Thunderbolt 4 Ports</h2><p>The NUC12 also features <strong>2 Thunderbolt 4 ports</strong>, each offering a 40Gbps link. This provides the flexibility to expand storage further by connecting to external SSD enclosures or HDD RAID setups—potentially accommodating up to <strong>8x10Gbps (Gen3x1) external SSDs</strong> via TB3&#x2F;4 4-bay enclosures.</p>
-<p><img src="/2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/14.01.43.png" alt="Thunderbolt 4 Ports"></p>
-<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>By fully utilizing the Gen4x4 M.2 slot, SATA slot, Gen3x1 2242 slot, and the Gen3x1 WiFi slot, I successfully installed four SSDs into a single 4x4 NUC12 with ease. This setup provides an impressive 10TB of high-speed storage in a remarkably compact form factor.</p>
-<p><img src="/2024/05/13/Intel-NUC12-1240P-10TB-4-SSD-Super-HomeLab-Build/13.21.09.png" alt="Completed HomeLab"></p>
-<p>I am thrilled with how compact yet powerful the Intel NUC12 1240P has proven to be for this HomeLab build. It not only meets my storage needs but also leverages advanced features for potential future expansions.</p>
-<p>Feel free to share your thoughts or ask questions in the comments below. Happy building!</p>
 
       
     </div>
